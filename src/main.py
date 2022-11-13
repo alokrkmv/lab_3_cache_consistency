@@ -5,7 +5,7 @@ import sys
 import random
 import sys
 from peers import Peer
-from create_bazar import create_bazar, get_hop_count
+from create_bazar import create_bazar
 # It is responsible for spwaning peers as buyers or sellers
 
 def main():
@@ -43,19 +43,19 @@ def main():
 
         
 
-
 if __name__=='__main__':
     peers = main()
     peer_id_list = []
     for peer in peers:
         peer_id_list.append(peer.id)
-    edges = create_bazar(peer_id_list, True)
-    hop_count = get_hop_count(edges)
-    # Set the maximum hop count for each peer
+
     for peer in peers:
-        peer.hop_count = hop_count
+        for peer_id in peer_id_list:
+            if peer_id == peer.id:
+                continue
+            peer.neighbors.append(peer_id)
+    edges = create_bazar(peer_id_list, False)
     base_path = os.getcwd()
-    print(base_path)
     try: 
         for i,peer in enumerate(peers):
             new_path = f"{base_path}/peer/peer{i}"
