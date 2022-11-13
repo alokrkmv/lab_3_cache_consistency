@@ -22,14 +22,20 @@ class Peer(Process):
         self.item = items[random.randint(0, len(items) - 1)]
         self.executor = ThreadPoolExecutor(max_workers=20)
         self.host  = host
-        self.hop_count = None
-        self.neighbors = {}
         self.lock_item = Lock()
         self.lock_sellers = Lock()
         self.output_array = []
         self.max_items = 10
         self.sellers = []
         self.base_path = base_path
+        self.neighbors = []
+        self.received_ok_message = False
+        self.received_won_message = False
+        self.send_winning_message = False
+        self.current_trader_id = None
+        self.election_flag = False
+        self.election_lock = Lock()
+        self.winning_lock = Lock()
         
 
     def __str__(self):
@@ -47,27 +53,118 @@ class Peer(Process):
         Returns: the endpoint (reference) of the nameserver currently running 
         """
         return Pyro4.locateNS(host=self.host)
+    # Get pyro4 uri for each neighbor
+    def get_uri_from_id(self,peer_id):
+        neighbor_uri = self.get_nameserver().lookup(peer_id)
+        neighbor_proxy = Pyro4.Proxy(neighbor_uri)
+        return neighbor_proxy
+
+    def check_higher_id(self,id_2):
+        id_1_index = int(self.id[-1])
+        id_2_index = int(id_2[-1])
+
+        return True if id_2_index>id_1_index else False
+
     
-
-    def get_all_neighbors(self, peer_id):
-        """
-        Args:
-            peer_id: id of the peer
-        Finds the neighbors of the current peer and updates the neighbors dictionary in {id: uri} in pairs 
-        """
-        time.sleep(2)
-        bazar_network = open(f"{self.base_path}/bazaar.json")
-        data = json.load(bazar_network)
-        try:
-            expected_neighbors = data[peer_id]
-        except Exception as e:
-            print("Loading neighbors for bazaar failed with error {e} Please make sure that the bazar has been created fully")
-
-        for neighbor in expected_neighbors:
-            neighbor_uri = self.get_nameserver().lookup(neighbor)
-            self.neighbors[neighbor] = neighbor_uri
-               
+                    
             
+    def forward_win_message(self):
+        print(f"{self.id} has won the election and is now the new trader of the bazaar!!!")
+        self.received_won_message = True
+        self.current_trader_id = self.id
+        self.role = "Trader"
+        for neighbor in self.neighbors:
+            self.executor.submit(self.get_uri_from_id(neighbor).send_election_message ,"won",self.id)
+
+   
+
+    # This method elects the leader using Bully algorithm
+    @Pyro4.expose
+    def elect_leader(self):
+        print(f"{self.id} has started the election")
+        time.sleep(1)
+        higher_peers = []
+        
+        for neigh_id in self.neighbors:
+            if neigh_id == self.current_trader_id:
+                continue
+            if self.check_higher_id(neigh_id):
+                higher_peers.append(self.get_uri_from_id(neigh_id))
+        if len(neigh_id)>0:
+            # Acquire the election lock and set election running status to true
+            self.election_lock.acquire()
+            self.election_flag = True
+            self.election_lock.release()
+            try:
+
+                for higher_peer in higher_peers:
+                    self.executor.submit(higher_peer.send_election_message ,"elect_leader",self.id)
+            except Exception as e:
+                print(f"Something went wrong in sending message with error {e} and uri{higher_peer}")
+        else:
+            self.send_winning_message()
+        
+
+
+    '''
+    This function handles three types of messages
+    elect_leader : If this message is received by the peer then it will first respond to the sender 
+    by an ok message and forward the election message to its neighbors
+    ok: Drop out of the election
+    I won : Recived the message from the new leader set winning trader as the new co-ordinator of the 
+    bazaar
+    '''
+    @Pyro4.expose
+    def send_election_message(self,message,sender):
+        try:
+            if message == "elect_leader":
+                self.executor.submit(self.get_uri_from_id(sender).send_election_message,"OK",sender)
+                # If the peer haven't taken part in election till now only then it will take part in an election
+                if not self.received_ok_message and not self.received_won_message:
+                    higher_peers = []
+                    for neigh_id in self.neighbors:
+                        if neigh_id == self.current_trader_id:
+                            continue
+                        if self.check_higher_id(neigh_id):
+                            higher_peers.append(self.get_uri_from_id(neigh_id))
+                if len(neigh_id)>0:
+                    # Acquire the election lock and set election running status to true
+                    self.election_lock.acquire()
+                    self.election_flag = True
+                    self.election_lock.release()
+                    
+                    for higher_peer in higher_peers:
+                        self.executor.submit(higher_peer.send_election_message ,"elect_leader",self.id)
+                    
+                    time.sleep(3)
+
+                    # check for the winning case
+                    # If the peer haven't received an Ok or won message that message it is the winner of the election
+                    # and will be crowned as the leader
+                    if self.received_ok_message == False and self.received_won_message == False:
+                        self.winning_lock.acquire()
+                        self.send_winning_message = True
+                        self.forward_win_message()
+                        self.winning_lock.release()
+                else:
+                    self.winning_lock.acquire()
+                    self.send_winning_message = True
+                    self.forward_win_message()
+                    self.winning_lock.release()
+            elif message == "OK":
+                self.received_ok_message = True
+            elif message == "won":
+                print(f"{self.id} received message won from {sender} and recognizes {sender} as the new coordinator of the bazaar")
+                self.winning_lock.acquire()
+                self.received_won_message = True
+                self.current_trader_id = sender
+                self.winning_lock.release()
+                # Sleep for sometime before trading begins
+                time.sleep(3)
+        except Exception as e:
+            print(f"Something went wrong with error {e}")
+
+                       
     def get_timestamp(self):
         """
         Returns: Current Timestamp
@@ -100,53 +197,58 @@ class Peer(Process):
                 
                 # Start the Pyro requestLoop
                 self.executor.submit(daemon.requestLoop)
-
-                # Check that all neighbours are healthy before starting buy or sell
-                # t1 = Thread(target = self.get_all_neighbors,kwargs={"peer_id":self.id})
-              
-                self.get_all_neighbors(self.id)
-          
-                while True and self.role=="buyer":
-                    lookups = []
-                    
-                    for neighbor,uri in self.neighbors.items():
-                        neighbor_proxy = Pyro4.Proxy(uri) # getting the uri of the neighbors
-                        print(f"{self.get_timestamp()} - {self.id} issues lookup to {neighbor}")
-                        # Creating threads for each neighbor's lookup
-                        lookups.append(self.executor.submit(neighbor_proxy.lookup,self.item,self.hop_count,[self.id]))
-                    for lookup_request in lookups:
-                        # Executing each lookup
-                        lookup_request.result()
-                    
-                    with self.lock_sellers:
-                        if self.sellers:
-                            # If response from sellers has been received select a random seller
-                            id = self.sellers[random.randint(0, len(self.sellers) - 1)]
-                            random_seller_id = id["id"]
-                            item = id["item"]
-                            if item == self.item:
-                                print(f"{self.get_timestamp()} - {self.id} picked {random_seller_id} to purchase {self.item}")
-
-                                # get uri of seller
-                                seller = Pyro4.Proxy(self.get_nameserver().lookup(random_seller_id))
-                                # create a thread to run the buy function of the seller
-                                picked_seller = self.executor.submit(seller.buy,self.id)
-
-                                if picked_seller.result(): # run the buy method of the seller
-                                    print(self.get_timestamp(), '-', self.id, "bought", self.item, "from", random_seller_id)
-                                else:
-                                    print(self.get_timestamp(), self.id, "failed to buy", self.item, "from", random_seller_id)
-                        self.sellers = []
-                        
-                        # Choose another random item to buy
-                        self.item = self.items[random.randint(0, len(self.items) - 1)]
-                        print(f"{self.get_timestamp()} - Buyer {self.id} now picked item {self.item} to buy")
-                    
-                    # Buyer waiting for a random amount of time before starting a new purchase
-                    time.sleep(random.randint(1,3))
-                
+                # Sleep for sometime so that all peers join Bazaar
+                time.sleep(4)
+                if int(self.id[-1])==2:
+                    self.elect_leader()
                 while True:
-                    time.sleep(1) 
+                    time.sleep(1)
+
+              
+              
+             
+          
+        #         while True and self.role=="buyer":
+        #             lookups = []
+                    
+        #             for neighbor,uri in self.neighbors.items():
+        #                 neighbor_proxy = Pyro4.Proxy(uri) # getting the uri of the neighbors
+        #                 print(f"{self.get_timestamp()} - {self.id} issues lookup to {neighbor}")
+        #                 # Creating threads for each neighbor's lookup
+        #                 lookups.append(self.executor.submit(neighbor_proxy.lookup,self.item,self.hop_count,[self.id]))
+        #             for lookup_request in lookups:
+        #                 # Executing each lookup
+        #                 lookup_request.result()
+                    
+        #             with self.lock_sellers:
+        #                 if self.sellers:
+        #                     # If response from sellers has been received select a random seller
+        #                     id = self.sellers[random.randint(0, len(self.sellers) - 1)]
+        #                     random_seller_id = id["id"]
+        #                     item = id["item"]
+        #                     if item == self.item:
+        #                         print(f"{self.get_timestamp()} - {self.id} picked {random_seller_id} to purchase {self.item}")
+
+        #                         # get uri of seller
+        #                         seller = Pyro4.Proxy(self.get_nameserver().lookup(random_seller_id))
+        #                         # create a thread to run the buy function of the seller
+        #                         picked_seller = self.executor.submit(seller.buy,self.id)
+
+        #                         if picked_seller.result(): # run the buy method of the seller
+        #                             print(self.get_timestamp(), '-', self.id, "bought", self.item, "from", random_seller_id)
+        #                         else:
+        #                             print(self.get_timestamp(), self.id, "failed to buy", self.item, "from", random_seller_id)
+        #                 self.sellers = []
+                        
+        #                 # Choose another random item to buy
+        #                 self.item = self.items[random.randint(0, len(self.items) - 1)]
+        #                 print(f"{self.get_timestamp()} - Buyer {self.id} now picked item {self.item} to buy")
+                    
+        #             # Buyer waiting for a random amount of time before starting a new purchase
+        #             time.sleep(random.randint(1,3))
+                
+        #         while True:
+        #             time.sleep(1) 
         
         except Exception as e:
             print(f"Something went wrong in run method with exception {e}")
