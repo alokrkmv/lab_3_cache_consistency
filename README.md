@@ -5,6 +5,9 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com)
 
+### Docker run command
+
+docker run -d -p 27017:27017 --name mongo_container mongo
 #### Steps to run the project
 1. It is advisable to create and activate a virtualenv before starting the project. However it is not a requirement to run the project.
 2. The application can be started by running a single bash script run.sh inside src folder.
