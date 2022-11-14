@@ -6,7 +6,10 @@ import random
 import time
 import json
 import copy
+from database import DbHandler
+
 from datetime import datetime
+
 
 class Peer(Process):
     def __init__(self,id,role,items, items_count,host,base_path):
@@ -36,6 +39,10 @@ class Peer(Process):
         self.election_flag = False
         self.election_lock = Lock()
         self.winning_lock = Lock()
+        self.price = None
+        self.has_deposited = False
+        self.db = DbHandler()
+        self.has_deposited_lock = Lock()
         
 
     def __str__(self):
@@ -72,37 +79,50 @@ class Peer(Process):
         print(f"{self.id} has won the election and is now the new trader of the bazaar!!!")
         self.received_won_message = True
         self.current_trader_id = self.id
-        self.role = "Trader"
+        self.role = "trader"
         for neighbor in self.neighbors:
             self.executor.submit(self.get_uri_from_id(neighbor).send_election_message ,"won",self.id)
 
+        print("Trader is ready to trade")
+        self.executor.submit(self.begin_trading)
    
 
     # This method elects the leader using Bully algorithm
     @Pyro4.expose
     def elect_leader(self):
-        print(f"{self.id} has started the election")
-        time.sleep(1)
-        higher_peers = []
-        
-        for neigh_id in self.neighbors:
-            if neigh_id == self.current_trader_id:
-                continue
-            if self.check_higher_id(neigh_id):
-                higher_peers.append(self.get_uri_from_id(neigh_id))
-        if len(neigh_id)>0:
-            # Acquire the election lock and set election running status to true
-            self.election_lock.acquire()
-            self.election_flag = True
-            self.election_lock.release()
-            try:
+        try:
+            print(f"{self.id} has started the election")
+            time.sleep(1)
+            higher_peers = []
+            
+            for neigh_id in self.neighbors:
+                if neigh_id == self.current_trader_id:
+                    continue
+                if self.check_higher_id(neigh_id):
+                    higher_peers.append(self.get_uri_from_id(neigh_id))
+            if len(higher_peers)>0:
+                # Acquire the election lock and set election running status to true
+                self.election_lock.acquire()
+                self.election_flag = True
+                self.election_lock.release()
+            
 
                 for higher_peer in higher_peers:
                     self.executor.submit(higher_peer.send_election_message ,"elect_leader",self.id)
-            except Exception as e:
-                print(f"Something went wrong in sending message with error {e} and uri{higher_peer}")
-        else:
-            self.send_winning_message()
+                time.sleep(5)
+                if self.received_ok_message == False and  self.received_won_message == False:
+                    self.winning_lock.acquire()
+                    self.send_winning_message = True
+                    self.forward_win_message()
+                    self.winning_lock.release()
+    
+            else:
+                self.winning_lock.acquire()
+                self.send_winning_message = True
+                self.forward_win_message()
+                self.winning_lock.release()
+        except Exception as e:
+            print(f"Something went wrong while {self.id} tried to start election with error {e}")
         
 
 
@@ -127,30 +147,30 @@ class Peer(Process):
                             continue
                         if self.check_higher_id(neigh_id):
                             higher_peers.append(self.get_uri_from_id(neigh_id))
-                if len(neigh_id)>0:
-                    # Acquire the election lock and set election running status to true
-                    self.election_lock.acquire()
-                    self.election_flag = True
-                    self.election_lock.release()
-                    
-                    for higher_peer in higher_peers:
-                        self.executor.submit(higher_peer.send_election_message ,"elect_leader",self.id)
-                    
-                    time.sleep(3)
+                    if len(higher_peers)>0:
+                        # Acquire the election lock and set election running status to true
+                        self.election_lock.acquire()
+                        self.election_flag = True
+                        self.election_lock.release()
+                        
+                        for higher_peer in higher_peers:
+                            self.executor.submit(higher_peer.send_election_message ,"elect_leader",self.id)
+                        
+                        time.sleep(5)
 
-                    # check for the winning case
-                    # If the peer haven't received an Ok or won message that message it is the winner of the election
-                    # and will be crowned as the leader
-                    if self.received_ok_message == False and self.received_won_message == False:
+                        # check for the winning case
+                        # If the peer haven't received an Ok or won message that message it is the winner of the election
+                        # and will be crowned as the leader
+                        if self.received_ok_message == False and self.received_won_message == False:
+                            self.winning_lock.acquire()
+                            self.send_winning_message = True
+                            self.forward_win_message()
+                            self.winning_lock.release()
+                    else:
                         self.winning_lock.acquire()
                         self.send_winning_message = True
                         self.forward_win_message()
                         self.winning_lock.release()
-                else:
-                    self.winning_lock.acquire()
-                    self.send_winning_message = True
-                    self.forward_win_message()
-                    self.winning_lock.release()
             elif message == "OK":
                 self.received_ok_message = True
             elif message == "won":
@@ -158,11 +178,59 @@ class Peer(Process):
                 self.winning_lock.acquire()
                 self.received_won_message = True
                 self.current_trader_id = sender
+                self.election_flag = False
                 self.winning_lock.release()
                 # Sleep for sometime before trading begins
-                time.sleep(3)
+                time.sleep(10)
+                print(f"Election has completed succesfully and {self.id} is ready to trade")
+                self.executor.submit(self.begin_trading)
         except Exception as e:
             print(f"Something went wrong with error {e}")
+
+    @Pyro4.expose
+    def begin_trading(self):
+        
+        # Set all election related flags to false
+        self.winning_lock.acquire()
+        self.received_won_message = False
+        self.received_ok_message = False
+        self.send_winning_message = False
+        self.winning_lock.release()
+
+        # When trading begins seller will deposit all their items to trader if they haven't done so
+        
+        if self.role == "seller" and not self.has_deposited:
+            trader = self.current_trader_id
+            trader_proxy = self.get_uri_from_id(trader)
+            item = self.item
+            count  = self.items_count
+            price = self.price
+
+            seller_data = {"seller_id":self.id, "count":count, "price":price, "item":item}
+            registration_result = self.executor.submit(trader_proxy.register_product, seller_data, self.id)
+            res = registration_result.result()
+            if res:
+                print(f"{self.id} registered their product {self.item} with trader")
+                self.has_deposited_lock.acquire()
+                self.has_deposited = True
+                self.has_deposited_lock.release()
+            else:
+                print(f"Something went wrong while registering the product with trader. Retrying!!!")
+                self.begin_trading()
+                
+
+
+
+    # This method registers products of each seller
+    @Pyro4.expose
+    def register_product(self, seller_info, seller_id):
+        try:
+            self.db.insert_into_database(seller_info)
+            return True
+        except Exception as e:
+            print(f"Registering product for {seller_id} failed with error{e}")
+            return False
+        
 
                        
     def get_timestamp(self):

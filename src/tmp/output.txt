@@ -1,0 +1,61 @@
++++++++++++++Starting The Bazar+++++++++++++++++++++++
+Installing all the requirements for the project
+Requirement already satisfied: Pyro4==4.82 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from -r requirements.txt (line 1)) (4.82)
+Requirement already satisfied: networkx==2.8.7 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from -r requirements.txt (line 2)) (2.8.7)
+Requirement already satisfied: matplotlib==3.6.1 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from -r requirements.txt (line 3)) (3.6.1)
+Requirement already satisfied: pymongo==4.3.2 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from -r requirements.txt (line 4)) (4.3.2)
+Requirement already satisfied: serpent>=1.27; python_version >= "3.2" in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from Pyro4==4.82->-r requirements.txt (line 1)) (1.41)
+Requirement already satisfied: fonttools>=4.22.0 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from matplotlib==3.6.1->-r requirements.txt (line 3)) (4.37.4)
+Requirement already satisfied: pyparsing>=2.2.1 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from matplotlib==3.6.1->-r requirements.txt (line 3)) (3.0.9)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from matplotlib==3.6.1->-r requirements.txt (line 3)) (1.4.4)
+Requirement already satisfied: python-dateutil>=2.7 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from matplotlib==3.6.1->-r requirements.txt (line 3)) (2.8.2)
+Requirement already satisfied: numpy>=1.19 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from matplotlib==3.6.1->-r requirements.txt (line 3)) (1.23.4)
+Requirement already satisfied: contourpy>=1.0.1 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from matplotlib==3.6.1->-r requirements.txt (line 3)) (1.0.5)
+Requirement already satisfied: packaging>=20.0 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from matplotlib==3.6.1->-r requirements.txt (line 3)) (21.3)
+Requirement already satisfied: cycler>=0.10 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from matplotlib==3.6.1->-r requirements.txt (line 3)) (0.11.0)
+Requirement already satisfied: pillow>=6.2.0 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from matplotlib==3.6.1->-r requirements.txt (line 3)) (9.2.0)
+Requirement already satisfied: dnspython<3.0.0,>=1.16.0 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from pymongo==4.3.2->-r requirements.txt (line 4)) (2.2.1)
+Requirement already satisfied: six>=1.5 in /home/alokrkmv/Documents/my_code/lab-1-the_bazar/the_bazar_env/lib/python3.8/site-packages (from python-dateutil>=2.7->matplotlib==3.6.1->-r requirements.txt (line 3)) (1.16.0)
+Starting nameserver in detached mode
+No nameserver found!!! Starting a new server on the host machine
+Removing dead peers from the server
+Potentially removing lots of items from the Name server. Are you sure (y/n)?0 items removed.
+Removing dead peers from the server
+Potentially removing lots of items from the Name server. Are you sure (y/n)?0 items removed.
+Starting the main process
+Not starting broadcast server for localhost.
+NS running on localhost:9090 (127.0.0.1)
+Warning: HMAC key not set. Anyone can connect to this server!
+URI = PYRO:Pyro.NameServer@localhost:9090
+NS shut down.
+2022-11-13 14:59:51.540683 - seller3 joined the bazar as seller selling salt
+seller3 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+Election has completed succesfully and seller3 is ready to trade
+2022-11-13 14:59:51.538865 - buyer5 joined the bazar as buyer looking for fish
+buyer5 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+Election has completed succesfully and buyer5 is ready to trade
+2022-11-13 14:59:51.543319 - seller8 joined the bazar as seller selling fish
+seller8 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+Election has completed succesfully and seller8 is ready to trade
+2022-11-13 14:59:51.541166 - buyer7 joined the bazar as buyer looking for fish
+buyer7 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+Election has completed succesfully and buyer7 is ready to trade
+2022-11-13 14:59:51.542853 - buyer9 joined the bazar as buyer looking for fish
+buyer9 has won the election and is now the new trader of the bazaar!!!
+Trader is ready to trade
+2022-11-13 14:59:51.541427 - seller4 joined the bazar as seller selling fish
+seller4 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+Election has completed succesfully and seller4 is ready to trade
+2022-11-13 14:59:51.539303 - buyer2 joined the bazar as buyer looking for salt
+buyer2 has started the election
+buyer2 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+Election has completed succesfully and buyer2 is ready to trade
+2022-11-13 14:59:51.542737 - buyer6 joined the bazar as buyer looking for fish
+buyer6 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+Election has completed succesfully and buyer6 is ready to trade
+2022-11-13 14:59:51.527382 - buyer0 joined the bazar as buyer looking for boar
+buyer0 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+Election has completed succesfully and buyer0 is ready to trade
+2022-11-13 14:59:51.535651 - seller1 joined the bazar as seller selling salt
+seller1 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+Election has completed succesfully and seller1 is ready to trade

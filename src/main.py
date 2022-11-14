@@ -6,6 +6,7 @@ import random
 import sys
 from peers import Peer
 from create_bazar import create_bazar
+from database import DbHandler
 # It is responsible for spwaning peers as buyers or sellers
 
 def main():
@@ -54,8 +55,23 @@ if __name__=='__main__':
             if peer_id == peer.id:
                 continue
             peer.neighbors.append(peer_id)
+            if peer.role == "seller":
+                item_cost = random.randint(5,10)
+                peer.price = item_cost
     edges = create_bazar(peer_id_list, False)
     base_path = os.getcwd()
+    # Check database connection status
+
+    database_client = DbHandler()
+    try:
+        if database_client.test_connection():
+            print("Connected succesfuly to the databse")
+        else:
+            print("Something went wrong while connecting to database.... Exiting!!!")
+            sys.exit()
+    except Exception as e:
+        print(f"Database connection failed with error {e}. Application will now exit!!!")
+        
     try: 
         for i,peer in enumerate(peers):
             new_path = f"{base_path}/peer/peer{i}"
