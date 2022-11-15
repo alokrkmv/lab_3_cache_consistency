@@ -14,6 +14,11 @@ class DbHandler:
 
         except Exception as e:
             print(f"Something went Wrong while connecting to database with error {e}")
+        
+    
+    def reset_database(self):
+        
+        self.collection.drop()
 
     # This function is called by init to check if database connection is succesful
     def test_connection(self):
@@ -50,6 +55,8 @@ class DbHandler:
             print(f"Something went wrong while trying to fetch all data with exception {e}")
 
 
+
+
     # This function fetches data of a particular seller from collection
     def fetch_one_from_database(self,seller_id):
         try:
@@ -57,27 +64,33 @@ class DbHandler:
             return seller_data
         except Exception as e:
             print(f"Something went wrong while trying to fetch data for {seller_id} with exception {e}")
-    # Updates the data for an individual seller
-    def update_one(self,seller_id, new_data):
+    # # Updates the data for an individual seller
+    # def update_one(self,seller_id, new_data):
 
-        try:
-            filter = { 'seller_id': seller_id }
+    #     try:
+    #         filter = { 'seller_id': seller_id }
             
-            # Values to be updated.
-            newvalues = { "$set": new_data }
-            self.collection.update_one(filter,newvalues)
-        except Exception as e:
-            print(f"Something went wrong while trying to update the data for {seller_id} with exception {e}")
+    #         # Values to be updated.
+    #         newvalues = { "$set": new_data }
+    #         self.collection.update_one(filter,newvalues)
+    #     except Exception as e:
+    #         print(f"Something went wrong while trying to update the data for {seller_id} with exception {e}")
 
     # Fetches all info of a seller selling particular item.
 
     def find_seller_by_item(self, item):
+        
         all_data = self.fetch_all_from_database()
+  
+    
         for data in all_data:
-            if data["item"]==item and data["count"]>0:
+        
+        
+            if data["item"]==item:
+               
                 return data
-            else:
-                return None
+        return None
+
 
 
 

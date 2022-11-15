@@ -43,6 +43,9 @@ class Peer(Process):
         self.has_deposited = False
         self.db = DbHandler()
         self.has_deposited_lock = Lock()
+        self.trading_queue = []
+        self.item_lock = []
+        self.trading_lock = Lock()
         
 
     def __str__(self):
@@ -92,7 +95,7 @@ class Peer(Process):
     def elect_leader(self):
         try:
             print(f"{self.id} has started the election")
-            time.sleep(1)
+            # time.sleep(1)
             higher_peers = []
             
             for neigh_id in self.neighbors:
@@ -189,36 +192,127 @@ class Peer(Process):
 
     @Pyro4.expose
     def begin_trading(self):
+        try:
         
-        # Set all election related flags to false
-        self.winning_lock.acquire()
-        self.received_won_message = False
-        self.received_ok_message = False
-        self.send_winning_message = False
-        self.winning_lock.release()
+            # Set all election related flags to false
+            self.winning_lock.acquire()
+            self.received_won_message = False
+            self.received_ok_message = False
+            self.send_winning_message = False
+            self.winning_lock.release()
 
-        # When trading begins seller will deposit all their items to trader if they haven't done so
-        
-        if self.role == "seller" and not self.has_deposited:
-            trader = self.current_trader_id
-            trader_proxy = self.get_uri_from_id(trader)
-            item = self.item
-            count  = self.items_count
-            price = self.price
+            # When trading begins seller will deposit all their items to trader if they haven't done so
+            
+            if self.role == "seller" and not self.has_deposited:
+                trader = self.current_trader_id
+                trader_proxy = self.get_uri_from_id(trader)
+                item = self.item
+                count  = self.items_count
+                price = self.price
 
-            seller_data = {"seller_id":self.id, "count":count, "price":price, "item":item}
-            registration_result = self.executor.submit(trader_proxy.register_product, seller_data, self.id)
-            res = registration_result.result()
-            if res:
-                print(f"{self.id} registered their product {self.item} with trader")
-                self.has_deposited_lock.acquire()
-                self.has_deposited = True
-                self.has_deposited_lock.release()
-            else:
-                print(f"Something went wrong while registering the product with trader. Retrying!!!")
-                self.begin_trading()
+                seller_data = {"seller_id":self.id, "count":count, "price":price, "item":item}
+                registration_result = self.executor.submit(trader_proxy.register_product, seller_data, self.id)
+                res = registration_result.result()
+                if res:
+                    print(f"{self.id} registered their product {self.item} with trader")
+                    self.has_deposited_lock.acquire()
+                    self.has_deposited = True
+                    self.has_deposited_lock.release()
+                else:
+                    print(f"Something went wrong while registering the product with trader. Retrying!!!")
+                    self.begin_trading()
+            # Trader loop will take care of purchase request from buyer
+            elif self.role == "trader":
                 
+                self.executor.submit(self.trader_loop)
+            # If role is of buyer then start buyer loop and keep on buying product
+            elif self.role == "buyer":
+                # Wait for sellers to register their product with trader
+                time.sleep(5)
+                self.executor.submit(self.buyer_loop)
+        except Exception as e:
+            print(f"Something went wrong while starting to trade for {self.id} with error {e}")
+    
+    @Pyro4.expose              
+    def add_to_trading_queue(self, buyer_id, item):
+        # print("Treading queue logic")
+        self.trading_queue.append((item, buyer_id))
+        # print(self.trading_queue)
 
+
+    # This method starts buyer loop for buyer using which they can buy any product
+    def buyer_loop(self):
+        while True:
+            trader = self.get_uri_from_id(self.current_trader_id)
+            self.executor.submit(trader.add_to_trading_queue, self.id, self.item)
+            time.sleep(10)
+            
+            self.item = self.items[random.randint(0, len(self.items) - 1)]
+            
+        
+    @Pyro4.expose
+    def send_purchase_message(self, seller_id, item):
+        print(f"{self.id} purchased {item} from {seller_id}")
+        self.item_lock.aquire()
+        self.item = self.items[random.randint(0, len(self.items) - 1)]
+        self.item_lock.release()
+        print(f"{self.id} has now picked item {self.item} to purchase")
+        
+        
+
+    # Trader will sell the product to buyer using this function they will also send a message to the seller 
+    # whose product was sold with remaining number of products and commission amount
+    def trader_loop(self):
+        while True:
+
+            try:
+                if len(self.trading_queue)>0:
+         
+                    
+                    item, buyer_id = self.trading_queue.pop(0)
+                    
+                    print(f"Trader got a purchase request for item {item} from {buyer_id}")
+                    data = self.db.find_seller_by_item(item)
+                   
+                    
+                    if data == None:
+                        print(f"{item} is not available for sell in the bazaar right now")
+                        continue
+                    seller_id = data["seller_id"]
+                    price = data["price"]
+                    count = data["count"]
+                    
+
+                    seller_proxy = self.get_uri_from_id(seller_id)
+                    buyer_proxy = self.get_uri_from_id(buyer_id)
+
+                    self.db.insert_into_database({"seller_id":seller_id, "count":count-1, "price":price, "item":item})
+                    self.executor.submit(seller_proxy.send_sale_message, item, 0.8*price, count-1, buyer_id, False)
+                    self.executor.submit(buyer_proxy.send_purchase_message, seller_id, item)
+  
+              
+            except Exception as e:
+                print(f"Registering product for {seller_id} failed with error{e}")
+                return False
+
+    @Pyro4.expose
+    def send_sale_message(self, item, commission, count, buyer_id, zero_flag):
+
+        if count>=0:
+            print(f"{self.id} has sold {item} to {buyer_id} and earned {commission}")
+            print(f"{self.id} has {count} {item} left")
+        if count <=0:
+            print(f"{self.id} is out of stock for item {item}")
+            while True:
+                picked_item = self.items[random.randint(0, len(self.item) - 1)]
+                if self.item!=picked_item:
+                    self.item = picked_item
+                    break
+            print(f"{self.id} has picked item {self.item} to sell")
+            self.has_deposited_lock.acquire()
+            self.has_deposited = False
+            self.has_deposited_lock.release()
+            self.begin_trading()
 
 
     # This method registers products of each seller
@@ -226,6 +320,9 @@ class Peer(Process):
     def register_product(self, seller_info, seller_id):
         try:
             self.db.insert_into_database(seller_info)
+            seller_data = self.db.fetch_one_from_database(seller_id)
+            if seller_data == None or seller_data["count"] == 0:
+                return False
             return True
         except Exception as e:
             print(f"Registering product for {seller_id} failed with error{e}")
@@ -271,179 +368,8 @@ class Peer(Process):
                     self.elect_leader()
                 while True:
                     time.sleep(1)
-
-              
-              
-             
-          
-        #         while True and self.role=="buyer":
-        #             lookups = []
-                    
-        #             for neighbor,uri in self.neighbors.items():
-        #                 neighbor_proxy = Pyro4.Proxy(uri) # getting the uri of the neighbors
-        #                 print(f"{self.get_timestamp()} - {self.id} issues lookup to {neighbor}")
-        #                 # Creating threads for each neighbor's lookup
-        #                 lookups.append(self.executor.submit(neighbor_proxy.lookup,self.item,self.hop_count,[self.id]))
-        #             for lookup_request in lookups:
-        #                 # Executing each lookup
-        #                 lookup_request.result()
-                    
-        #             with self.lock_sellers:
-        #                 if self.sellers:
-        #                     # If response from sellers has been received select a random seller
-        #                     id = self.sellers[random.randint(0, len(self.sellers) - 1)]
-        #                     random_seller_id = id["id"]
-        #                     item = id["item"]
-        #                     if item == self.item:
-        #                         print(f"{self.get_timestamp()} - {self.id} picked {random_seller_id} to purchase {self.item}")
-
-        #                         # get uri of seller
-        #                         seller = Pyro4.Proxy(self.get_nameserver().lookup(random_seller_id))
-        #                         # create a thread to run the buy function of the seller
-        #                         picked_seller = self.executor.submit(seller.buy,self.id)
-
-        #                         if picked_seller.result(): # run the buy method of the seller
-        #                             print(self.get_timestamp(), '-', self.id, "bought", self.item, "from", random_seller_id)
-        #                         else:
-        #                             print(self.get_timestamp(), self.id, "failed to buy", self.item, "from", random_seller_id)
-        #                 self.sellers = []
-                        
-        #                 # Choose another random item to buy
-        #                 self.item = self.items[random.randint(0, len(self.items) - 1)]
-        #                 print(f"{self.get_timestamp()} - Buyer {self.id} now picked item {self.item} to buy")
-                    
-        #             # Buyer waiting for a random amount of time before starting a new purchase
-        #             time.sleep(random.randint(1,3))
-                
-        #         while True:
-        #             time.sleep(1) 
         
         except Exception as e:
             print(f"Something went wrong in run method with exception {e}")
     
-    # This method is reponsible for the purchase of an item item logic
-    @Pyro4.expose
-    def buy(self, buyer_id):
-        """
-        This function decrements the count of items for the seller. And also allows the
-        seller to pick another item when the stock of the current item is finished.
-        Args:
-            buyer_id: id of the buyer
-        Returns:
-            boolean: whether the transaction got executed between buyer and seller
-        """
-        try:
-            if self.items_count > 0:
-                # Decrement the item count for that seller
-                self.items_count -= 1
-                print(f"{self.get_timestamp()} - {self.id} sold {self.item} to {buyer_id}")
-                print(f"{self.get_timestamp()} - {self.id} now has {self.items_count} {self.item} item(s) remaining")
-                return True
-            else:
-                while True:
-                    # pick another random item different than the previous one to sell
-                    picked_item = self.items[random.randint(0, len(self.item) - 1)]
-                    if self.item!=picked_item:
-                        self.item = picked_item
-                        break
-                # reset the max count of items
-                self.items_count = self.max_items
-                print(f"{self.get_timestamp()} - {self.id} is now the seller of {self.item}")
-                self.output_array.append(f"Seller {self.id} is now the seller of {self.item}.")
-                return False
-        except Exception as e:
-            print(f"Something went wrong in buy with error {e}")
-
-
-    @Pyro4.expose
-    def lookup(self,product_name: str, hop_count: int, search_path):
-        """
-        This  method is the lookup method which transmits the call to its neighbours
-        until a suitable seller for the item is found. Checks if current peer is seller.
-        If it is a seller and has the item requested, then reply function of the previous 
-        peer is called over a new thread to send the message back to the buyer. If the
-        current peer is a buyer or is not selling the item requested, a lookup function
-        on all the neighbors of the current peer (except from which the message was received)
-        is called to propagate the message forward.
-        Args:
-            product_name: str
-                product demanded by the buyer
-            hop_count: int
-                number of hops remaining after the previous hop
-            search_path: [str]
-                list of ids of the peers via which the request arrived
-        Return:
-            Null
-        """
-        
-        if hop_count < 1:
-            # discard message if hopcount = 0
-            return
-        else:
-            # decrement the hop count at every step
-            hop_count -= 1
-        previous_peer = search_path[-1]
-        try:
-            # If seller found and selling the item call reply
-            if self.role == "seller" and product_name == self.item:
-                
-                recipient = Pyro4.Proxy(self.get_nameserver().lookup(previous_peer))
-                search_path.pop()
-                search_path.insert(0,self.id)
-                # if seller is found the reply method is called to send the message back to the buyer
-                self.executor.submit(recipient.reply,self.item,search_path)
-            else:
-                # For each neighbour
-                for each_neighbour,uri in self.neighbors.items():
-                    # not sending the message back to the peer from which it was received
-                    if each_neighbour == previous_peer:  
-                        continue
-                    neighbor_proxy = Pyro4.Proxy(uri)
-                    if self.id not in search_path:
-                        search_path.append(self.id)
-                    # create new thread and call lookup
-                    self.executor.submit(neighbor_proxy.lookup,product_name,hop_count,search_path)
- 
-        except Exception as e:
-            if "dictionary" in str(e):
-                print("Peers still loading!!!")
-            else:
-                print(f"Something went wrong in lookup with exception {e}.")
-
-
-    @Pyro4.expose
-    def reply(self, item, id_list):
-        """
-        This function handles the reply being sent by the matched seller back to the buyer.
-        If a seller is found, then the id is appended to a list of sellers for the buyer.
-        The id_list contains the return path of the message from the seller to the buyer.
-        if there is only 1 element left, it is the seller's id. If there are more than 1
-        elements in the id_list, message still hasn't reached the buyer and the reply method
-        of the previous peer will be called.
-        Args:
-            id_list: the list of ids of the peer through which the reply should go through
-        Returns:
-            Null
-        """
-        try:
-            if id_list and len(id_list) == 1:
-
-                print(self.get_timestamp(), '-', self.id, "got a match reply from", id_list[0])
-                # adding the seller to the list of matched sellers
-                with self.lock_sellers:
-                    self.sellers.append({"id":id_list[0],"item":item})
-
-            elif id_list and len(id_list) > 1:
-                # Calling the reply method of the previous peer
-                recipient_id = id_list.pop()
-                with Pyro4.Proxy(self.neighbors[recipient_id]) as recipient:
-                    self.executor.submit(recipient.reply, item, id_list)
-
-        except(Exception) as e:
-            print(f"Something went wrong while trying to fecth the reply with error {e}")
-
-        
-
-
-
-        
+    
