@@ -58,7 +58,7 @@ if __name__=='__main__':
             if peer.role == "seller":
                 item_cost = random.randint(5,10)
                 peer.price = item_cost
-    edges = create_bazar(peer_id_list, False)
+    edges = create_bazar(peer_id_list, True)
     base_path = os.getcwd()
     # Check database connection status
 

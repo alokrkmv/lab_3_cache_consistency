@@ -287,7 +287,7 @@ class Peer(Process):
                     buyer_proxy = self.get_uri_from_id(buyer_id)
 
                     self.db.insert_into_database({"seller_id":seller_id, "count":count-1, "price":price, "item":item})
-                    self.executor.submit(seller_proxy.send_sale_message, item, 0.8*price, count-1, buyer_id, False)
+                    self.executor.submit(seller_proxy.send_sale_message, item, round(0.8*price,2), count-1, buyer_id, False)
                     self.executor.submit(buyer_proxy.send_purchase_message, seller_id, item)
   
               
@@ -299,7 +299,7 @@ class Peer(Process):
     def send_sale_message(self, item, commission, count, buyer_id, zero_flag):
 
         if count>=0:
-            print(f"{self.id} has sold {item} to {buyer_id} and earned {commission}")
+            print(f"{self.id} has sold {item} to {buyer_id} and earned {commission} $")
             print(f"{self.id} has {count} {item} left")
         if count <=0:
             print(f"{self.id} is out of stock for item {item}")
