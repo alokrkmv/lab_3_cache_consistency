@@ -103,7 +103,7 @@ class Peer(Process):
     # Trader will call sick after serving 40 requests
     @Pyro4.expose
     def send_heartbeat(self):
-        if self.heartbeat_counter<5:
+        if self.heartbeat_counter<40:
             return "alive"
         else:
             self.election_lock.acquire()
