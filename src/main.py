@@ -65,6 +65,7 @@ if __name__=='__main__':
     database_client = DbHandler()
     try:
         if database_client.test_connection():
+            database_client.reset_database()
             print("Connected succesfuly to the databse")
         else:
             print("Something went wrong while connecting to database.... Exiting!!!")
