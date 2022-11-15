@@ -46,6 +46,9 @@ class Peer(Process):
         self.trading_queue = []
         self.item_lock = []
         self.trading_lock = Lock()
+        self.heartbeat_counter = 0
+        self.heatbeat_lock = Lock()
+        self.smallest_buyer = "buyer0"
         
 
     def __str__(self):
@@ -81,13 +84,33 @@ class Peer(Process):
     def forward_win_message(self):
         print(f"{self.id} has won the election and is now the new trader of the bazaar!!!")
         self.received_won_message = True
+        self.election_flag = False
         self.current_trader_id = self.id
         self.role = "trader"
+        pending_transactions = self.db.fetch_pending_transactions()
+        if pending_transactions !=None:
+            self.trading_queue = pending_transactions["data"][:]
         for neighbor in self.neighbors:
             self.executor.submit(self.get_uri_from_id(neighbor).send_election_message ,"won",self.id)
 
+        # Increase the number of workers for trader as Trader has a lot to do in 
+        # current architecture
+        self.executor = ThreadPoolExecutor(max_workers=50)
+
         print("Trader is ready to trade")
         self.executor.submit(self.begin_trading)
+
+    # Trader will call sick after serving 40 requests
+    @Pyro4.expose
+    def send_heartbeat(self):
+        if self.heartbeat_counter<5:
+            return "alive"
+        else:
+            self.election_lock.acquire()
+            self.election_flag = True
+            self.election_lock.release()
+            return "dead"
+
    
 
     # This method elects the leader using Bully algorithm
@@ -199,6 +222,8 @@ class Peer(Process):
             self.received_won_message = False
             self.received_ok_message = False
             self.send_winning_message = False
+            self.heartbeat_counter = 0
+            self.election_flag = False
             self.winning_lock.release()
 
             # When trading begins seller will deposit all their items to trader if they haven't done so
@@ -235,19 +260,37 @@ class Peer(Process):
     
     @Pyro4.expose              
     def add_to_trading_queue(self, buyer_id, item):
-        # print("Treading queue logic")
         self.trading_queue.append((item, buyer_id))
-        # print(self.trading_queue)
+     
 
 
     # This method starts buyer loop for buyer using which they can buy any product
     def buyer_loop(self):
+        
         while True:
-            trader = self.get_uri_from_id(self.current_trader_id)
-            self.executor.submit(trader.add_to_trading_queue, self.id, self.item)
-            time.sleep(10)
-            
-            self.item = self.items[random.randint(0, len(self.items) - 1)]
+            try:
+                trader = self.get_uri_from_id(self.current_trader_id)
+                executor = self.executor.submit(trader.send_heartbeat)
+                res = executor.result()
+                if res == "dead":
+                    if self.id !=self.smallest_buyer:
+                        self.election_lock.acquire()
+                        self.election_flag = True
+                        self.election_lock.release()
+                        break
+                    else:
+                        self.election_lock.acquire()
+                        self.election_flag = True
+                        self.election_lock.release()
+                        print("Current leader is dead!!! Start re-election")
+                        self.elect_leader()
+                        break
+                self.executor.submit(trader.add_to_trading_queue, self.id, self.item)
+                time.sleep(10)
+                
+                self.item = self.items[random.randint(0, len(self.items) - 1)]
+            except Exception as e:
+                print(f"Something went wrong in the buyer loop with error {e} ")
             
         
     @Pyro4.expose
@@ -264,9 +307,23 @@ class Peer(Process):
     # whose product was sold with remaining number of products and commission amount
     def trader_loop(self):
         while True:
+            if self.election_flag:
+                
+                break
 
             try:
                 if len(self.trading_queue)>0:
+                    # Write all the pending transactions to the disk
+
+                    pending_transactions = {"data":self.trading_queue}
+                    try:
+                        thread = Thread(target=self.db.save_transactions, args=(pending_transactions,))
+                        thread.start()
+                        # thread.join()
+
+                        # self.executor.submit(self.db.save_transactions,pending_transactions)
+                    except Exception as e:
+                        print("Something went wrong while trying to write pending transactions to disk with error {e}")
          
                     
                     item, buyer_id = self.trading_queue.pop(0)
@@ -287,6 +344,10 @@ class Peer(Process):
                     buyer_proxy = self.get_uri_from_id(buyer_id)
 
                     self.db.insert_into_database({"seller_id":seller_id, "count":count-1, "price":price, "item":item})
+                    # Upon each succesful trade increase the hearbeat counter by 1
+                    self.heatbeat_lock.acquire()
+                    self.heartbeat_counter+=1
+                    self.heatbeat_lock.release()
                     self.executor.submit(seller_proxy.send_sale_message, item, round(0.8*price,2), count-1, buyer_id, False)
                     self.executor.submit(buyer_proxy.send_purchase_message, seller_id, item)
   
