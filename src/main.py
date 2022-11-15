@@ -33,6 +33,7 @@ def main():
         id = f"{r}{str(i)}"
         ids[id] = r
     base_path = os.getcwd()
+
     for i in range(2,number_of_peers):
         role = roles[random.randint(0,len(roles)-1)]
         id = f"{role}{str(i)}"

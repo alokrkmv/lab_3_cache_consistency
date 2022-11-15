@@ -8,6 +8,7 @@ class DbHandler:
             self.test_collection = self.test_database["test_collection"]
             self.mydatabase = self.client["bazaar_info"]
             self.collection = self.mydatabase["trader_info"]
+            self.transactions = self.mydatabase["transactions"]
             test_message = {"test_message":"testing"}
             newvalues = { "$set": { "test_message": "testing_new" } }
             self.test_collection.update_one(test_message,newvalues,upsert = True)
@@ -19,6 +20,7 @@ class DbHandler:
     def reset_database(self):
         
         self.collection.drop()
+        self.transactions.drop()
 
     # This function is called by init to check if database connection is succesful
     def test_connection(self):
@@ -64,18 +66,7 @@ class DbHandler:
             return seller_data
         except Exception as e:
             print(f"Something went wrong while trying to fetch data for {seller_id} with exception {e}")
-    # # Updates the data for an individual seller
-    # def update_one(self,seller_id, new_data):
-
-    #     try:
-    #         filter = { 'seller_id': seller_id }
-            
-    #         # Values to be updated.
-    #         newvalues = { "$set": new_data }
-    #         self.collection.update_one(filter,newvalues)
-    #     except Exception as e:
-    #         print(f"Something went wrong while trying to update the data for {seller_id} with exception {e}")
-
+   
     # Fetches all info of a seller selling particular item.
 
     def find_seller_by_item(self, item):
@@ -90,6 +81,24 @@ class DbHandler:
                
                 return data
         return None
+
+    # Saves pending transactions of the bazaar
+
+    def save_transactions(self, item):
+        try:
+            query = {"seller_id":"trader"}
+            newvalues = { "$set": item }
+            self.transactions.update_one(query,newvalues,upsert = True)
+        except Exception as e:
+            print(f"Something went Wrong while inserting into database {self.mydatabase} with error {e}")
+    
+    def fetch_pending_transactions(self):
+        try:
+            
+            transactions = self.transactions.find_one({"seller_id":"trader"})
+            return transactions
+        except Exception as e:
+            print(f"Something went Wrong while inserting into database {self.mydatabase} with error {e}")
 
 
 
