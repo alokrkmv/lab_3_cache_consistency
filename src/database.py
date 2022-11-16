@@ -69,7 +69,7 @@ class DbHandler:
    
     # Fetches all info of a seller selling particular item.
 
-    def find_seller_by_item(self, item):
+    def find_seller_by_item(self, item, trader_id):
         
         all_data = self.fetch_all_from_database()
   
@@ -77,7 +77,7 @@ class DbHandler:
         for data in all_data:
         
         
-            if data["item"]==item:
+            if data["item"]==item and data["seller_id"]!=trader_id:
                
                 return data
         return None
@@ -94,11 +94,17 @@ class DbHandler:
     
     def fetch_pending_transactions(self):
         try:
-            
             transactions = self.transactions.find_one({"seller_id":"trader"})
             return transactions
         except Exception as e:
             print(f"Something went Wrong while inserting into database {self.mydatabase} with error {e}")
+
+
+    def delete_one(self, query):
+        try:
+            self.transactions.delete_one(query)
+        except Exception as e:
+            print(f"Something went Wrong while deleting item from {self.mydatabase} with error {e}")
 
 
 
