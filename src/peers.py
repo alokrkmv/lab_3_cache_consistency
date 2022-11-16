@@ -7,6 +7,7 @@ import time
 import json
 import copy
 from database import DbHandler
+from lamport_clock import LamportClock
 
 from datetime import datetime
 
@@ -49,6 +50,9 @@ class Peer(Process):
         self.heartbeat_counter = 0
         self.heatbeat_lock = Lock()
         self.smallest_buyer = "buyer0"
+        self.clock = LamportClock()
+        self.clock_lock = Lock()
+        self.clock_counter = 0
         
 
     def __str__(self):
@@ -87,6 +91,7 @@ class Peer(Process):
         self.election_flag = False
         self.current_trader_id = self.id
         self.role = "trader"
+     
         pending_transactions = self.db.fetch_pending_transactions()
         if pending_transactions !=None:
             self.trading_queue = pending_transactions["data"][:]
@@ -97,7 +102,7 @@ class Peer(Process):
         # current architecture
         self.executor = ThreadPoolExecutor(max_workers=50)
 
-        print("Trader is ready to trade")
+        print("Trader is ready for product registration")
         self.executor.submit(self.begin_trading)
 
     # Trader will call sick after serving 40 requests
@@ -111,14 +116,52 @@ class Peer(Process):
             self.election_lock.release()
             return "dead"
 
-   
+     # broadcast_lamport_clock : This method broadcasts a peer's clock to all the peers.
+    def broadcast_lamport_clock(self):
+        for neighbor in self.neighbors:
+            neighbor_proxy = self.get_uri_from_id(neighbor)
+            self.executor.submit(neighbor_proxy.adjust_buyer_clock, self.clock.value)
+
+    @Pyro4.expose
+    def adjust_buyer_clock(self, sender_clock):
+       
+        try:
+            if self.role == "buyer" or self.role == "seller" : 
+                self.clock_lock.acquire()
+                
+                if self.id == "buyer0":
+                    self.clock_counter+=1
+                # Make buyer 0 slow after every 30 sync requests
+                if self.id == "buyer0" and self.clock_counter%30 ==0 :
+                    time.sleep(30)
+                self.clock.adjust(sender_clock) 
+                self.clock_lock.release()
+ 
+        except Exception as e:
+            print(f"Something went wrong while trying to adjust buyer's clock with error {e}")
+
+    
+
+
+    # Function to reset the role of previous trader
+    @Pyro4.expose
+    def role_reversal(self):
+        print(f"id: {self.id}")
+        self.role = self.id[:-1]
+        print(f"role: {self.role}")
+        self.clock.value = 0
 
     # This method elects the leader using Bully algorithm
     @Pyro4.expose
     def elect_leader(self):
+        current_trader = self.current_trader_id
+        if current_trader!=None:
+            current_trader_proxy = self.get_uri_from_id(current_trader)
+            # Resetting the role of the trader
+            current_trader_proxy.role_reversal()
+            self.broadcast_lamport_clock()
         try:
             print(f"{self.id} has started the election")
-            # time.sleep(1)
             higher_peers = []
             
             for neigh_id in self.neighbors:
@@ -163,7 +206,7 @@ class Peer(Process):
     @Pyro4.expose
     def send_election_message(self,message,sender):
         try:
-            if message == "elect_leader":
+            if message == "elect_leader" and self.id !=self.current_trader_id:
                 self.executor.submit(self.get_uri_from_id(sender).send_election_message,"OK",sender)
                 # If the peer haven't taken part in election till now only then it will take part in an election
                 if not self.received_ok_message and not self.received_won_message:
@@ -193,10 +236,11 @@ class Peer(Process):
                             self.forward_win_message()
                             self.winning_lock.release()
                     else:
-                        self.winning_lock.acquire()
-                        self.send_winning_message = True
-                        self.forward_win_message()
-                        self.winning_lock.release()
+                        if self.received_ok_message == False and self.received_won_message == False:
+                            self.winning_lock.acquire()
+                            self.send_winning_message = True
+                            self.forward_win_message()
+                            self.winning_lock.release()
             elif message == "OK":
                 self.received_ok_message = True
             elif message == "won":
@@ -206,8 +250,6 @@ class Peer(Process):
                 self.current_trader_id = sender
                 self.election_flag = False
                 self.winning_lock.release()
-                # Sleep for sometime before trading begins
-                time.sleep(10)
                 print(f"Election has completed succesfully and {self.id} is ready to trade")
                 self.executor.submit(self.begin_trading)
         except Exception as e:
@@ -218,6 +260,7 @@ class Peer(Process):
         try:
         
             # Set all election related flags to false
+            time.sleep(15)
             self.winning_lock.acquire()
             self.received_won_message = False
             self.received_ok_message = False
@@ -248,19 +291,20 @@ class Peer(Process):
                     self.begin_trading()
             # Trader loop will take care of purchase request from buyer
             elif self.role == "trader":
-                
+                time.sleep(10)
+                print("Trader is ready to trade")
                 self.executor.submit(self.trader_loop)
             # If role is of buyer then start buyer loop and keep on buying product
             elif self.role == "buyer":
                 # Wait for sellers to register their product with trader
-                time.sleep(5)
+                time.sleep(10)
                 self.executor.submit(self.buyer_loop)
         except Exception as e:
             print(f"Something went wrong while starting to trade for {self.id} with error {e}")
     
     @Pyro4.expose              
-    def add_to_trading_queue(self, buyer_id, item):
-        self.trading_queue.append((item, buyer_id))
+    def add_to_trading_queue(self, buyer_id, item, clock_value):
+        self.trading_queue.append((item, buyer_id, clock_value))
      
 
 
@@ -285,8 +329,14 @@ class Peer(Process):
                         print("Current leader is dead!!! Start re-election")
                         self.elect_leader()
                         break
-                self.executor.submit(trader.add_to_trading_queue, self.id, self.item)
-                time.sleep(10)
+                self.broadcast_lamport_clock()
+                self.clock.forward()
+                clock_value = self.clock.value
+                self.executor.submit(trader.add_to_trading_queue, self.id, self.item,clock_value)
+                if self.id == "buyer0":
+                    time.sleep(20)
+                else:
+                    time.sleep(10)
                 
                 self.item = self.items[random.randint(0, len(self.items) - 1)]
             except Exception as e:
@@ -319,17 +369,24 @@ class Peer(Process):
                     try:
                         thread = Thread(target=self.db.save_transactions, args=(pending_transactions,))
                         thread.start()
-                        # thread.join()
-
-                        # self.executor.submit(self.db.save_transactions,pending_transactions)
+                
                     except Exception as e:
                         print("Something went wrong while trying to write pending transactions to disk with error {e}")
          
+                    min_value = float("inf")
+                    min_index = 0
+                    for i, item_tuple in enumerate(self.trading_queue):
+                        item, buyer_id, buyer_clock = item_tuple
+                        if buyer_clock<min_value:
+                            min_index = i
+                            min_value = buyer_clock
+                    item, buyer_id , buyer_clock= self.trading_queue.pop(min_index)
+                    self.clock.adjust(buyer_clock)
+                    self.clock.forward()
+                    print(f"Trader clock : {self.clock.value}")
                     
-                    item, buyer_id = self.trading_queue.pop(0)
-                    
-                    print(f"Trader got a purchase request for item {item} from {buyer_id}")
-                    data = self.db.find_seller_by_item(item)
+                    print(f"Trader got a purchase request for item {item} from {buyer_id} with clock {buyer_clock}")
+                    data = self.db.find_seller_by_item(item, self.id)
                    
                     
                     if data == None:
@@ -348,6 +405,7 @@ class Peer(Process):
                     self.heatbeat_lock.acquire()
                     self.heartbeat_counter+=1
                     self.heatbeat_lock.release()
+                    print(f"Current Trader of the bazar is {self.id}")
                     self.executor.submit(seller_proxy.send_sale_message, item, round(0.8*price,2), count-1, buyer_id, False)
                     self.executor.submit(buyer_proxy.send_purchase_message, seller_id, item)
   
@@ -428,6 +486,8 @@ class Peer(Process):
                 if int(self.id[-1])==2:
                     self.elect_leader()
                 while True:
+                    # purposely making one thread slow in the system to simulate lamport 
+                    # clock synchronization affectively
                     time.sleep(1)
         
         except Exception as e:
