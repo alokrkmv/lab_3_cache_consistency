@@ -146,9 +146,7 @@ class Peer(Process):
     # Function to reset the role of previous trader
     @Pyro4.expose
     def role_reversal(self):
-        print(f"id: {self.id}")
         self.role = self.id[:-1]
-        print(f"role: {self.role}")
         self.clock.value = 0
 
     # This method elects the leader using Bully algorithm
