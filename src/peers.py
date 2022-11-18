@@ -87,7 +87,7 @@ class Peer(Process):
                     
             
     def forward_win_message(self):
-        print(f"{self.get_timestamp()}: {self.id} has won the election and is now the new trader of the bazaar!!!")
+        print(f"{self.get_timestamp()}: Dear buyers and sellers, My ID is {self.id}, and I am the new coordinator")
         self.received_won_message = True
         self.election_flag = False
         self.current_trader_id = self.id
@@ -137,14 +137,11 @@ class Peer(Process):
                     time.sleep(30)
                 self.clock.adjust(sender_clock) 
                 self.clock_lock.release()
-                print(f"{self.get_timestamp()} : {self.id} adjusted its clock")
  
         except Exception as e:
             print(f"Something went wrong while trying to adjust buyer's clock with error {e}")
 
     
-
-
     # Function to reset the role of previous trader
     @Pyro4.expose
     def role_reversal(self):
@@ -390,7 +387,7 @@ class Peer(Process):
                    
                     
                     if data == None:
-                        print(f"{item} is not available for sell in the bazaar right now")
+                        print(f"{self.get_timestamp()}: {item} is not available for sell in the bazaar right now")
                         continue
                     seller_id = data["seller_id"]
                     price = data["price"]
@@ -427,13 +424,13 @@ class Peer(Process):
             self.executor.submit(current_trader_proxy.update_clock_data)
 
         if count <=0:
-            print(f"{self.id} is out of stock for item {item}")
+            print(f"{self.get_timestamp()}: {self.id} is out of stock for item {item}")
             while True:
                 picked_item = self.items[random.randint(0, len(self.item) - 1)]
                 if self.item!=picked_item:
                     self.item = picked_item
                     break
-            print(f"{self.id} has picked item {self.item} to sell")
+            print(f"{self.get_timestamp()}: {self.id} has picked item {self.item} to sell")
             self.has_deposited_lock.acquire()
             self.has_deposited = False
             self.has_deposited_lock.release()
@@ -458,8 +455,8 @@ class Peer(Process):
     def update_clock_data(self, clock_data):
         requested_seller, _ = clock_data
         index = None
-        for i,_ in enumerate(self.seller_clock):
-            seller_id, _ = clock_data
+        for i,clock in enumerate(self.seller_clock):
+            seller_id, _ = clock
             if seller_id == requested_seller:
                 index = i
         if index!=None:
