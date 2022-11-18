@@ -69,18 +69,36 @@ class DbHandler:
    
     # Fetches all info of a seller selling particular item.
 
-    def find_seller_by_item(self, item, trader_id):
+    def find_seller_by_item(self, item, trader_id, seller_clock):
         
         all_data = self.fetch_all_from_database()
-  
-    
+        min_clock = float("inf")
+        min_seller = None
+         
+        
+        sellers = []
+
+        seller_dict =   {}    
+            
         for data in all_data:
-        
-        
             if data["item"]==item and data["seller_id"]!=trader_id:
-               
-                return data
-        return None
+                if len(seller_clock)<=0:
+                    return data
+                sellers.append(data["seller_id"])
+                seller_dict[data["seller_id"]] = data
+
+        for seller_id, clock in seller_clock:
+            if seller_id not in sellers:
+                continue
+            if clock <= min_clock:
+                min_clock = clock
+                min_seller = seller_id
+
+        if min_seller == None and len(sellers)>0:
+            return seller_dict[sellers[0]]
+        if len(sellers)<=0:
+            return None
+        return seller_dict[min_seller]
 
     # Saves pending transactions of the bazaar
 

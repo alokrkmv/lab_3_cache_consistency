@@ -385,7 +385,7 @@ class Peer(Process):
                     print(f"Trader clock : {self.clock.value}")
                     
                     print(f"Trader got a purchase request for item {item} from {buyer_id} with clock {buyer_clock}")
-                    data = self.db.find_seller_by_item(item, self.id)
+                    data = self.db.find_seller_by_item(item, self.id, self.sellers)
                    
                     
                     if data == None:
@@ -423,7 +423,7 @@ class Peer(Process):
             self.clock.forward()
             # Add the new clock value to trader's clock queue
             current_trader_proxy = self.get_uri_from_id(self.current_trader_id)
-            current_trader_proxy.update_clock_data
+            self.executor.submit(current_trader_proxy.update_clock_data)
 
         if count <=0:
             print(f"{self.id} is out of stock for item {item}")
