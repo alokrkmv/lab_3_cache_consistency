@@ -1,3 +1,5 @@
+import sys
+sys.path.append("..")
 from start_nameserver import start_nameserver
 import unittest
 import Pyro4

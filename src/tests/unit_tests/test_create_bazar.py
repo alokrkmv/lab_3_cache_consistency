@@ -1,3 +1,5 @@
+import sys
+sys.path.append("..")
 from create_bazar import create_bazar, get_longest_path, get_hop_count
 import unittest
 import os
