@@ -53,6 +53,7 @@ class Peer(Process):
         self.clock = LamportClock()
         self.clock_lock = Lock()
         self.clock_counter = 0
+        self.seller_clock = []
         
 
     def __str__(self):
@@ -86,7 +87,7 @@ class Peer(Process):
                     
             
     def forward_win_message(self):
-        print(f"{self.id} has won the election and is now the new trader of the bazaar!!!")
+        print(f"{self.get_timestamp()}: {self.id} has won the election and is now the new trader of the bazaar!!!")
         self.received_won_message = True
         self.election_flag = False
         self.current_trader_id = self.id
@@ -102,7 +103,7 @@ class Peer(Process):
         # current architecture
         self.executor = ThreadPoolExecutor(max_workers=50)
 
-        print("Trader is ready for product registration")
+        print(f"{self.get_timestamp()}: Trader is ready for product registration")
         self.executor.submit(self.begin_trading)
 
     # Trader will call sick after serving 40 requests
@@ -136,6 +137,7 @@ class Peer(Process):
                     time.sleep(30)
                 self.clock.adjust(sender_clock) 
                 self.clock_lock.release()
+                print(f"{self.get_timestamp()} : {self.id} adjusted its clock")
  
         except Exception as e:
             print(f"Something went wrong while trying to adjust buyer's clock with error {e}")
@@ -159,7 +161,7 @@ class Peer(Process):
             current_trader_proxy.role_reversal()
             self.broadcast_lamport_clock()
         try:
-            print(f"{self.id} has started the election")
+            print(f"{self.get_timestamp()}: {self.id} has started the election")
             higher_peers = []
             
             for neigh_id in self.neighbors:
@@ -189,7 +191,7 @@ class Peer(Process):
                 self.forward_win_message()
                 self.winning_lock.release()
         except Exception as e:
-            print(f"Something went wrong while {self.id} tried to start election with error {e}")
+            print(f"{self.get_timestamp()}: Something went wrong while {self.id} tried to start election with error {e}")
         
 
 
@@ -242,16 +244,16 @@ class Peer(Process):
             elif message == "OK":
                 self.received_ok_message = True
             elif message == "won":
-                print(f"{self.id} received message won from {sender} and recognizes {sender} as the new coordinator of the bazaar")
+                print(f"{self.get_timestamp()}: {self.id} received message won from {sender} and recognizes {sender} as the new coordinator of the bazaar")
                 self.winning_lock.acquire()
                 self.received_won_message = True
                 self.current_trader_id = sender
                 self.election_flag = False
                 self.winning_lock.release()
-                print(f"Election has completed succesfully and {self.id} is ready to trade")
+                print(f"{self.get_timestamp()}: Election has completed succesfully and {self.id} is ready to trade")
                 self.executor.submit(self.begin_trading)
         except Exception as e:
-            print(f"Something went wrong with error {e}")
+            print(f"{self.get_timestamp()}: Something went wrong with error {e}")
 
     @Pyro4.expose
     def begin_trading(self):
@@ -280,7 +282,7 @@ class Peer(Process):
                 registration_result = self.executor.submit(trader_proxy.register_product, seller_data, self.id)
                 res = registration_result.result()
                 if res:
-                    print(f"{self.id} registered their product {self.item} with trader")
+                    print(f"{self.get_timestamp()}: {self.id} registered their product {self.item} with trader")
                     self.has_deposited_lock.acquire()
                     self.has_deposited = True
                     self.has_deposited_lock.release()
@@ -290,7 +292,7 @@ class Peer(Process):
             # Trader loop will take care of purchase request from buyer
             elif self.role == "trader":
                 time.sleep(10)
-                print("Trader is ready to trade")
+                print(f"{self.get_timestamp()} : Trader is ready to trade")
                 self.executor.submit(self.trader_loop)
             # If role is of buyer then start buyer loop and keep on buying product
             elif self.role == "buyer":
@@ -298,7 +300,7 @@ class Peer(Process):
                 time.sleep(10)
                 self.executor.submit(self.buyer_loop)
         except Exception as e:
-            print(f"Something went wrong while starting to trade for {self.id} with error {e}")
+            print(f"{self.get_timestamp()} : Something went wrong while starting to trade for {self.id} with error {e}")
     
     @Pyro4.expose              
     def add_to_trading_queue(self, buyer_id, item, clock_value):
@@ -343,11 +345,11 @@ class Peer(Process):
         
     @Pyro4.expose
     def send_purchase_message(self, seller_id, item):
-        print(f"{self.id} purchased {item} from {seller_id}")
+        print(f"{self.get_timestamp()} : {self.id} purchased {item} from {seller_id}")
         self.item_lock.aquire()
         self.item = self.items[random.randint(0, len(self.items) - 1)]
         self.item_lock.release()
-        print(f"{self.id} has now picked item {self.item} to purchase")
+        print(f"{self.get_timestamp()} : {self.id} has now picked item {self.item} to purchase")
         
         
 
@@ -381,10 +383,10 @@ class Peer(Process):
                     item, buyer_id , buyer_clock= self.trading_queue.pop(min_index)
                     self.clock.adjust(buyer_clock)
                     self.clock.forward()
-                    print(f"Trader clock : {self.clock.value}")
+                    print(f"{self.get_timestamp()} : Trader clock : {self.clock.value}")
                     
-                    print(f"Trader got a purchase request for item {item} from {buyer_id} with clock {buyer_clock}")
-                    data = self.db.find_seller_by_item(item, self.id)
+                    print(f"{self.get_timestamp()} : Trader got a purchase request for item {item} from {buyer_id} with clock {buyer_clock}")
+                    data = self.db.find_seller_by_item(item, self.id, self.sellers)
                    
                     
                     if data == None:
@@ -403,21 +405,27 @@ class Peer(Process):
                     self.heatbeat_lock.acquire()
                     self.heartbeat_counter+=1
                     self.heatbeat_lock.release()
-                    print(f"Current Trader of the bazar is {self.id}")
+                    print(f"{self.get_timestamp()} :Current Trader of the bazar is {self.id}")
                     self.executor.submit(seller_proxy.send_sale_message, item, round(0.8*price,2), count-1, buyer_id, False)
                     self.executor.submit(buyer_proxy.send_purchase_message, seller_id, item)
   
               
             except Exception as e:
-                print(f"Registering product for {seller_id} failed with error{e}")
+                print(f"{self.get_timestamp()} : Registering product for {seller_id} failed with error{e}")
                 return False
 
     @Pyro4.expose
     def send_sale_message(self, item, commission, count, buyer_id, zero_flag):
-
+        
         if count>=0:
-            print(f"{self.id} has sold {item} to {buyer_id} and earned {commission} $")
-            print(f"{self.id} has {count} {item} left")
+            print(f"{self.get_timestamp()} : {self.id} has sold {item} to {buyer_id} and earned {commission} $")
+            print(f"{self.get_timestamp()} : {self.id} has {count} {item} left")
+            # Seller will forward their clock after each request
+            self.clock.forward()
+            # Add the new clock value to trader's clock queue
+            current_trader_proxy = self.get_uri_from_id(self.current_trader_id)
+            self.executor.submit(current_trader_proxy.update_clock_data)
+
         if count <=0:
             print(f"{self.id} is out of stock for item {item}")
             while True:
@@ -444,8 +452,19 @@ class Peer(Process):
         except Exception as e:
             print(f"Registering product for {seller_id} failed with error{e}")
             return False
-        
 
+    # Through this method seller sends their clock value to trader which trader uses to resolve the sell. 
+    @Pyro4.expose
+    def update_clock_data(self, clock_data):
+        requested_seller, _ = clock_data
+        index = None
+        for i,_ in enumerate(self.seller_clock):
+            seller_id, _ = clock_data
+            if seller_id == requested_seller:
+                index = i
+        if index!=None:
+            self.seller_clock.pop(index)
+        self.seller_clock.append(clock_data)
                        
     def get_timestamp(self):
         """
@@ -473,9 +492,9 @@ class Peer(Process):
                 except Exception as e:
                     print(f"Registring to nameserver failed with error {e}")
                 if self.role == "buyer":
-                    print(f"{self.get_timestamp()} - {self.id} joined the bazar as buyer looking for {self.item}")
+                    print(f"{self.get_timestamp()} : {self.id} joined the bazar as buyer looking for {self.item}")
                 else:
-                    print(f"{self.get_timestamp()} - {self.id} joined the bazar as seller selling {self.item}")
+                    print(f"{self.get_timestamp()} : {self.id} joined the bazar as seller selling {self.item}")
                 
                 # Start the Pyro requestLoop
                 self.executor.submit(daemon.requestLoop)
