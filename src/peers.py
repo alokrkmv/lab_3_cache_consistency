@@ -53,6 +53,7 @@ class Peer(Process):
         self.clock = LamportClock()
         self.clock_lock = Lock()
         self.clock_counter = 0
+        self.seller_clock = []
         
 
     def __str__(self):
@@ -414,10 +415,16 @@ class Peer(Process):
 
     @Pyro4.expose
     def send_sale_message(self, item, commission, count, buyer_id, zero_flag):
-
+        
         if count>=0:
             print(f"{self.id} has sold {item} to {buyer_id} and earned {commission} $")
             print(f"{self.id} has {count} {item} left")
+            # Seller will forward their clock after each request
+            self.clock.forward()
+            # Add the new clock value to trader's clock queue
+            current_trader_proxy = self.get_uri_from_id(self.current_trader_id)
+            current_trader_proxy.update_clock_data
+
         if count <=0:
             print(f"{self.id} is out of stock for item {item}")
             while True:
@@ -444,8 +451,19 @@ class Peer(Process):
         except Exception as e:
             print(f"Registering product for {seller_id} failed with error{e}")
             return False
-        
 
+    # Through this method seller sends their clock value to trader which trader uses to resolve the sell. 
+    @Pyro4.expose
+    def update_clock_data(self, clock_data):
+        requested_seller, _ = clock_data
+        index = None
+        for i,_ in enumerate(self.seller_clock):
+            seller_id, _ = clock_data
+            if seller_id == requested_seller:
+                index = i
+        if index!=None:
+            self.seller_clock.pop(index)
+        self.seller_clock.append(clock_data)
                        
     def get_timestamp(self):
         """
