@@ -301,6 +301,13 @@ class Peer(Process):
 
     @Pyro4.expose
     def begin_trading(self):
+        """
+        This method resets all the flags to False to create a fresh bazar.
+        It first checks if the seller has deposited its items to the trader, if not then deposit the items to the trader and the has_deposited
+        flag to True. 
+        If the role is trader, then start the trader loop
+        If the rolw is buyer then start the buyer loop
+        """
         try:
         
             # Set all election related flags to false
@@ -354,7 +361,12 @@ class Peer(Process):
 
     # This method starts buyer loop for buyer using which they can buy any product
     def buyer_loop(self):
-        
+        """
+        This function keeps checking for the heartbeat of the trader. If the response is dead, then the peer sets the election_flag to True.
+        The peer with the smallest id restarts the election.
+        In every buy loop, the buyer broadcasts its clock to all the peers, adds the item that it wants to buy to the trading queue and then waits
+        for 10 seconds to send another request.
+        """
         while True:
             try:
                 trader = self.get_uri_from_id(self.current_trader_id)
@@ -389,6 +401,13 @@ class Peer(Process):
         
     @Pyro4.expose
     def send_purchase_message(self, seller_id, item):
+        """
+        Args:
+            seller_id: id of the seller who sold that item
+            item: itme which was sold by the seller
+        This function prints the message about the item that the buyer has bought
+        The buyer then selects another item to buy
+        """
         print(f"{self.get_timestamp()} : {self.id} purchased {item} from {seller_id}")
         self.item_lock.aquire()
         self.item = self.items[random.randint(0, len(self.items) - 1)]
@@ -400,11 +419,18 @@ class Peer(Process):
     # Trader will sell the product to buyer using this function they will also send a message to the seller 
     # whose product was sold with remaining number of products and commission amount
     def trader_loop(self):
+        """
+        This function runs the trader's loop. It first writes all the pending transactions to the disk to keep a track of the pending transactions
+        to ensure that in an untimely death of the trader, the next trader will be able to pick up the remaining transactions.
+        Then it iterates of the trading queue to get the buyer id which has the lowest clock value. Then it processes that request. It first adjusts
+        the buyer's clock and then finds the seller that has this item and has the lowest clock. After it has successfully found the seller, it prints
+        a message for the successful trade of item between buyer and seller. The sellers items are then decreased by 1 and the value is then updated
+        in the database. It sends a message which tells which seller's item was sold and how much did the seller earn. Also prints the id of the buyer
+        that bought the item.
+        """
         while True:
             if self.election_flag:
-                
                 break
-
             try:
                 if len(self.trading_queue)>0:
                     # Write all the pending transactions to the disk
@@ -460,7 +486,12 @@ class Peer(Process):
 
     @Pyro4.expose
     def send_sale_message(self, item, commission, count, buyer_id, zero_flag):
-        
+        """
+        This function prints the item that a seller sold and the money that it earned. Also prints the remaining number of items.
+        The clock of the seller is forwarded by 1, and the new value of the clock is updated with the trader.
+        If the count of items is 0, then a message saying the seller is out of stock is printed. Then the seller picks up another item.
+        After the item is picked, has_deposited flag is set to false, signifying that the seller is yet to deposit its items with the trader.
+        """
         if count>=0:
             print(f"{self.get_timestamp()} : {self.id} has sold {item} to {buyer_id} and earned {commission} $")
             print(f"{self.get_timestamp()} : {self.id} has {count} {item} left")
@@ -487,6 +518,9 @@ class Peer(Process):
     # This method registers products of each seller
     @Pyro4.expose
     def register_product(self, seller_info, seller_id):
+        """
+        This method registers the product of the seller, and adds it to the database
+        """
         try:
             self.db.insert_into_database(seller_info)
             seller_data = self.db.fetch_one_from_database(seller_id)
