@@ -18,12 +18,17 @@ class DbHandler:
         
     
     def reset_database(self):
-        
+        """
+        Removes all the previous run data from collections
+        """
         self.collection.drop()
         self.transactions.drop()
 
     # This function is called by init to check if database connection is succesful
     def test_connection(self):
+        """
+        Checks if the connection to the database is successful
+        """
         try:
             res = self.test_collection.find_one({"test_message": "testing_new"})
             if "test_message" in res:
@@ -34,10 +39,13 @@ class DbHandler:
             print(f"Something went wrong while connecting to MongoDB server with exception {e}")
             return False
 
-    # Insert a single entity into database
-    # If already present then update
-    # Determined by upsert flag
+
     def insert_into_database(self, data):
+        """
+        Insert a single entity into database
+        If already present then update
+        Determined by upsert flag
+        """
         try:
             query = {"seller_id":data["seller_id"]}
             newvalues = { "$set": data }
@@ -47,6 +55,9 @@ class DbHandler:
 
     # This functions fetches all data from the trader_info_collection
     def fetch_all_from_database(self):
+        """
+        This functions fetches all data from the trader_info_collection
+        """
         try:
             sellers_data = []
             data = self.collection.find()
@@ -61,6 +72,9 @@ class DbHandler:
 
     # This function fetches data of a particular seller from collection
     def fetch_one_from_database(self,seller_id):
+        """
+        This function fetches data of a particular seller from collection
+        """
         try:
             seller_data = self.collection.find_one({"seller_id":seller_id})
             return seller_data
@@ -68,9 +82,10 @@ class DbHandler:
             print(f"Something went wrong while trying to fetch data for {seller_id} with exception {e}")
    
     # Fetches all info of a seller selling particular item.
-
     def find_seller_by_item(self, item, trader_id, seller_clock):
-        
+        """
+        This function fetches the seller that has a particular item and has the lowest clock value
+        """
         all_data = self.fetch_all_from_database()
         min_clock = float("inf")
         min_seller = None
@@ -101,8 +116,10 @@ class DbHandler:
         return seller_dict[min_seller]
 
     # Saves pending transactions of the bazaar
-
     def save_transactions(self, item):
+        """
+        Saves pending transactions of the bazaar
+        """
         try:
             query = {"seller_id":"trader"}
             newvalues = { "$set": item }
@@ -111,6 +128,9 @@ class DbHandler:
             print(f"Something went Wrong while inserting into database {self.mydatabase} with error {e}")
     
     def fetch_pending_transactions(self):
+        """
+        Fetches the pending transactions
+        """
         try:
             transactions = self.transactions.find_one({"seller_id":"trader"})
             return transactions
@@ -119,6 +139,9 @@ class DbHandler:
 
 
     def delete_one(self, query):
+        """
+        Deletes ther data for a single entry from the database for the given query
+        """
         try:
             self.transactions.delete_one(query)
         except Exception as e:
