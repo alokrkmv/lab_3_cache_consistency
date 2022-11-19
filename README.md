@@ -7,7 +7,7 @@
 
 ### Setting up the database
 
-Database setup is necessary to run this project as this project requires a MongoDb server to be up and running in the local system. Setting up Mongo using docker is convinient and highly recommended.
+##### Database setup is necessary to run this project as this project requires a MongoDb server to be up and running in the local system. Setting up Mongo using docker is convinient and highly recommended.
 
 Following are the steps to setup database using docker:
 
