@@ -387,7 +387,7 @@ class Peer(Process):
                    
                     
                     if data == None:
-                        print(f"{self.get_timestamp()}: {item} is not available for sell in the bazaar right now")
+                        print(f"{self.get_timestamp()}:{item} is not available for sell in the bazaar right now")
                         continue
                     seller_id = data["seller_id"]
                     price = data["price"]
