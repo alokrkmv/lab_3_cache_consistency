@@ -40,11 +40,7 @@ sudo apt-get install python3-tk````
 #### Documentation links
 
 
-1  ![design_doc](https://github.com/alokrkmv/lab-1-the_bazar/blob/main/src/Documentation/Design%20Doc.pdf)
-  
-2 ![experiment_doc](https://github.com/alokrkmv/lab-1-the_bazar/blob/main/src/Documentation/Experiment%20Doc.pdf)
-  
-3 ![testing_doc](https://github.com/alokrkmv/lab-1-the_bazar/blob/main/src/Documentation/Testing%20Doc.pdf)
+1  ![design_doc](https://github.com/alokrkmv/lab-2-the_trading_post/blob/main/src/Documentation/the_trading_post_doumentation.pdf)
 
     
   
