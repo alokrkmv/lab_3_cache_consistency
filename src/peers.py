@@ -87,7 +87,19 @@ class Peer(Process):
                     
             
     def forward_win_message(self):
+
+       
+
+        """
+        This function prints the winning message for the peer that has won the election. It sets the received_won_message flag to True, to ensure
+        there is no re-election. Sets the election_flag to False, to indicate that election is over. sets current_trader_id to the peer's id who won
+        the election. And sets the role to trader. It fetches the pending requests from the buyers before the previous trader died. Then it 
+        sends a win message to all the peers in the network. Finally a high number of threads are created for the trader and the begin trading function
+        is called.
+        """
+
         print(f"{self.get_timestamp()}: Dear buyers and sellers, My ID is {self.id}, and I am the new coordinator")
+  
         self.received_won_message = True
         self.election_flag = False
         self.current_trader_id = self.id
@@ -109,6 +121,9 @@ class Peer(Process):
     # Trader will call sick after serving 40 requests
     @Pyro4.expose
     def send_heartbeat(self):
+        """
+        This function sets the election_flag to True whenever the trader dies after 40 heartbeats and returns a string dead.
+        """
         if self.heartbeat_counter<40:
             return "alive"
         else:
@@ -119,13 +134,22 @@ class Peer(Process):
 
      # broadcast_lamport_clock : This method broadcasts a peer's clock to all the peers.
     def broadcast_lamport_clock(self):
+        """
+        This method allows the peers to broadcast their clocks to other peers in the network. And adjusts the clocks of all the peers. 
+        """
         for neighbor in self.neighbors:
             neighbor_proxy = self.get_uri_from_id(neighbor)
             self.executor.submit(neighbor_proxy.adjust_buyer_clock, self.clock.value)
 
     @Pyro4.expose
     def adjust_buyer_clock(self, sender_clock):
-       
+        """
+        Args:
+            sender_clock: tuple (sender_id, clock_value)
+        This function adjusts the clocks of the peer to the max value between the current_clock value and the sender's clock value
+        For buyer0, the clock is adjusted for every 29 requests and at the 30th request buyer0 is slowed down to simulate a slow peer
+        in the network. buyer0's clock will be slowed down after every 30 requests for 30s.
+        """
         try:
             if self.role == "buyer" or self.role == "seller" : 
                 self.clock_lock.acquire()
@@ -145,12 +169,24 @@ class Peer(Process):
     # Function to reset the role of previous trader
     @Pyro4.expose
     def role_reversal(self):
+        """
+        Whenever the trader dies, this method updates its role back to its previous role and resets the clock value.
+        """
         self.role = self.id[:-1]
         self.clock.value = 0
 
     # This method elects the leader using Bully algorithm
     @Pyro4.expose
     def elect_leader(self):
+        """
+        Reverse the role of the current trader (if any)
+        The peer 2 starts the election. It gets the uri of all the neighbor peers (all peers in this case) and sets the election_flag to True.
+        For all the peers with higher id, a message to "elect leader" is sent. And then it waits fo 5 seconds before checking if the received_ok_message
+        flag is set or not. If it is False, and there is no win message from any peer, then the current peer wins the election.
+        If there are no higher peers then the current peer wins and forwards the win message.
+        For the highest peer, if that peer doesn't receives any response of "OK" after sending the elect leader message, then that highest peer
+        wins and forwards the win message.
+        """
         current_trader = self.current_trader_id
         if current_trader!=None:
             current_trader_proxy = self.get_uri_from_id(current_trader)
@@ -193,15 +229,26 @@ class Peer(Process):
 
 
     '''
-    This function handles three types of messages
-    elect_leader : If this message is received by the peer then it will first respond to the sender 
-    by an ok message and forward the election message to its neighbors
-    ok: Drop out of the election
-    I won : Recived the message from the new leader set winning trader as the new co-ordinator of the 
-    bazaar
+    
     '''
     @Pyro4.expose
     def send_election_message(self,message,sender):
+        """
+        Args:
+            message: string (the message sent by a peer)
+            sender: string peeer id
+        This function handles three types of messages.
+        
+        elect_leader : If this message is received by the peer, then it will first respond to the sender by an ok message 
+        and forwards the election message to its neighbors with a higher id. If there are higher peers, then the election_flag is set to True
+        After forwarding the election message, the peer waits for 5 seconds to check if received_ok_message and received_won_message flags are
+        set to True or not. If they are set to true then the current peer drops from the election. Else it sends a win message.
+        
+        OK: If a peer receives the OK message it drops from the election since there are higher peers who are alive
+        
+        won: If won message is recieved from any peer, then the received_won_message flag is set to trye, current trader id is set to the 
+        id of the sender, election_flag is set to False to mark the ending of election. Then begin_trading function is called.
+        """
         try:
             if message == "elect_leader" and self.id !=self.current_trader_id:
                 self.executor.submit(self.get_uri_from_id(sender).send_election_message,"OK",sender)
@@ -254,6 +301,13 @@ class Peer(Process):
 
     @Pyro4.expose
     def begin_trading(self):
+        """
+        This method resets all the flags to False to create a fresh bazar.
+        It first checks if the seller has deposited its items to the trader, if not then deposit the items to the trader and the has_deposited
+        flag to True. 
+        If the role is trader, then start the trader loop
+        If the rolw is buyer then start the buyer loop
+        """
         try:
         
             # Set all election related flags to false
@@ -307,7 +361,12 @@ class Peer(Process):
 
     # This method starts buyer loop for buyer using which they can buy any product
     def buyer_loop(self):
-        
+        """
+        This function keeps checking for the heartbeat of the trader. If the response is dead, then the peer sets the election_flag to True.
+        The peer with the smallest id restarts the election.
+        In every buy loop, the buyer broadcasts its clock to all the peers, adds the item that it wants to buy to the trading queue and then waits
+        for 10 seconds to send another request.
+        """
         while True:
             try:
                 trader = self.get_uri_from_id(self.current_trader_id)
@@ -342,6 +401,13 @@ class Peer(Process):
         
     @Pyro4.expose
     def send_purchase_message(self, seller_id, item):
+        """
+        Args:
+            seller_id: id of the seller who sold that item
+            item: itme which was sold by the seller
+        This function prints the message about the item that the buyer has bought
+        The buyer then selects another item to buy
+        """
         print(f"{self.get_timestamp()} : {self.id} purchased {item} from {seller_id}")
         self.item_lock.aquire()
         self.item = self.items[random.randint(0, len(self.items) - 1)]
@@ -353,11 +419,18 @@ class Peer(Process):
     # Trader will sell the product to buyer using this function they will also send a message to the seller 
     # whose product was sold with remaining number of products and commission amount
     def trader_loop(self):
+        """
+        This function runs the trader's loop. It first writes all the pending transactions to the disk to keep a track of the pending transactions
+        to ensure that in an untimely death of the trader, the next trader will be able to pick up the remaining transactions.
+        Then it iterates of the trading queue to get the buyer id which has the lowest clock value. Then it processes that request. It first adjusts
+        the buyer's clock and then finds the seller that has this item and has the lowest clock. After it has successfully found the seller, it prints
+        a message for the successful trade of item between buyer and seller. The sellers items are then decreased by 1 and the value is then updated
+        in the database. It sends a message which tells which seller's item was sold and how much did the seller earn. Also prints the id of the buyer
+        that bought the item.
+        """
         while True:
             if self.election_flag:
-                
                 break
-
             try:
                 if len(self.trading_queue)>0:
                     # Write all the pending transactions to the disk
@@ -413,7 +486,12 @@ class Peer(Process):
 
     @Pyro4.expose
     def send_sale_message(self, item, commission, count, buyer_id, zero_flag):
-        
+        """
+        This function prints the item that a seller sold and the money that it earned. Also prints the remaining number of items.
+        The clock of the seller is forwarded by 1, and the new value of the clock is updated with the trader.
+        If the count of items is 0, then a message saying the seller is out of stock is printed. Then the seller picks up another item.
+        After the item is picked, has_deposited flag is set to false, signifying that the seller is yet to deposit its items with the trader.
+        """
         if count>=0:
             print(f"{self.get_timestamp()} : {self.id} has sold {item} to {buyer_id} and earned {commission} $")
             print(f"{self.get_timestamp()} : {self.id} has {count} {item} left")
@@ -440,6 +518,9 @@ class Peer(Process):
     # This method registers products of each seller
     @Pyro4.expose
     def register_product(self, seller_info, seller_id):
+        """
+        This method registers the product of the seller, and adds it to the database
+        """
         try:
             self.db.insert_into_database(seller_info)
             seller_data = self.db.fetch_one_from_database(seller_id)
