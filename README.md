@@ -5,12 +5,24 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com)
 
+### Setting up the database
+
+Database setup is necessary to run this project as this project requires a MongoDb server to be up and running in the local system. Setting up Mongo using docker is convinient and highly recommended.
+
+Following are the steps to setup database using docker:
+
+1. Pull the official mongo docker image from docker hub using ````docker pull mongo````
+2. Make sure that any old mongo container is removed if not then stop any running container using ````docker stop <container_id>```` container_id can be fetched using ````docker ps````. Remove the stopped container using ````docker rm <container_id>````
+3. Now run ````docker run -d -p 27017:27017 --name mongo_container mongo```` to start the docker container on port 27017.
+
+### Database can also be setup in one go using database_setup.sh file provided. Just make sure that any previous container is stopped and removed then run ````sudo bash setup_database.sh```.
+
 ### Docker run command
 
 docker run -d -p 27017:27017 --name mongo_container mongo
 #### Steps to run the project
 1. It is advisable to create and activate a virtualenv before starting the project. However it is not a requirement to run the project.
-2. The application can be started by running a single bash script run.sh inside src folder.
+2. The application can be started by running a single bash script run.sh inside src folder once database setup is done.
 3. Make sure that you current directory is src and then run ````bash run.sh host_name <number_of_peers>````
 4. Hostname is a mandatory parameter and needs to be passed as a command line argument for the program to start.
 5. Number of peers is optional paramter if passed the network will generate a network with equivalent number of peers otherwise it will default to six peer network based on the default config provided in config_file.
