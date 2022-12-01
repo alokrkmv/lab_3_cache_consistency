@@ -1,0 +1,81 @@
+Showing the graphical representation of the bazaar
+buyer salt
+seller salt
+seller salt
+seller salt
+seller salt
+2022-10-20 02:25:05.069802 - seller3 joined the bazar as seller selling salt
+2022-10-20 02:25:05.071931 - seller1 joined the bazar as seller selling salt
+2022-10-20 02:25:05.074398 - buyer0 joined the bazar as buyer looking for salt
+2022-10-20 02:25:05.074981 - seller4 joined the bazar as seller selling salt
+2022-10-20 02:25:05.075671 - seller2 joined the bazar as seller selling salt
+2022-10-20 02:25:07.102482 - Buyer buyer0 issues lookup to seller3
+2022-10-20 02:25:07.104067 - Buyer buyer0 issues lookup to seller4
+2022-10-20 02:25:07.106366 - buyer0 got a match reply from seller3
+2022-10-20 02:25:07.108457 - Buyer buyer0 issues lookup to seller1
+2022-10-20 02:25:07.113766 - buyer0 got a match reply from seller4
+2022-10-20 02:25:07.115147 - buyer0 got a match reply from seller1
+
+2022-10-20 02:25:07.116320 - buyer0 picked seller3 to purchase salt
+2022-10-20 02:25:07.119452 - seller3 sold salt to buyer0
+2022-10-20 02:25:07.119463 - seller3 now has 1 salt item(s) remaining
+2022-10-20 02:25:07.119746 - buyer0 bought salt from seller3
+
+2022-10-20 02:25:07.119765 - Buyer buyer0 now picked item fish to buy
+2022-10-20 02:25:08.121013 - Buyer buyer0 issues lookup to seller3
+2022-10-20 02:25:08.122202 - Buyer buyer0 issues lookup to seller4
+2022-10-20 02:25:08.132446 - Buyer buyer0 issues lookup to seller1
+2022-10-20 02:25:08.157920 - Buyer buyer0 now picked item boar to buy
+2022-10-20 02:25:11.159410 - Buyer buyer0 issues lookup to seller3
+2022-10-20 02:25:11.160769 - Buyer buyer0 issues lookup to seller4
+2022-10-20 02:25:11.161616 - Buyer buyer0 issues lookup to seller1
+2022-10-20 02:25:11.200466 - Buyer buyer0 now picked item salt to buy
+2022-10-20 02:25:13.203257 - Buyer buyer0 issues lookup to seller3
+2022-10-20 02:25:13.204267 - Buyer buyer0 issues lookup to seller4
+2022-10-20 02:25:13.208412 - Buyer buyer0 issues lookup to seller1
+
+2022-10-20 02:25:13.220101 - buyer0 got a match reply from seller3
+2022-10-20 02:25:13.220483 - buyer0 got a match reply from seller4
+2022-10-20 02:25:13.224331 - buyer0 got a match reply from seller1
+
+2022-10-20 02:25:13.224658 - buyer0 picked seller3 to purchase salt
+2022-10-20 02:25:13.229384 - seller3 sold salt to buyer0
+2022-10-20 02:25:13.229395 - seller3 now has 0 salt item(s) remaining
+2022-10-20 02:25:13.230001 - buyer0 bought salt from seller3
+
+2022-10-20 02:25:13.230021 - Buyer buyer0 now picked item fish to buy
+2022-10-20 02:25:16.232956 - Buyer buyer0 issues lookup to seller3
+2022-10-20 02:25:16.234496 - Buyer buyer0 issues lookup to seller4
+2022-10-20 02:25:16.236870 - Buyer buyer0 issues lookup to seller1
+2022-10-20 02:25:16.266145 - Buyer buyer0 now picked item fish to buy
+2022-10-20 02:25:17.267184 - Buyer buyer0 issues lookup to seller3
+2022-10-20 02:25:17.268878 - Buyer buyer0 issues lookup to seller4
+2022-10-20 02:25:17.273814 - Buyer buyer0 issues lookup to seller1
+2022-10-20 02:25:17.309341 - Buyer buyer0 now picked item salt to buy
+2022-10-20 02:25:19.312694 - Buyer buyer0 issues lookup to seller3
+2022-10-20 02:25:19.314235 - Buyer buyer0 issues lookup to seller4
+2022-10-20 02:25:19.316151 - Buyer buyer0 issues lookup to seller1
+
+2022-10-20 02:25:19.326625 - buyer0 got a match reply from seller4
+2022-10-20 02:25:19.334733 - buyer0 got a match reply from seller1
+
+2022-10-20 02:25:19.335072 - buyer0 picked seller1 to purchase salt
+2022-10-20 02:25:19.338165 - buyer0 got a match reply from seller1
+2022-10-20 02:25:19.343740 - seller1 sold salt to buyer0
+2022-10-20 02:25:19.343749 - seller1 now has 1 salt item(s) remaining
+2022-10-20 02:25:19.344470 - buyer0 bought salt from seller1
+
+2022-10-20 02:25:19.344488 - Buyer buyer0 now picked item salt to buy
+2022-10-20 02:25:19.345643 - buyer0 got a match reply from seller2
+2022-10-20 02:25:22.345752 - Buyer buyer0 issues lookup to seller3
+2022-10-20 02:25:22.347703 - Buyer buyer0 issues lookup to seller4
+2022-10-20 02:25:22.353604 - Buyer buyer0 issues lookup to seller1
+2022-10-20 02:25:22.372986 - buyer0 got a match reply from seller4
+2022-10-20 02:25:22.381229 - buyer0 got a match reply from seller1
+2022-10-20 02:25:22.382512 - buyer0 got a match reply from seller1
+
+2022-10-20 02:25:22.383383 - buyer0 picked seller1 to purchase salt
+2022-10-20 02:25:22.391915 - buyer0 got a match reply from seller2
+2022-10-20 02:25:22.393117 - seller1 sold salt to buyer0
+2022-10-20 02:25:22.393132 - seller1 now has 0 salt item(s) remaining
+2022-10-20 02:25:22.393407 - buyer0 bought salt from seller1

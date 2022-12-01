@@ -1,0 +1,782 @@
++++++++++++++Starting The Bazar+++++++++++++++++++++++
+Installing all the requirements for the project
+Starting nameserver in detached mode
+Namespace server is already running on localhost
+Removing dead peers from the server
+Potentially removing lots of items from the Name server. Are you sure (y/n)?1 items removed.
+Removing dead peers from the server
+Potentially removing lots of items from the Name server. Are you sure (y/n)?4 items removed.
+Starting the main process
+Showing the graphical representation of the bazaar
+/home/alokrkmv/Documents/my_code/lab-1-the_bazar/src/experiments
+2022-10-20 02:34:43.836536 - seller1 joined the bazar as seller selling salt
+2022-10-20 02:34:43.838022 - buyer5 joined the bazar as buyer looking for fish
+2022-10-20 02:34:43.838883 - buyer0 joined the bazar as buyer looking for boar
+2022-10-20 02:34:43.839074 - buyer2 joined the bazar as buyer looking for boar
+2022-10-20 02:34:43.839903 - buyer3 joined the bazar as buyer looking for boar
+2022-10-20 02:34:43.840459 - buyer4 joined the bazar as buyer looking for fish
+####################### buyer4 Iterations 0 #########################
+2022-10-20 02:34:45.846436 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:45.855071 - Buyer buyer4 now picked item fish to buy
+####################### buyer4 Iterations 1 #########################
+####################### buyer2 Iterations 0 #########################
+2022-10-20 02:34:45.855276 - buyer2 issues lookup to seller1
+####################### buyer5 Iterations 0 #########################
+2022-10-20 02:34:45.855489 - buyer5 issues lookup to seller1
+2022-10-20 02:34:45.855692 - buyer4 issues lookup to buyer0
+####################### buyer0 Iterations 0 #########################
+2022-10-20 02:34:45.856275 - buyer0 issues lookup to buyer3
+####################### buyer3 Iterations 0 #########################
+2022-10-20 02:34:45.856485 - buyer3 issues lookup to buyer0
+Something went wrong in lookup with exception dictionary changed size during iteration. Peers still loading.
+2022-10-20 02:34:45.861678 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:45.862420 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:45.862757 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:45.864547 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:45.870898 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:45.874230 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:45.878257 - buyer0 issues lookup to seller1
+2022-10-20 02:34:45.882490 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:45.897083 - Buyer buyer4 now picked item boar to buy
+####################### buyer4 Iterations 2 #########################
+2022-10-20 02:34:45.897992 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:45.954535 - Buyer buyer3 now picked item fish to buy
+####################### buyer3 Iterations 1 #########################
+2022-10-20 02:34:45.960698 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:45.971812 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 1 #########################
+2022-10-20 02:34:45.974064 - buyer5 issues lookup to seller1
+2022-10-20 02:34:45.976851 - Buyer buyer2 now picked item salt to buy
+####################### buyer2 Iterations 1 #########################
+2022-10-20 02:34:45.979900 - buyer2 issues lookup to seller1
+2022-10-20 02:34:45.979990 - Buyer buyer4 now picked item boar to buy
+####################### buyer4 Iterations 3 #########################
+2022-10-20 02:34:45.983413 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:45.984701 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:45.994540 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:46.000090 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:46.004903 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:46.013439 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 1 #########################
+2022-10-20 02:34:46.016444 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:46.023333 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:46.038231 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:46.039463 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:46.064697 - buyer0 issues lookup to seller1
+2022-10-20 02:34:46.100242 - Buyer buyer4 now picked item salt to buy
+####################### buyer4 Iterations 4 #########################
+2022-10-20 02:34:46.104481 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:46.157338 - Buyer buyer0 now picked item salt to buy
+####################### buyer0 Iterations 2 #########################
+2022-10-20 02:34:46.161053 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:46.179507 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:46.187530 - Buyer buyer4 now picked item fish to buy
+####################### buyer4 Iterations 5 #########################
+2022-10-20 02:34:46.189296 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:46.196394 - Buyer buyer2 now picked item boar to buy
+####################### buyer2 Iterations 2 #########################
+2022-10-20 02:34:46.197119 - buyer0 issues lookup to seller1
+2022-10-20 02:34:46.202343 - buyer2 issues lookup to seller1
+2022-10-20 02:34:46.207152 - Buyer buyer3 now picked item boar to buy
+####################### buyer3 Iterations 2 #########################
+2022-10-20 02:34:46.209189 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:46.214894 - buyer5 got a match reply from seller1
+2022-10-20 02:34:46.216466 - buyer2 got a match reply from seller1
+2022-10-20 02:34:46.224229 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:46.233963 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:46.234534 - buyer5 picked seller1 to purchase salt
+2022-10-20 02:34:46.256125 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:46.263596 - Buyer buyer0 now picked item boar to buy
+####################### buyer0 Iterations 3 #########################
+2022-10-20 02:34:46.269570 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:46.271962 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:46.287934 - Buyer buyer4 now picked item boar to buy
+####################### buyer4 Iterations 6 #########################
+2022-10-20 02:34:46.288333 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:46.292015 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:46.302706 - buyer0 issues lookup to seller1
+2022-10-20 02:34:46.355586 - buyer0 got a match reply from seller1
+2022-10-20 02:34:46.370552 - seller1 sold salt to buyer5
+2022-10-20 02:34:46.370578 - seller1 now has 4 salt item(s) remaining
+2022-10-20 02:34:46.370940 - buyer4 got a match reply from seller1
+2022-10-20 02:34:46.375711 - buyer5 bought salt from seller1
+2022-10-20 02:34:46.375751 - Buyer buyer5 now picked item boar to buy
+####################### buyer5 Iterations 2 #########################
+2022-10-20 02:34:46.378404 - buyer5 issues lookup to seller1
+2022-10-20 02:34:46.383978 - buyer4 picked seller1 to purchase boar
+2022-10-20 02:34:46.399496 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:46.413533 - buyer0 picked seller1 to purchase boar
+2022-10-20 02:34:46.426099 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:46.440603 - seller1 sold salt to buyer4
+2022-10-20 02:34:46.440632 - seller1 now has 3 salt item(s) remaining
+2022-10-20 02:34:46.446034 - buyer4 bought boar from seller1
+2022-10-20 02:34:46.446073 - Buyer buyer4 now picked item salt to buy
+####################### buyer4 Iterations 7 #########################
+2022-10-20 02:34:46.449123 - buyer2 picked seller1 to purchase boar
+2022-10-20 02:34:46.449322 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:46.464603 - seller1 sold salt to buyer0
+2022-10-20 02:34:46.464629 - seller1 now has 2 salt item(s) remaining
+2022-10-20 02:34:46.470421 - buyer0 bought boar from seller1
+2022-10-20 02:34:46.470454 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 4 #########################
+2022-10-20 02:34:46.472905 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:46.492228 - Buyer buyer3 now picked item salt to buy
+####################### buyer3 Iterations 3 #########################
+2022-10-20 02:34:46.493892 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:46.495641 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:46.510696 - buyer0 issues lookup to seller1
+2022-10-20 02:34:46.517171 - Buyer buyer4 now picked item boar to buy
+####################### buyer4 Iterations 8 #########################
+2022-10-20 02:34:46.517497 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:46.520941 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:46.531623 - buyer2 got a match reply from seller1
+2022-10-20 02:34:46.539437 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:46.550737 - buyer5 got a match reply from seller1
+2022-10-20 02:34:46.602422 - seller1 sold salt to buyer2
+2022-10-20 02:34:46.602448 - seller1 now has 1 salt item(s) remaining
+2022-10-20 02:34:46.607703 - Buyer buyer4 now picked item boar to buy
+####################### buyer4 Iterations 9 #########################
+2022-10-20 02:34:46.611962 - buyer2 bought boar from seller1
+2022-10-20 02:34:46.612004 - Buyer buyer2 now picked item boar to buy
+####################### buyer2 Iterations 3 #########################
+2022-10-20 02:34:46.618613 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:46.619588 - buyer2 issues lookup to seller1
+2022-10-20 02:34:46.641434 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:46.642334 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 5 #########################
+2022-10-20 02:34:46.650427 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:46.665236 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:46.671935 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:46.683839 - buyer5 picked seller1 to purchase boar
+2022-10-20 02:34:46.688256 - buyer0 issues lookup to seller1
+2022-10-20 02:34:46.690162 - Buyer buyer4 now picked item boar to buy
+####################### buyer4 Iterations 10 #########################
+2022-10-20 02:34:46.694147 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:46.780999 - buyer5 got a match reply from seller1
+2022-10-20 02:34:46.797856 - Buyer buyer3 now picked item fish to buy
+####################### buyer3 Iterations 4 #########################
+2022-10-20 02:34:46.799692 - Buyer buyer4 now picked item salt to buy
+####################### buyer4 Iterations 11 #########################
+2022-10-20 02:34:46.802728 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:46.803658 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:46.814402 - buyer2 got a match reply from seller1
+2022-10-20 02:34:46.823141 - Buyer buyer0 now picked item boar to buy
+####################### buyer0 Iterations 6 #########################
+2022-10-20 02:34:46.826214 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:46.840158 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:46.844211 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:46.852027 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:46.865494 - buyer4 got a match reply from seller1
+2022-10-20 02:34:46.870684 - buyer0 issues lookup to seller1
+2022-10-20 02:34:46.879984 - seller1 sold salt to buyer5
+2022-10-20 02:34:46.880011 - seller1 now has 0 salt item(s) remaining
+2022-10-20 02:34:46.886146 - buyer5 bought boar from seller1
+2022-10-20 02:34:46.886184 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 3 #########################
+2022-10-20 02:34:46.893351 - buyer5 issues lookup to seller1
+2022-10-20 02:34:46.905741 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:46.906538 - buyer2 picked seller1 to purchase boar
+2022-10-20 02:34:46.908769 - buyer4 picked seller1 to purchase salt
+2022-10-20 02:34:46.945546 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:46.960076 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 7 #########################
+2022-10-20 02:34:46.960316 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:46.987962 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:47.001748 - buyer0 issues lookup to seller1
+seller1 is now the seller of fish at time 2022-10-20 02:34:47.019382
+2022-10-20 02:34:47.027274 buyer4 failed to buy salt from seller1
+2022-10-20 02:34:47.027315 - Buyer buyer4 now picked item salt to buy
+####################### buyer4 Iterations 12 #########################
+2022-10-20 02:34:47.028919 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:47.064020 - buyer3 got a match reply from seller1
+2022-10-20 02:34:47.067905 - buyer0 got a match reply from seller1
+2022-10-20 02:34:47.094777 - buyer0 picked seller1 to purchase fish
+2022-10-20 02:34:47.095450 - Buyer buyer4 now picked item fish to buy
+####################### buyer4 Iterations 13 #########################
+2022-10-20 02:34:47.098174 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:47.117538 - seller1 sold fish to buyer2
+2022-10-20 02:34:47.117567 - seller1 now has 9 fish item(s) remaining
+2022-10-20 02:34:47.119756 - buyer2 bought boar from seller1
+2022-10-20 02:34:47.119789 - Buyer buyer2 now picked item boar to buy
+####################### buyer2 Iterations 4 #########################
+2022-10-20 02:34:47.121436 - buyer2 issues lookup to seller1
+2022-10-20 02:34:47.124076 - buyer5 got a match reply from seller1
+2022-10-20 02:34:47.163965 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:47.164667 - seller1 sold fish to buyer0
+2022-10-20 02:34:47.164687 - seller1 now has 8 fish item(s) remaining
+2022-10-20 02:34:47.168894 - buyer0 bought fish from seller1
+2022-10-20 02:34:47.168931 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 8 #########################
+2022-10-20 02:34:47.173250 - buyer5 picked seller1 to purchase salt
+2022-10-20 02:34:47.175680 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:47.185413 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:47.193988 - buyer4 got a match reply from seller1
+2022-10-20 02:34:47.197136 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:47.199447 - buyer0 got a match reply from seller1
+2022-10-20 02:34:47.205567 - buyer4 picked seller1 to purchase fish
+2022-10-20 02:34:47.205944 - buyer2 got a match reply from seller1
+2022-10-20 02:34:47.217558 - buyer0 issues lookup to seller1
+2022-10-20 02:34:47.262182 - buyer3 picked seller1 to purchase fish
+2022-10-20 02:34:47.289291 - buyer3 got a match reply from seller1
+2022-10-20 02:34:47.301386 - buyer0 got a match reply from seller1
+2022-10-20 02:34:47.302410 - seller1 sold fish to buyer4
+2022-10-20 02:34:47.302432 - seller1 now has 7 fish item(s) remaining
+2022-10-20 02:34:47.308562 - buyer4 bought fish from seller1
+2022-10-20 02:34:47.308602 - Buyer buyer4 now picked item fish to buy
+####################### buyer4 Iterations 14 #########################
+2022-10-20 02:34:47.311951 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:47.325290 - buyer0 picked seller1 to purchase fish
+2022-10-20 02:34:47.339020 - buyer3 got a match reply from seller1
+2022-10-20 02:34:47.348508 - buyer3 got a match reply from seller1
+2022-10-20 02:34:47.357781 - seller1 sold fish to buyer5
+2022-10-20 02:34:47.357808 - seller1 now has 6 fish item(s) remaining
+2022-10-20 02:34:47.359196 - buyer0 got a match reply from seller1
+2022-10-20 02:34:47.361770 - buyer5 bought salt from seller1
+2022-10-20 02:34:47.361803 - Buyer buyer5 now picked item fish to buy
+####################### buyer5 Iterations 4 #########################
+2022-10-20 02:34:47.372341 - buyer5 issues lookup to seller1
+2022-10-20 02:34:47.372601 - buyer4 got a match reply from seller1
+2022-10-20 02:34:47.394981 - buyer4 picked seller1 to purchase fish
+2022-10-20 02:34:47.396550 - seller1 sold fish to buyer0
+2022-10-20 02:34:47.396576 - seller1 now has 5 fish item(s) remaining
+2022-10-20 02:34:47.398263 - buyer0 bought fish from seller1
+2022-10-20 02:34:47.398296 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 9 #########################
+2022-10-20 02:34:47.400730 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:47.403555 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:47.426603 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:47.429789 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:47.443893 - buyer0 issues lookup to seller1
+2022-10-20 02:34:47.460278 - seller1 sold fish to buyer4
+2022-10-20 02:34:47.460305 - seller1 now has 4 fish item(s) remaining
+2022-10-20 02:34:47.464457 - buyer4 bought fish from seller1
+2022-10-20 02:34:47.464496 - Buyer buyer4 now picked item salt to buy
+####################### buyer4 Iterations 15 #########################
+2022-10-20 02:34:47.467232 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:47.502465 - seller1 sold fish to buyer3
+2022-10-20 02:34:47.502493 - seller1 now has 3 fish item(s) remaining
+2022-10-20 02:34:47.505933 - buyer3 bought fish from seller1
+2022-10-20 02:34:47.505973 - Buyer buyer3 now picked item boar to buy
+####################### buyer3 Iterations 5 #########################
+2022-10-20 02:34:47.509161 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:47.510965 - buyer2 picked seller1 to purchase boar
+2022-10-20 02:34:47.518653 - buyer4 got a match reply from seller1
+2022-10-20 02:34:47.523495 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:47.546396 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:47.547015 - buyer0 picked seller1 to purchase fish
+2022-10-20 02:34:47.550827 - buyer4 picked seller1 to purchase salt
+2022-10-20 02:34:47.555331 - buyer0 got a match reply from seller1
+2022-10-20 02:34:47.592915 - seller1 sold fish to buyer0
+2022-10-20 02:34:47.592942 - seller1 now has 2 fish item(s) remaining
+2022-10-20 02:34:47.596971 - buyer3 got a match reply from seller1
+2022-10-20 02:34:47.597810 - buyer0 bought fish from seller1
+2022-10-20 02:34:47.597841 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 10 #########################
+2022-10-20 02:34:47.599850 - buyer3 got a match reply from seller1
+2022-10-20 02:34:47.605452 - seller1 sold fish to buyer4
+2022-10-20 02:34:47.605477 - seller1 now has 1 fish item(s) remaining
+2022-10-20 02:34:47.605679 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:47.611506 - buyer4 bought salt from seller1
+2022-10-20 02:34:47.611549 - Buyer buyer4 now picked item salt to buy
+####################### buyer4 Iterations 16 #########################
+2022-10-20 02:34:47.619353 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:47.621368 - buyer5 got a match reply from seller1
+2022-10-20 02:34:47.632568 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:47.658969 - buyer0 issues lookup to seller1
+2022-10-20 02:34:47.679074 - buyer0 got a match reply from seller1
+2022-10-20 02:34:47.703985 - seller1 sold fish to buyer2
+2022-10-20 02:34:47.704013 - seller1 now has 0 fish item(s) remaining
+2022-10-20 02:34:47.708984 - Buyer buyer4 now picked item boar to buy
+####################### buyer4 Iterations 17 #########################
+2022-10-20 02:34:47.711042 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:47.714905 - buyer2 bought boar from seller1
+2022-10-20 02:34:47.714941 - Buyer buyer2 now picked item boar to buy
+####################### buyer2 Iterations 5 #########################
+2022-10-20 02:34:47.715027 - buyer3 picked seller1 to purchase boar
+2022-10-20 02:34:47.717151 - buyer2 issues lookup to seller1
+2022-10-20 02:34:47.721410 - buyer5 picked seller1 to purchase fish
+2022-10-20 02:34:47.729471 - buyer0 got a match reply from seller1
+2022-10-20 02:34:47.740595 - buyer0 picked seller1 to purchase fish
+2022-10-20 02:34:47.742710 - buyer0 got a match reply from seller1
+2022-10-20 02:34:47.749001 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:47.769676 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:47.777113 - Buyer buyer4 now picked item fish to buy
+####################### buyer4 Iterations 18 #########################
+2022-10-20 02:34:47.783157 - buyer4 issues lookup to buyer0
+seller1 is now the seller of salt at time 2022-10-20 02:34:47.804025
+2022-10-20 02:34:47.808341 buyer0 failed to buy fish from seller1
+2022-10-20 02:34:47.808382 - Buyer buyer0 now picked item boar to buy
+####################### buyer0 Iterations 11 #########################
+2022-10-20 02:34:47.812378 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:47.838198 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:47.849651 - seller1 sold salt to buyer3
+2022-10-20 02:34:47.849677 - seller1 now has 9 salt item(s) remaining
+2022-10-20 02:34:47.854743 - buyer3 bought boar from seller1
+2022-10-20 02:34:47.854777 - Buyer buyer3 now picked item boar to buy
+####################### buyer3 Iterations 6 #########################
+2022-10-20 02:34:47.858801 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:47.862003 - buyer0 issues lookup to seller1
+2022-10-20 02:34:47.872879 - Buyer buyer4 now picked item boar to buy
+####################### buyer4 Iterations 19 #########################
+2022-10-20 02:34:47.873706 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:47.876059 - buyer4 issues lookup to buyer0
+2022-10-20 02:34:47.891267 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:47.894897 - buyer0 got a match reply from seller1
+2022-10-20 02:34:47.923698 - buyer0 got a match reply from seller1
+2022-10-20 02:34:47.940997 - seller1 sold salt to buyer5
+2022-10-20 02:34:47.941023 - seller1 now has 8 salt item(s) remaining
+2022-10-20 02:34:47.948766 - buyer5 bought fish from seller1
+2022-10-20 02:34:47.948806 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 5 #########################
+2022-10-20 02:34:47.951122 - buyer0 picked seller1 to purchase boar
+2022-10-20 02:34:47.952785 - buyer5 issues lookup to seller1
+2022-10-20 02:34:47.976583 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:47.983195 - Buyer buyer4 now picked item boar to buy
+110311
+2022-10-20 02:34:47.991631 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:48.001165 - seller1 sold salt to buyer0
+2022-10-20 02:34:48.001191 - seller1 now has 7 salt item(s) remaining
+2022-10-20 02:34:48.004515 - buyer0 bought boar from seller1
+2022-10-20 02:34:48.004559 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 12 #########################
+2022-10-20 02:34:48.006257 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:48.026074 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:48.034157 - buyer0 issues lookup to seller1
+2022-10-20 02:34:48.036160 - Buyer buyer2 now picked item boar to buy
+####################### buyer2 Iterations 6 #########################
+2022-10-20 02:34:48.043077 - buyer5 got a match reply from seller1
+2022-10-20 02:34:48.044144 - buyer2 issues lookup to seller1
+2022-10-20 02:34:48.052628 - buyer0 got a match reply from seller1
+2022-10-20 02:34:48.052970 - buyer3 got a match reply from seller1
+2022-10-20 02:34:48.054947 - buyer3 got a match reply from seller1
+2022-10-20 02:34:48.074696 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:48.085427 - buyer3 picked seller1 to purchase boar
+2022-10-20 02:34:48.095103 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:48.104594 - buyer0 got a match reply from seller1
+2022-10-20 02:34:48.119337 - buyer0 got a match reply from seller1
+2022-10-20 02:34:48.122135 - buyer0 picked seller1 to purchase fish
+2022-10-20 02:34:48.151019 - buyer5 got a match reply from seller1
+2022-10-20 02:34:48.154047 - buyer0 got a match reply from seller1
+2022-10-20 02:34:48.163009 - seller1 sold salt to buyer0
+2022-10-20 02:34:48.163038 - seller1 now has 6 salt item(s) remaining
+2022-10-20 02:34:48.174450 - seller1 sold salt to buyer3
+2022-10-20 02:34:48.174472 - seller1 now has 5 salt item(s) remaining
+2022-10-20 02:34:48.175442 - buyer0 bought fish from seller1
+2022-10-20 02:34:48.175479 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 13 #########################
+2022-10-20 02:34:48.176986 - buyer3 bought boar from seller1
+2022-10-20 02:34:48.177025 - Buyer buyer3 now picked item salt to buy
+####################### buyer3 Iterations 7 #########################
+2022-10-20 02:34:48.180460 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:48.183211 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:48.189682 - buyer5 picked seller1 to purchase salt
+2022-10-20 02:34:48.199127 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:48.207398 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:48.216146 - buyer0 issues lookup to seller1
+2022-10-20 02:34:48.243238 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:48.255227 - Buyer buyer2 now picked item fish to buy
+####################### buyer2 Iterations 7 #########################
+2022-10-20 02:34:48.261309 - buyer2 issues lookup to seller1
+2022-10-20 02:34:48.283638 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:48.298691 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:48.319171 - buyer0 picked seller1 to purchase fish
+2022-10-20 02:34:48.346122 - Buyer buyer3 now picked item fish to buy
+####################### buyer3 Iterations 8 #########################
+2022-10-20 02:34:48.349358 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:48.368171 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:48.369409 - seller1 sold salt to buyer0
+2022-10-20 02:34:48.369435 - seller1 now has 4 salt item(s) remaining
+2022-10-20 02:34:48.380561 - buyer0 bought fish from seller1
+2022-10-20 02:34:48.380607 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 14 #########################
+2022-10-20 02:34:48.381805 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:48.390876 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:48.399884 - buyer3 got a match reply from seller1
+2022-10-20 02:34:48.406063 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:48.406649 - buyer5 got a match reply from seller1
+2022-10-20 02:34:48.409194 - seller1 sold salt to buyer5
+2022-10-20 02:34:48.409211 - seller1 now has 3 salt item(s) remaining
+2022-10-20 02:34:48.411847 - buyer5 bought salt from seller1
+2022-10-20 02:34:48.411890 - Buyer buyer5 now picked item boar to buy
+####################### buyer5 Iterations 6 #########################
+2022-10-20 02:34:48.417455 - buyer5 issues lookup to seller1
+2022-10-20 02:34:48.419820 - buyer0 issues lookup to seller1
+2022-10-20 02:34:48.443909 - buyer3 picked seller1 to purchase fish
+2022-10-20 02:34:48.449940 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:48.474240 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:48.506428 - Buyer buyer0 now picked item boar to buy
+####################### buyer0 Iterations 15 #########################
+2022-10-20 02:34:48.508085 - buyer5 got a match reply from seller1
+2022-10-20 02:34:48.510842 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:48.516290 - seller1 sold salt to buyer3
+2022-10-20 02:34:48.516318 - seller1 now has 2 salt item(s) remaining
+2022-10-20 02:34:48.523808 - Buyer buyer2 now picked item salt to buy
+####################### buyer2 Iterations 8 #########################
+2022-10-20 02:34:48.528465 - buyer3 bought fish from seller1
+2022-10-20 02:34:48.528505 - Buyer buyer3 now picked item salt to buy
+####################### buyer3 Iterations 9 #########################
+2022-10-20 02:34:48.529913 - buyer2 issues lookup to seller1
+2022-10-20 02:34:48.532573 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:48.535782 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:48.546341 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:48.547498 - buyer0 issues lookup to seller1
+2022-10-20 02:34:48.552389 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:48.565838 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:48.575453 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:48.620974 - buyer3 got a match reply from seller1
+2022-10-20 02:34:48.625184 - buyer5 got a match reply from seller1
+2022-10-20 02:34:48.626028 - Buyer buyer0 now picked item boar to buy
+####################### buyer0 Iterations 16 #########################
+2022-10-20 02:34:48.627572 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:48.652118 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:48.664235 - buyer0 issues lookup to seller1
+2022-10-20 02:34:48.672682 - buyer3 picked seller1 to purchase salt
+2022-10-20 02:34:48.711753 - seller1 sold salt to buyer3
+2022-10-20 02:34:48.711780 - seller1 now has 1 salt item(s) remaining
+2022-10-20 02:34:48.724998 - buyer3 bought salt from seller1
+2022-10-20 02:34:48.725038 - Buyer buyer3 now picked item fish to buy
+####################### buyer3 Iterations 10 #########################
+2022-10-20 02:34:48.727935 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:48.752279 - buyer3 got a match reply from seller1
+2022-10-20 02:34:48.758813 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:48.759248 - Buyer buyer0 now picked item salt to buy
+####################### buyer0 Iterations 17 #########################
+2022-10-20 02:34:48.760381 - buyer2 got a match reply from seller1
+2022-10-20 02:34:48.767528 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:48.776201 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:48.782301 - buyer5 picked seller1 to purchase boar
+2022-10-20 02:34:48.786542 - buyer2 picked seller1 to purchase salt
+2022-10-20 02:34:48.814480 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:48.827378 - buyer0 issues lookup to seller1
+2022-10-20 02:34:48.849231 - buyer3 got a match reply from seller1
+2022-10-20 02:34:48.900009 - buyer3 picked seller1 to purchase fish
+2022-10-20 02:34:48.913304 - Buyer buyer0 now picked item fish to buy
+####################### buyer0 Iterations 18 #########################
+2022-10-20 02:34:48.915060 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:48.920037 - buyer0 got a match reply from seller1
+2022-10-20 02:34:48.930101 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:48.955525 - seller1 sold salt to buyer3
+2022-10-20 02:34:48.955551 - seller1 now has 0 salt item(s) remaining
+2022-10-20 02:34:48.958421 - buyer3 bought fish from seller1
+2022-10-20 02:34:48.958465 - Buyer buyer3 now picked item fish to buy
+####################### buyer3 Iterations 11 #########################
+2022-10-20 02:34:48.964771 - buyer0 issues lookup to seller1
+2022-10-20 02:34:48.968141 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:48.974051 - buyer2 got a match reply from seller1
+2022-10-20 02:34:48.977833 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:48.990156 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:49.013721 - buyer0 picked seller1 to purchase fish
+seller1 is now the seller of boar at time 2022-10-20 02:34:49.041956
+2022-10-20 02:34:49.045959 buyer0 failed to buy fish from seller1
+2022-10-20 02:34:49.045999 - Buyer buyer0 now picked item boar to buy
+####################### buyer0 Iterations 19 #########################
+2022-10-20 02:34:49.047488 - buyer0 issues lookup to buyer3
+2022-10-20 02:34:49.062117 - buyer0 issues lookup to buyer4
+2022-10-20 02:34:49.071970 - seller1 sold boar to buyer5
+2022-10-20 02:34:49.071997 - seller1 now has 9 boar item(s) remaining
+2022-10-20 02:34:49.072720 - seller1 sold boar to buyer2
+2022-10-20 02:34:49.072747 - seller1 now has 8 boar item(s) remaining
+2022-10-20 02:34:49.076886 - buyer2 bought salt from seller1
+2022-10-20 02:34:49.076924 - Buyer buyer2 now picked item salt to buy
+####################### buyer2 Iterations 9 #########################
+2022-10-20 02:34:49.079330 - buyer3 got a match reply from seller1
+2022-10-20 02:34:49.082001 - buyer2 issues lookup to seller1
+2022-10-20 02:34:49.085521 - buyer5 bought boar from seller1
+2022-10-20 02:34:49.085561 - Buyer buyer5 now picked item fish to buy
+####################### buyer5 Iterations 7 #########################
+2022-10-20 02:34:49.088369 - buyer0 issues lookup to seller1
+2022-10-20 02:34:49.089970 - buyer3 picked seller1 to purchase fish
+2022-10-20 02:34:49.091050 - buyer5 issues lookup to seller1
+2022-10-20 02:34:49.115209 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:49.115786 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:49.139726 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:49.140580 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:49.156593 - seller1 sold boar to buyer3
+2022-10-20 02:34:49.156621 - seller1 now has 7 boar item(s) remaining
+2022-10-20 02:34:49.156746 - Buyer buyer0 now picked item fish to buy
+110759
+2022-10-20 02:34:49.159144 - buyer0 got a match reply from seller1
+2022-10-20 02:34:49.161107 - buyer3 bought fish from seller1
+2022-10-20 02:34:49.161150 - Buyer buyer3 now picked item salt to buy
+####################### buyer3 Iterations 12 #########################
+2022-10-20 02:34:49.164896 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:49.175169 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:49.184406 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:49.187299 - buyer3 got a match reply from seller1
+2022-10-20 02:34:49.223659 - buyer3 got a match reply from seller1
+2022-10-20 02:34:49.242088 - buyer2 got a match reply from seller1
+2022-10-20 02:34:49.254484 - buyer3 picked seller1 to purchase salt
+2022-10-20 02:34:49.281980 - buyer3 got a match reply from seller1
+2022-10-20 02:34:49.299588 - buyer2 picked seller1 to purchase salt
+2022-10-20 02:34:49.301976 - seller1 sold boar to buyer3
+2022-10-20 02:34:49.301997 - seller1 now has 6 boar item(s) remaining
+2022-10-20 02:34:49.307691 - buyer3 bought salt from seller1
+2022-10-20 02:34:49.307730 - Buyer buyer3 now picked item salt to buy
+####################### buyer3 Iterations 13 #########################
+2022-10-20 02:34:49.312950 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:49.331585 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:49.371458 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:49.416439 - seller1 sold boar to buyer2
+2022-10-20 02:34:49.416467 - seller1 now has 5 boar item(s) remaining
+2022-10-20 02:34:49.420312 - buyer2 bought salt from seller1
+2022-10-20 02:34:49.420354 - Buyer buyer2 now picked item fish to buy
+####################### buyer2 Iterations 10 #########################
+2022-10-20 02:34:49.426471 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 8 #########################
+2022-10-20 02:34:49.430207 - buyer2 issues lookup to seller1
+2022-10-20 02:34:49.431945 - buyer3 picked seller1 to purchase salt
+2022-10-20 02:34:49.433260 - buyer5 issues lookup to seller1
+2022-10-20 02:34:49.433729 - buyer3 got a match reply from seller1
+2022-10-20 02:34:49.447443 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:49.450546 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:49.451252 - buyer0 got a match reply from seller1
+2022-10-20 02:34:49.469199 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:49.477429 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:49.481043 - seller1 sold boar to buyer3
+2022-10-20 02:34:49.481068 - seller1 now has 4 boar item(s) remaining
+2022-10-20 02:34:49.487635 - buyer3 bought salt from seller1
+2022-10-20 02:34:49.487676 - Buyer buyer3 now picked item boar to buy
+####################### buyer3 Iterations 14 #########################
+2022-10-20 02:34:49.489039 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:49.516387 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:49.534044 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:49.637402 - buyer3 picked seller1 to purchase boar
+2022-10-20 02:34:49.646084 - buyer0 got a match reply from seller1
+2022-10-20 02:34:49.657174 - buyer3 got a match reply from seller1
+2022-10-20 02:34:49.666212 - Buyer buyer2 now picked item salt to buy
+####################### buyer2 Iterations 11 #########################
+2022-10-20 02:34:49.668330 - buyer2 issues lookup to seller1
+2022-10-20 02:34:49.688867 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:49.697807 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 9 #########################
+2022-10-20 02:34:49.701233 - buyer5 issues lookup to seller1
+2022-10-20 02:34:49.708070 - seller1 sold boar to buyer3
+2022-10-20 02:34:49.708123 - seller1 now has 3 boar item(s) remaining
+2022-10-20 02:34:49.708802 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:49.715524 - buyer3 bought boar from seller1
+2022-10-20 02:34:49.715557 - Buyer buyer3 now picked item boar to buy
+####################### buyer3 Iterations 15 #########################
+2022-10-20 02:34:49.719515 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:49.731491 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:49.733343 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:49.749086 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:49.767685 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:49.772003 - buyer3 got a match reply from seller1
+2022-10-20 02:34:49.820923 - Buyer buyer2 now picked item fish to buy
+####################### buyer2 Iterations 12 #########################
+2022-10-20 02:34:49.823919 - buyer2 issues lookup to seller1
+2022-10-20 02:34:49.849545 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:49.867658 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:49.873901 - buyer3 picked seller1 to purchase boar
+2022-10-20 02:34:49.879131 - buyer3 got a match reply from seller1
+2022-10-20 02:34:49.929741 - seller1 sold boar to buyer3
+2022-10-20 02:34:49.929769 - seller1 now has 2 boar item(s) remaining
+2022-10-20 02:34:49.933959 - buyer3 bought boar from seller1
+2022-10-20 02:34:49.933998 - Buyer buyer3 now picked item salt to buy
+####################### buyer3 Iterations 16 #########################
+2022-10-20 02:34:49.941201 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:49.942520 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 10 #########################
+2022-10-20 02:34:49.944271 - buyer5 issues lookup to seller1
+2022-10-20 02:34:49.955476 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:49.962647 - buyer3 got a match reply from seller1
+2022-10-20 02:34:49.963762 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:49.965779 - Buyer buyer2 now picked item fish to buy
+####################### buyer2 Iterations 13 #########################
+2022-10-20 02:34:49.968493 - buyer2 issues lookup to seller1
+2022-10-20 02:34:49.972612 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:49.993417 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:49.995752 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:50.010691 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:50.025494 - buyer3 got a match reply from seller1
+2022-10-20 02:34:50.094695 - buyer3 picked seller1 to purchase salt
+2022-10-20 02:34:50.118610 - buyer3 got a match reply from seller1
+2022-10-20 02:34:50.121834 - buyer3 got a match reply from seller1
+2022-10-20 02:34:50.147810 - seller1 sold boar to buyer3
+2022-10-20 02:34:50.147837 - seller1 now has 1 boar item(s) remaining
+2022-10-20 02:34:50.151208 - buyer3 bought salt from seller1
+2022-10-20 02:34:50.151241 - Buyer buyer3 now picked item boar to buy
+####################### buyer3 Iterations 17 #########################
+2022-10-20 02:34:50.158440 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:50.174186 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:50.174685 - Buyer buyer2 now picked item boar to buy
+####################### buyer2 Iterations 14 #########################
+2022-10-20 02:34:50.177695 - buyer2 issues lookup to seller1
+2022-10-20 02:34:50.193815 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:50.202528 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:50.206489 - buyer3 got a match reply from seller1
+2022-10-20 02:34:50.213317 - Buyer buyer5 now picked item boar to buy
+####################### buyer5 Iterations 11 #########################
+2022-10-20 02:34:50.216874 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:50.220690 - buyer5 issues lookup to seller1
+2022-10-20 02:34:50.235321 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:50.265780 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:50.292897 - buyer3 picked seller1 to purchase boar
+2022-10-20 02:34:50.315766 - buyer2 got a match reply from seller1
+2022-10-20 02:34:50.337319 - seller1 sold boar to buyer3
+2022-10-20 02:34:50.337346 - seller1 now has 0 boar item(s) remaining
+2022-10-20 02:34:50.345379 - buyer3 bought boar from seller1
+2022-10-20 02:34:50.345412 - Buyer buyer3 now picked item fish to buy
+####################### buyer3 Iterations 18 #########################
+2022-10-20 02:34:50.348634 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:50.358430 - buyer3 got a match reply from seller1
+2022-10-20 02:34:50.359285 - buyer2 picked seller1 to purchase boar
+2022-10-20 02:34:50.360065 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:50.372566 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:50.373111 - buyer3 got a match reply from seller1
+seller1 is now the seller of salt at time 2022-10-20 02:34:50.393739
+2022-10-20 02:34:50.395482 - buyer3 got a match reply from seller1
+2022-10-20 02:34:50.400367 buyer2 failed to buy boar from seller1
+2022-10-20 02:34:50.400406 - Buyer buyer2 now picked item salt to buy
+####################### buyer2 Iterations 15 #########################
+2022-10-20 02:34:50.401680 - buyer2 issues lookup to seller1
+2022-10-20 02:34:50.402662 - buyer3 got a match reply from seller1
+2022-10-20 02:34:50.413457 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:50.426048 - buyer5 got a match reply from seller1
+2022-10-20 02:34:50.439600 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:50.441776 - buyer3 picked seller1 to purchase fish
+2022-10-20 02:34:50.467782 - buyer5 picked seller1 to purchase boar
+2022-10-20 02:34:50.468709 - seller1 sold salt to buyer3
+2022-10-20 02:34:50.468735 - seller1 now has 9 salt item(s) remaining
+2022-10-20 02:34:50.473092 - buyer3 bought fish from seller1
+2022-10-20 02:34:50.473232 - Buyer buyer3 now picked item boar to buy
+####################### buyer3 Iterations 19 #########################
+2022-10-20 02:34:50.480329 - buyer3 issues lookup to buyer0
+2022-10-20 02:34:50.493107 - buyer2 got a match reply from seller1
+2022-10-20 02:34:50.535630 - buyer3 issues lookup to buyer2
+2022-10-20 02:34:50.560570 - buyer3 issues lookup to buyer5
+2022-10-20 02:34:50.564515 - buyer2 picked seller1 to purchase salt
+2022-10-20 02:34:50.605176 - seller1 sold salt to buyer2
+2022-10-20 02:34:50.605199 - seller1 now has 8 salt item(s) remaining
+2022-10-20 02:34:50.613470 - buyer2 bought salt from seller1
+2022-10-20 02:34:50.613515 - Buyer buyer2 now picked item boar to buy
+####################### buyer2 Iterations 16 #########################
+2022-10-20 02:34:50.615994 - buyer2 issues lookup to seller1
+2022-10-20 02:34:50.646456 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:50.658633 - Buyer buyer3 now picked item salt to buy
+185414
+2022-10-20 02:34:50.662737 - seller1 sold salt to buyer5
+2022-10-20 02:34:50.662759 - seller1 now has 7 salt item(s) remaining
+2022-10-20 02:34:50.666798 - buyer5 bought boar from seller1
+2022-10-20 02:34:50.666833 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 12 #########################
+2022-10-20 02:34:50.668179 - buyer5 issues lookup to seller1
+2022-10-20 02:34:50.669712 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:50.684512 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:50.699369 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:50.734359 - Buyer buyer2 now picked item salt to buy
+####################### buyer2 Iterations 17 #########################
+2022-10-20 02:34:50.736957 - buyer2 issues lookup to seller1
+2022-10-20 02:34:50.754826 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:50.766263 - buyer2 got a match reply from seller1
+2022-10-20 02:34:50.768320 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:50.789084 - buyer5 got a match reply from seller1
+2022-10-20 02:34:50.797513 - buyer2 got a match reply from seller1
+2022-10-20 02:34:50.799219 - buyer2 got a match reply from seller1
+2022-10-20 02:34:50.816215 - buyer2 picked seller1 to purchase salt
+2022-10-20 02:34:50.816846 - buyer5 picked seller1 to purchase salt
+2022-10-20 02:34:50.855993 - buyer5 got a match reply from seller1
+2022-10-20 02:34:50.862385 - seller1 sold salt to buyer2
+2022-10-20 02:34:50.862414 - seller1 now has 6 salt item(s) remaining
+2022-10-20 02:34:50.871898 - buyer2 bought salt from seller1
+2022-10-20 02:34:50.871931 - Buyer buyer2 now picked item fish to buy
+####################### buyer2 Iterations 18 #########################
+2022-10-20 02:34:50.873057 - buyer2 issues lookup to seller1
+2022-10-20 02:34:50.877630 - seller1 sold salt to buyer5
+2022-10-20 02:34:50.877653 - seller1 now has 5 salt item(s) remaining
+2022-10-20 02:34:50.882273 - buyer5 bought salt from seller1
+2022-10-20 02:34:50.882312 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 13 #########################
+2022-10-20 02:34:50.884213 - buyer5 issues lookup to seller1
+2022-10-20 02:34:50.891966 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:50.899637 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:50.901781 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:50.920740 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:50.932164 - buyer2 got a match reply from seller1
+2022-10-20 02:34:50.949725 - buyer2 got a match reply from seller1
+2022-10-20 02:34:50.956160 - buyer5 got a match reply from seller1
+2022-10-20 02:34:50.963426 - buyer2 got a match reply from seller1
+2022-10-20 02:34:50.979326 - buyer2 picked seller1 to purchase fish
+2022-10-20 02:34:50.985670 - buyer5 got a match reply from seller1
+2022-10-20 02:34:50.992048 - buyer5 picked seller1 to purchase salt
+2022-10-20 02:34:51.024400 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.025934 - buyer2 got a match reply from seller1
+2022-10-20 02:34:51.032927 - seller1 sold salt to buyer2
+2022-10-20 02:34:51.032953 - seller1 now has 4 salt item(s) remaining
+2022-10-20 02:34:51.039706 - buyer2 bought fish from seller1
+2022-10-20 02:34:51.039746 - Buyer buyer2 now picked item boar to buy
+####################### buyer2 Iterations 19 #########################
+2022-10-20 02:34:51.039921 - buyer2 issues lookup to seller1
+2022-10-20 02:34:51.044087 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.044513 - seller1 sold salt to buyer5
+2022-10-20 02:34:51.044533 - seller1 now has 3 salt item(s) remaining
+2022-10-20 02:34:51.049887 - buyer5 bought salt from seller1
+2022-10-20 02:34:51.049919 - Buyer buyer5 now picked item boar to buy
+####################### buyer5 Iterations 14 #########################
+2022-10-20 02:34:51.050533 - buyer5 issues lookup to seller1
+2022-10-20 02:34:51.053870 - buyer2 issues lookup to buyer5
+2022-10-20 02:34:51.059407 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:51.066783 - buyer2 issues lookup to buyer3
+2022-10-20 02:34:51.074289 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:51.121626 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.135919 - buyer5 picked seller1 to purchase boar
+2022-10-20 02:34:51.141208 - buyer2 picked seller1 to purchase boar
+2022-10-20 02:34:51.146779 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.190878 - seller1 sold salt to buyer5
+2022-10-20 02:34:51.190900 - seller1 now has 2 salt item(s) remaining
+2022-10-20 02:34:51.192617 - seller1 sold salt to buyer2
+2022-10-20 02:34:51.192635 - seller1 now has 1 salt item(s) remaining
+2022-10-20 02:34:51.196186 - buyer5 bought boar from seller1
+2022-10-20 02:34:51.196221 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 15 #########################
+2022-10-20 02:34:51.197040 - buyer2 bought boar from seller1
+2022-10-20 02:34:51.197083 - Buyer buyer2 now picked item salt to buy
+157328
+2022-10-20 02:34:51.197906 - buyer5 issues lookup to seller1
+2022-10-20 02:34:51.221856 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:51.228198 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:51.239227 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.254267 - buyer5 picked seller1 to purchase salt
+2022-10-20 02:34:51.262337 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.275207 - seller1 sold salt to buyer5
+2022-10-20 02:34:51.275230 - seller1 now has 0 salt item(s) remaining
+2022-10-20 02:34:51.276148 - buyer5 bought salt from seller1
+2022-10-20 02:34:51.276177 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 16 #########################
+2022-10-20 02:34:51.276494 - buyer5 issues lookup to seller1
+2022-10-20 02:34:51.280003 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:51.287605 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:51.297741 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.298776 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.302890 - buyer5 picked seller1 to purchase salt
+2022-10-20 02:34:51.304533 - buyer5 got a match reply from seller1
+seller1 is now the seller of fish at time 2022-10-20 02:34:51.323335
+2022-10-20 02:34:51.324702 buyer5 failed to buy salt from seller1
+2022-10-20 02:34:51.324741 - Buyer buyer5 now picked item boar to buy
+####################### buyer5 Iterations 17 #########################
+2022-10-20 02:34:51.325509 - buyer5 issues lookup to seller1
+2022-10-20 02:34:51.333645 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:51.337726 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.342209 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:51.372965 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.377929 - buyer5 picked seller1 to purchase boar
+2022-10-20 02:34:51.383882 - buyer5 got a match reply from seller1
+2022-10-20 02:34:51.417393 - seller1 sold fish to buyer5
+2022-10-20 02:34:51.417421 - seller1 now has 9 fish item(s) remaining
+2022-10-20 02:34:51.419133 - buyer5 bought boar from seller1
+2022-10-20 02:34:51.419172 - Buyer buyer5 now picked item salt to buy
+####################### buyer5 Iterations 18 #########################
+2022-10-20 02:34:51.421620 - buyer5 issues lookup to seller1
+2022-10-20 02:34:51.427320 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:51.429229 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:51.455247 - buyer5 picked seller1 to purchase salt
+2022-10-20 02:34:51.483009 - seller1 sold fish to buyer5
+2022-10-20 02:34:51.483037 - seller1 now has 8 fish item(s) remaining
+2022-10-20 02:34:51.484239 - buyer5 bought salt from seller1
+2022-10-20 02:34:51.484280 - Buyer buyer5 now picked item boar to buy
+####################### buyer5 Iterations 19 #########################
+2022-10-20 02:34:51.491216 - buyer5 issues lookup to seller1
+2022-10-20 02:34:51.503120 - buyer5 issues lookup to buyer2
+2022-10-20 02:34:51.505665 - buyer5 issues lookup to buyer3
+2022-10-20 02:34:51.537014 - Buyer buyer5 now picked item fish to buy
+52744

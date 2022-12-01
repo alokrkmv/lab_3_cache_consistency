@@ -1,0 +1,520 @@
+Namespace server is already running on localhost
+Removing dead peers from the server
+Potentially removing lots of items from the Name server. Are you sure (y/n)?6 items removed.
+Removing dead peers from the server
+Potentially removing lots of items from the Name server. Are you sure (y/n)?4 items removed.
+Starting the main process
+Showing the graphical representation of the bazaar
+Connected succesfuly to the databse
+2022-11-18 18:03:39.573511 : buyer0 joined the bazar as buyer looking for boar
+2022-11-18 18:03:39.576666 : seller1 joined the bazar as seller selling boar
+2022-11-18 18:03:39.580555 : seller2 joined the bazar as seller selling salt
+2022-11-18 18:03:39.581303 : seller3 joined the bazar as seller selling fish
+2022-11-18 18:03:39.585774 : buyer4 joined the bazar as buyer looking for fish
+2022-11-18 18:03:39.586803 : buyer5 joined the bazar as buyer looking for fish
+2022-11-18 18:03:39.590092 : seller6 joined the bazar as seller selling fish
+2022-11-18 18:03:39.591808 : seller8 joined the bazar as seller selling salt
+2022-11-18 18:03:39.592269 : buyer7 joined the bazar as buyer looking for fish
+2022-11-18 18:03:39.594064 : buyer9 joined the bazar as buyer looking for salt
+2022-11-18 18:03:43.585559: seller2 has started the election
+2022-11-18 18:03:43.619875: Dear buyers and sellers, My ID is buyer9, and I am the new coordinator
+2022-11-18 18:03:43.633806: buyer0 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+2022-11-18 18:03:43.633863: Election has completed succesfully and buyer0 is ready to trade
+2022-11-18 18:03:43.638174: seller1 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+2022-11-18 18:03:43.638212: Election has completed succesfully and seller1 is ready to trade
+2022-11-18 18:03:43.646539: seller2 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+2022-11-18 18:03:43.646612: Election has completed succesfully and seller2 is ready to trade
+2022-11-18 18:03:43.649954: seller3 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+2022-11-18 18:03:43.650014: Election has completed succesfully and seller3 is ready to trade
+2022-11-18 18:03:43.655010: buyer4 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+2022-11-18 18:03:43.655051: Election has completed succesfully and buyer4 is ready to trade
+2022-11-18 18:03:43.658892: buyer5 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+2022-11-18 18:03:43.658939: Election has completed succesfully and buyer5 is ready to trade
+2022-11-18 18:03:43.663175: seller6 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+2022-11-18 18:03:43.663232: Election has completed succesfully and seller6 is ready to trade
+2022-11-18 18:03:43.666373: buyer7 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+2022-11-18 18:03:43.666414: Election has completed succesfully and buyer7 is ready to trade
+2022-11-18 18:03:43.669206: Trader is ready for product registration
+2022-11-18 18:03:43.669675: seller8 received message won from buyer9 and recognizes buyer9 as the new coordinator of the bazaar
+2022-11-18 18:03:43.669734: Election has completed succesfully and seller8 is ready to trade
+2022-11-18 18:03:58.692269: seller1 registered their product boar with trader
+2022-11-18 18:03:58.759812: seller3 registered their product fish with trader
+2022-11-18 18:03:58.766132: seller2 registered their product salt with trader
+2022-11-18 18:03:58.767858: seller6 registered their product fish with trader
+2022-11-18 18:03:58.768785: seller8 registered their product salt with trader
+2022-11-18 18:04:08.691925 : Trader is ready to trade
+2022-11-18 18:04:08.694926 : Trader clock : 2
+2022-11-18 18:04:08.695076 : Trader got a purchase request for item boar from buyer0 with clock 1
+2022-11-18 18:04:08.704479 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:08.705835 : seller1 has sold boar to buyer0 and earned 7.2 $
+2022-11-18 18:04:08.705891 : seller1 has 9 boar left
+2022-11-18 18:04:08.707323 : buyer0 purchased boar from seller1
+2022-11-18 18:04:08.755766 : Trader clock : 3
+2022-11-18 18:04:08.755816 : Trader got a purchase request for item fish from buyer4 with clock 1
+2022-11-18 18:04:08.767149 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:08.768584 : seller3 has sold fish to buyer4 and earned 4.0 $
+2022-11-18 18:04:08.768630 : seller3 has 9 fish left
+2022-11-18 18:04:08.770374 : buyer4 purchased fish from seller3
+2022-11-18 18:04:08.771134 : Trader clock : 4
+2022-11-18 18:04:08.771301 : Trader got a purchase request for item fish from buyer5 with clock 1
+2022-11-18 18:04:08.778934 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:08.780494 : seller3 has sold fish to buyer5 and earned 4.0 $
+2022-11-18 18:04:08.780537 : seller3 has 8 fish left
+2022-11-18 18:04:08.782309 : Trader clock : 5
+2022-11-18 18:04:08.782389 : Trader got a purchase request for item fish from buyer7 with clock 1
+2022-11-18 18:04:08.782465 : buyer5 purchased fish from seller3
+2022-11-18 18:04:08.789508 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:08.790604 : seller3 has sold fish to buyer7 and earned 4.0 $
+2022-11-18 18:04:08.790645 : seller3 has 7 fish left
+2022-11-18 18:04:08.796654 : buyer7 purchased fish from seller3
+2022-11-18 18:04:18.854034 : Trader clock : 6
+2022-11-18 18:04:18.854064 : Trader got a purchase request for item boar from buyer4 with clock 2
+2022-11-18 18:04:18.860929 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:18.862450 : seller1 has sold boar to buyer4 and earned 7.2 $
+2022-11-18 18:04:18.862494 : seller1 has 8 boar left
+2022-11-18 18:04:18.863924 : Trader clock : 7
+2022-11-18 18:04:18.863977 : Trader got a purchase request for item salt from buyer5 with clock 2
+2022-11-18 18:04:18.864129 : buyer4 purchased boar from seller1
+2022-11-18 18:04:18.870861 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:18.872255 : seller2 has sold salt to buyer5 and earned 5.6 $
+2022-11-18 18:04:18.872309 : seller2 has 9 salt left
+2022-11-18 18:04:18.873767 : Trader clock : 8
+2022-11-18 18:04:18.873859 : Trader got a purchase request for item fish from buyer7 with clock 2
+2022-11-18 18:04:18.874028 : buyer5 purchased salt from seller2
+2022-11-18 18:04:18.880278 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:18.881645 : seller3 has sold fish to buyer7 and earned 4.0 $
+2022-11-18 18:04:18.881692 : seller3 has 6 fish left
+2022-11-18 18:04:18.888041 : buyer7 purchased fish from seller3
+2022-11-18 18:04:28.843557 : Trader clock : 9
+2022-11-18 18:04:28.843616 : Trader got a purchase request for item fish from buyer0 with clock 2
+2022-11-18 18:04:28.848422 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:28.849673 : seller3 has sold fish to buyer0 and earned 4.0 $
+2022-11-18 18:04:28.849704 : seller3 has 5 fish left
+2022-11-18 18:04:28.855997 : buyer0 purchased fish from seller3
+2022-11-18 18:04:28.934110 : Trader clock : 10
+2022-11-18 18:04:28.934427 : Trader got a purchase request for item boar from buyer7 with clock 3
+2022-11-18 18:04:28.943471 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:28.945132 : seller1 has sold boar to buyer7 and earned 7.2 $
+2022-11-18 18:04:28.945179 : seller1 has 7 boar left
+2022-11-18 18:04:28.946457 : Trader clock : 11
+2022-11-18 18:04:28.946503 : Trader got a purchase request for item boar from buyer4 with clock 3
+2022-11-18 18:04:28.946700 : buyer7 purchased boar from seller1
+2022-11-18 18:04:28.952714 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:28.954428 : seller1 has sold boar to buyer4 and earned 7.2 $
+2022-11-18 18:04:28.954484 : seller1 has 6 boar left
+2022-11-18 18:04:28.955748 : Trader clock : 12
+2022-11-18 18:04:28.955860 : Trader got a purchase request for item boar from buyer5 with clock 3
+2022-11-18 18:04:28.956014 : buyer4 purchased boar from seller1
+2022-11-18 18:04:28.962735 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:28.964230 : seller1 has sold boar to buyer5 and earned 7.2 $
+2022-11-18 18:04:28.964467 : seller1 has 5 boar left
+2022-11-18 18:04:28.977385 : buyer5 purchased boar from seller1
+2022-11-18 18:04:39.027026 : Trader clock : 13
+2022-11-18 18:04:39.027062 : Trader got a purchase request for item fish from buyer5 with clock 4
+2022-11-18 18:04:39.030711 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:39.031925 : seller3 has sold fish to buyer5 and earned 4.0 $
+2022-11-18 18:04:39.031966 : seller3 has 4 fish left
+2022-11-18 18:04:39.032876 : buyer5 purchased fish from seller3
+2022-11-18 18:04:39.033221 : Trader clock : 14
+2022-11-18 18:04:39.033256 : Trader got a purchase request for item salt from buyer4 with clock 4
+2022-11-18 18:04:39.039581 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:39.041013 : seller2 has sold salt to buyer4 and earned 5.6 $
+2022-11-18 18:04:39.041061 : seller2 has 8 salt left
+2022-11-18 18:04:39.042638 : Trader clock : 15
+2022-11-18 18:04:39.042852 : buyer4 purchased salt from seller2
+2022-11-18 18:04:39.044249 : Trader got a purchase request for item salt from buyer7 with clock 4
+2022-11-18 18:04:39.050015 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:39.051506 : seller2 has sold salt to buyer7 and earned 5.6 $
+2022-11-18 18:04:39.051551 : seller2 has 7 salt left
+2022-11-18 18:04:39.057700 : buyer7 purchased salt from seller2
+2022-11-18 18:04:48.944599 : Trader clock : 16
+2022-11-18 18:04:48.944630 : Trader got a purchase request for item fish from buyer0 with clock 4
+2022-11-18 18:04:48.950560 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:48.952117 : seller3 has sold fish to buyer0 and earned 4.0 $
+2022-11-18 18:04:48.952182 : seller3 has 3 fish left
+2022-11-18 18:04:48.958323 : buyer0 purchased fish from seller3
+2022-11-18 18:04:49.101623 : Trader clock : 17
+2022-11-18 18:04:49.102106 : Trader got a purchase request for item fish from buyer7 with clock 5
+2022-11-18 18:04:49.108052 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:49.109609 : seller3 has sold fish to buyer7 and earned 4.0 $
+2022-11-18 18:04:49.109653 : seller3 has 2 fish left
+2022-11-18 18:04:49.110942 : Trader clock : 18
+2022-11-18 18:04:49.111031 : Trader got a purchase request for item boar from buyer5 with clock 5
+2022-11-18 18:04:49.111229 : buyer7 purchased fish from seller3
+2022-11-18 18:04:49.117591 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:49.119847 : seller1 has sold boar to buyer5 and earned 7.2 $
+2022-11-18 18:04:49.119895 : seller1 has 4 boar left
+2022-11-18 18:04:49.121129 : Trader clock : 19
+2022-11-18 18:04:49.121231 : Trader got a purchase request for item salt from buyer4 with clock 5
+2022-11-18 18:04:49.121299 : buyer5 purchased boar from seller1
+2022-11-18 18:04:49.127139 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:49.128561 : seller2 has sold salt to buyer4 and earned 5.6 $
+2022-11-18 18:04:49.128605 : seller2 has 6 salt left
+2022-11-18 18:04:49.134808 : buyer4 purchased salt from seller2
+2022-11-18 18:04:59.185338 : Trader clock : 20
+2022-11-18 18:04:59.185478 : Trader got a purchase request for item fish from buyer7 with clock 6
+2022-11-18 18:04:59.192779 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:59.194467 : seller3 has sold fish to buyer7 and earned 4.0 $
+2022-11-18 18:04:59.194511 : seller3 has 1 fish left
+2022-11-18 18:04:59.196734 : Trader clock : 21
+2022-11-18 18:04:59.196982 : Trader got a purchase request for item salt from buyer4 with clock 6
+2022-11-18 18:04:59.197006 : buyer7 purchased fish from seller3
+2022-11-18 18:04:59.204607 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:59.206209 : seller2 has sold salt to buyer4 and earned 5.6 $
+2022-11-18 18:04:59.206239 : seller2 has 5 salt left
+2022-11-18 18:04:59.210768 : Trader clock : 22
+2022-11-18 18:04:59.210891 : Trader got a purchase request for item salt from buyer5 with clock 6
+2022-11-18 18:04:59.211004 : buyer4 purchased salt from seller2
+2022-11-18 18:04:59.216116 :Current Trader of the bazar is buyer9
+2022-11-18 18:04:59.217846 : seller2 has sold salt to buyer5 and earned 5.6 $
+2022-11-18 18:04:59.217885 : seller2 has 4 salt left
+2022-11-18 18:04:59.224066 : buyer5 purchased salt from seller2
+2022-11-18 18:05:09.053856 : Trader clock : 23
+2022-11-18 18:05:09.054316 : Trader got a purchase request for item fish from buyer0 with clock 6
+2022-11-18 18:05:09.059340 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:09.060569 : seller3 has sold fish to buyer0 and earned 4.0 $
+2022-11-18 18:05:09.060610 : seller3 has 0 fish left
+2022-11-18 18:05:09.077312: seller3 is out of stock for item fish
+2022-11-18 18:05:09.082759 : buyer0 purchased fish from seller3
+2022-11-18 18:05:09.292363 : Trader clock : 24
+2022-11-18 18:05:09.292615 : Trader got a purchase request for item fish from buyer5 with clock 7
+2022-11-18 18:05:09.296836 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:09.298037: seller3 is out of stock for item fish
+2022-11-18 18:05:09.298098: seller3 has picked item salt to sell
+2022-11-18 18:05:09.299027 : Trader clock : 25
+2022-11-18 18:05:09.299084 : Trader got a purchase request for item fish from buyer7 with clock 7
+2022-11-18 18:05:09.299186 : buyer5 purchased fish from seller3
+2022-11-18 18:05:09.304421 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:09.305833: seller3 is out of stock for item fish
+2022-11-18 18:05:09.305889: seller3 has picked item boar to sell
+2022-11-18 18:05:09.306919 : buyer7 purchased fish from seller3
+2022-11-18 18:05:09.307304 : Trader clock : 26
+2022-11-18 18:05:09.307640 : Trader got a purchase request for item fish from buyer4 with clock 7
+2022-11-18 18:05:09.313038 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:09.314664: seller3 is out of stock for item fish
+2022-11-18 18:05:09.315641 : buyer4 purchased fish from seller3
+2022-11-18 18:05:19.396103 : Trader clock : 27
+2022-11-18 18:05:19.396903 : Trader got a purchase request for item fish from buyer7 with clock 8
+2022-11-18 18:05:19.403210 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:19.404601: seller3 is out of stock for item fish
+2022-11-18 18:05:19.404655: seller3 has picked item salt to sell
+2022-11-18 18:05:19.405773 : buyer7 purchased fish from seller3
+2022-11-18 18:05:19.406076 : Trader clock : 28
+2022-11-18 18:05:19.406488 : Trader got a purchase request for item salt from buyer5 with clock 8
+2022-11-18 18:05:19.411599 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:19.412959 : seller2 has sold salt to buyer5 and earned 5.6 $
+2022-11-18 18:05:19.413008 : seller2 has 3 salt left
+2022-11-18 18:05:19.414313 : buyer5 purchased salt from seller2
+2022-11-18 18:05:19.415427 : Trader clock : 29
+2022-11-18 18:05:19.415818 : Trader got a purchase request for item boar from buyer4 with clock 8
+2022-11-18 18:05:19.421580 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:19.423170 : seller1 has sold boar to buyer4 and earned 7.2 $
+2022-11-18 18:05:19.423215 : seller1 has 3 boar left
+2022-11-18 18:05:19.439742 : buyer4 purchased boar from seller1
+2022-11-18 18:05:24.371537: seller3 registered their product salt with trader
+2022-11-18 18:05:24.376926: seller3 registered their product salt with trader
+2022-11-18 18:05:29.148695 : Trader clock : 30
+2022-11-18 18:05:29.148732 : Trader got a purchase request for item salt from buyer0 with clock 8
+2022-11-18 18:05:29.152947 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:29.154121 : seller3 has sold salt to buyer0 and earned 4.0 $
+2022-11-18 18:05:29.154158 : seller3 has 9 salt left
+2022-11-18 18:05:29.161529 : buyer0 purchased salt from seller3
+2022-11-18 18:05:29.470065 : Trader clock : 31
+2022-11-18 18:05:29.470350 : Trader got a purchase request for item fish from buyer7 with clock 9
+2022-11-18 18:05:29.475706 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:29.476964 : seller6 has sold fish to buyer7 and earned 8.0 $
+2022-11-18 18:05:29.477005 : seller6 has 9 fish left
+2022-11-18 18:05:29.477846 : buyer7 purchased fish from seller6
+2022-11-18 18:05:29.478330 : Trader clock : 32
+2022-11-18 18:05:29.478652 : Trader got a purchase request for item salt from buyer4 with clock 9
+2022-11-18 18:05:29.484496 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:29.486436 : seller3 has sold salt to buyer4 and earned 4.0 $
+2022-11-18 18:05:29.486483 : seller3 has 8 salt left
+2022-11-18 18:05:29.487891 : Trader clock : 33
+2022-11-18 18:05:29.487943 : Trader got a purchase request for item boar from buyer5 with clock 9
+2022-11-18 18:05:29.488123 : buyer4 purchased salt from seller3
+2022-11-18 18:05:29.494042 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:29.495757 : seller1 has sold boar to buyer5 and earned 7.2 $
+2022-11-18 18:05:29.495801 : seller1 has 2 boar left
+2022-11-18 18:05:29.502035 : buyer5 purchased boar from seller1
+2022-11-18 18:05:39.556327 : Trader clock : 34
+2022-11-18 18:05:39.556446 : Trader got a purchase request for item fish from buyer5 with clock 10
+2022-11-18 18:05:39.563054 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:39.564440 : seller6 has sold fish to buyer5 and earned 8.0 $
+2022-11-18 18:05:39.564485 : seller6 has 8 fish left
+2022-11-18 18:05:39.566703 : buyer5 purchased fish from seller6
+2022-11-18 18:05:39.567055 : Trader clock : 35
+2022-11-18 18:05:39.567269 : Trader got a purchase request for item salt from buyer4 with clock 10
+2022-11-18 18:05:39.573431 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:39.574902 : seller3 has sold salt to buyer4 and earned 4.0 $
+2022-11-18 18:05:39.574947 : seller3 has 7 salt left
+2022-11-18 18:05:39.576591 : buyer4 purchased salt from seller3
+2022-11-18 18:05:39.576976 : Trader clock : 36
+2022-11-18 18:05:39.577025 : Trader got a purchase request for item fish from buyer7 with clock 10
+2022-11-18 18:05:39.583483 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:39.585105 : seller6 has sold fish to buyer7 and earned 8.0 $
+2022-11-18 18:05:39.585156 : seller6 has 7 fish left
+2022-11-18 18:05:39.591350 : buyer7 purchased fish from seller6
+2022-11-18 18:05:49.260934 : Trader clock : 37
+2022-11-18 18:05:49.261019 : Trader got a purchase request for item salt from buyer0 with clock 10
+2022-11-18 18:05:49.266731 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:49.268026 : seller3 has sold salt to buyer0 and earned 4.0 $
+2022-11-18 18:05:49.268070 : seller3 has 6 salt left
+2022-11-18 18:05:49.290430 : buyer0 purchased salt from seller3
+2022-11-18 18:05:49.649248 : Trader clock : 38
+2022-11-18 18:05:49.649328 : Trader got a purchase request for item fish from buyer7 with clock 11
+2022-11-18 18:05:49.655251 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:49.656847 : seller6 has sold fish to buyer7 and earned 8.0 $
+2022-11-18 18:05:49.656893 : seller6 has 6 fish left
+2022-11-18 18:05:49.658554 : Trader clock : 39
+2022-11-18 18:05:49.658606 : Trader got a purchase request for item boar from buyer5 with clock 11
+2022-11-18 18:05:49.658805 : buyer7 purchased fish from seller6
+2022-11-18 18:05:49.665999 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:49.667412 : seller1 has sold boar to buyer5 and earned 7.2 $
+2022-11-18 18:05:49.667457 : seller1 has 1 boar left
+2022-11-18 18:05:49.668986 : Trader clock : 40
+2022-11-18 18:05:49.669133 : Trader got a purchase request for item salt from buyer4 with clock 11
+2022-11-18 18:05:49.669145 : buyer5 purchased boar from seller1
+2022-11-18 18:05:49.676617 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:49.678074 : seller3 has sold salt to buyer4 and earned 4.0 $
+2022-11-18 18:05:49.678117 : seller3 has 5 salt left
+2022-11-18 18:05:49.684396 : buyer4 purchased salt from seller3
+2022-11-18 18:05:59.695624 : Trader clock : 41
+2022-11-18 18:05:59.696325 : Trader got a purchase request for item boar from buyer7 with clock 12
+2022-11-18 18:05:59.701400 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:59.702863 : seller1 has sold boar to buyer7 and earned 7.2 $
+2022-11-18 18:05:59.702911 : seller1 has 0 boar left
+2022-11-18 18:05:59.704576 : Trader clock : 42
+2022-11-18 18:05:59.704793 : buyer7 purchased boar from seller1
+2022-11-18 18:05:59.704837 : Trader got a purchase request for item fish from buyer5 with clock 12
+2022-11-18 18:05:59.707471: seller1 is out of stock for item boar
+2022-11-18 18:05:59.713276 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:59.714430 : seller6 has sold fish to buyer5 and earned 8.0 $
+2022-11-18 18:05:59.715222 : seller6 has 5 fish left
+2022-11-18 18:05:59.720698 : buyer5 purchased fish from seller6
+2022-11-18 18:05:59.760370 : Trader clock : 43
+2022-11-18 18:05:59.760426 : Trader got a purchase request for item fish from buyer4 with clock 12
+2022-11-18 18:05:59.765260 :Current Trader of the bazar is buyer9
+2022-11-18 18:05:59.766373 : seller6 has sold fish to buyer4 and earned 8.0 $
+2022-11-18 18:05:59.766400 : seller6 has 4 fish left
+2022-11-18 18:05:59.772778 : buyer4 purchased fish from seller6
+Current leader is dead!!! Start re-election
+2022-11-18 18:06:09.325454: buyer0 has started the election
+2022-11-18 18:06:09.359161: Dear buyers and sellers, My ID is seller8, and I am the new coordinator
+2022-11-18 18:06:09.376167: buyer0 received message won from seller8 and recognizes seller8 as the new coordinator of the bazaar
+2022-11-18 18:06:09.376225: Election has completed succesfully and buyer0 is ready to trade
+2022-11-18 18:06:09.384869: seller1 received message won from seller8 and recognizes seller8 as the new coordinator of the bazaar
+2022-11-18 18:06:09.385008: Election has completed succesfully and seller1 is ready to trade
+2022-11-18 18:06:09.395047: seller2 received message won from seller8 and recognizes seller8 as the new coordinator of the bazaar
+2022-11-18 18:06:09.395245: Election has completed succesfully and seller2 is ready to trade
+2022-11-18 18:06:09.401153: seller3 received message won from seller8 and recognizes seller8 as the new coordinator of the bazaar
+2022-11-18 18:06:09.401200: Election has completed succesfully and seller3 is ready to trade
+2022-11-18 18:06:09.406085: buyer4 received message won from seller8 and recognizes seller8 as the new coordinator of the bazaar
+2022-11-18 18:06:09.406190: Election has completed succesfully and buyer4 is ready to trade
+2022-11-18 18:06:09.410990: buyer5 received message won from seller8 and recognizes seller8 as the new coordinator of the bazaar
+2022-11-18 18:06:09.411072: Election has completed succesfully and buyer5 is ready to trade
+2022-11-18 18:06:09.413917: seller6 received message won from seller8 and recognizes seller8 as the new coordinator of the bazaar
+2022-11-18 18:06:09.413959: Election has completed succesfully and seller6 is ready to trade
+2022-11-18 18:06:09.417065: buyer7 received message won from seller8 and recognizes seller8 as the new coordinator of the bazaar
+2022-11-18 18:06:09.417106: Election has completed succesfully and buyer7 is ready to trade
+2022-11-18 18:06:09.418852: Trader is ready for product registration
+2022-11-18 18:06:09.419121: buyer9 received message won from seller8 and recognizes seller8 as the new coordinator of the bazaar
+2022-11-18 18:06:09.419169: Election has completed succesfully and buyer9 is ready to trade
+2022-11-18 18:06:34.443041 : Trader is ready to trade
+2022-11-18 18:06:34.444934 : Trader clock : 13
+2022-11-18 18:06:34.445260 : Trader got a purchase request for item fish from buyer4 with clock 12
+2022-11-18 18:06:34.455640 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.457005 : seller6 has sold fish to buyer4 and earned 8.0 $
+2022-11-18 18:06:34.457301 : seller6 has 3 fish left
+2022-11-18 18:06:34.458067 : buyer4 purchased fish from seller6
+2022-11-18 18:06:34.458790 : Trader clock : 14
+2022-11-18 18:06:34.459150 : Trader got a purchase request for item boar from buyer7 with clock 13
+2022-11-18 18:06:34.469809 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.471159: seller1 is out of stock for item boar
+2022-11-18 18:06:34.472244 : buyer7 purchased boar from seller1
+2022-11-18 18:06:34.473051 : Trader clock : 15
+2022-11-18 18:06:34.473450 : Trader got a purchase request for item boar from buyer5 with clock 13
+2022-11-18 18:06:34.477907 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.479122: seller1 is out of stock for item boar
+2022-11-18 18:06:34.480775 : Trader clock : 16
+2022-11-18 18:06:34.480820 : Trader got a purchase request for item fish from buyer4 with clock 13
+2022-11-18 18:06:34.480907 : buyer5 purchased boar from seller1
+2022-11-18 18:06:34.486832 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.488147 : seller6 has sold fish to buyer4 and earned 8.0 $
+2022-11-18 18:06:34.488192 : seller6 has 2 fish left
+2022-11-18 18:06:34.489963 : Trader clock : 17
+2022-11-18 18:06:34.490083 : Trader got a purchase request for item fish from buyer7 with clock 14
+2022-11-18 18:06:34.490291 : buyer4 purchased fish from seller6
+2022-11-18 18:06:34.496955 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.498310 : seller6 has sold fish to buyer7 and earned 8.0 $
+2022-11-18 18:06:34.498355 : seller6 has 1 fish left
+2022-11-18 18:06:34.499983 : buyer7 purchased fish from seller6
+2022-11-18 18:06:34.500350 : Trader clock : 18
+2022-11-18 18:06:34.500390 : Trader got a purchase request for item salt from buyer5 with clock 14
+2022-11-18 18:06:34.506560 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.507973 : seller3 has sold salt to buyer5 and earned 4.0 $
+2022-11-18 18:06:34.508018 : seller3 has 4 salt left
+2022-11-18 18:06:34.509445 : Trader clock : 19
+2022-11-18 18:06:34.509960 : buyer5 purchased salt from seller3
+2022-11-18 18:06:34.509990 : Trader got a purchase request for item boar from buyer4 with clock 14
+2022-11-18 18:06:34.515663 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.517358: seller1 is out of stock for item boar
+2022-11-18 18:06:34.517821: seller1 has picked item salt to sell
+2022-11-18 18:06:34.519367 : Trader clock : 20
+2022-11-18 18:06:34.519415 : Trader got a purchase request for item boar from buyer7 with clock 15
+2022-11-18 18:06:34.519748 : buyer4 purchased boar from seller1
+2022-11-18 18:06:34.524909 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.526372: seller1 is out of stock for item boar
+2022-11-18 18:06:34.528547 : Trader clock : 21
+2022-11-18 18:06:34.528803 : buyer7 purchased boar from seller1
+2022-11-18 18:06:34.528828 : Trader got a purchase request for item fish from buyer5 with clock 15
+2022-11-18 18:06:34.534054 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.535519 : seller6 has sold fish to buyer5 and earned 8.0 $
+2022-11-18 18:06:34.535563 : seller6 has 0 fish left
+2022-11-18 18:06:34.536866 : buyer5 purchased fish from seller6
+2022-11-18 18:06:34.537643 : Trader clock : 22
+2022-11-18 18:06:34.537687 : Trader got a purchase request for item boar from buyer4 with clock 15
+2022-11-18 18:06:34.539705: seller6 is out of stock for item fish
+2022-11-18 18:06:34.539900: seller6 has picked item boar to sell
+2022-11-18 18:06:34.543458 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.544982: seller1 is out of stock for item boar
+2022-11-18 18:06:34.546568 : Trader clock : 23
+2022-11-18 18:06:34.546670 : Trader got a purchase request for item boar from buyer0 with clock 15
+2022-11-18 18:06:34.546816 : buyer4 purchased boar from seller1
+2022-11-18 18:06:34.551584 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.553017: seller1 is out of stock for item boar
+2022-11-18 18:06:34.553067: seller1 has picked item boar to sell
+2022-11-18 18:06:34.554198 : buyer0 purchased boar from seller1
+2022-11-18 18:06:34.554528 : Trader clock : 24
+2022-11-18 18:06:34.554566 : Trader got a purchase request for item boar from buyer4 with clock 16
+2022-11-18 18:06:34.559727 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.561356: seller1 is out of stock for item boar
+2022-11-18 18:06:34.562893 : Trader clock : 25
+2022-11-18 18:06:34.563032 : Trader got a purchase request for item boar from buyer7 with clock 16
+2022-11-18 18:06:34.563105 : buyer4 purchased boar from seller1
+2022-11-18 18:06:34.568409 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.569931: seller1 is out of stock for item boar
+2022-11-18 18:06:34.569981: seller1 has picked item fish to sell
+2022-11-18 18:06:34.570981 : buyer7 purchased boar from seller1
+2022-11-18 18:06:34.571753 : Trader clock : 26
+2022-11-18 18:06:34.572084 : Trader got a purchase request for item fish from buyer5 with clock 16
+2022-11-18 18:06:34.577641 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.579063: seller6 is out of stock for item fish
+2022-11-18 18:06:34.580270 : buyer5 purchased fish from seller6
+2022-11-18 18:06:34.580643 : Trader clock : 27
+2022-11-18 18:06:34.581043 : Trader got a purchase request for item salt from buyer9 with clock 16
+2022-11-18 18:06:34.586868 :Current Trader of the bazar is seller8
+2022-11-18 18:06:34.588242 : seller3 has sold salt to buyer9 and earned 4.0 $
+2022-11-18 18:06:34.588286 : seller3 has 3 salt left
+2022-11-18 18:06:34.599871 : buyer9 purchased salt from seller3
+2022-11-18 18:06:39.923811 : Trader clock : 28
+2022-11-18 18:06:39.923850 : Trader got a purchase request for item boar from buyer7 with clock 17
+2022-11-18 18:06:39.931236 :Current Trader of the bazar is seller8
+2022-11-18 18:06:39.932738: seller1 is out of stock for item boar
+2022-11-18 18:06:39.934240 : Trader clock : 29
+2022-11-18 18:06:39.934271 : Trader got a purchase request for item fish from buyer5 with clock 17
+2022-11-18 18:06:39.934441 : buyer7 purchased boar from seller1
+2022-11-18 18:06:39.938227 :Current Trader of the bazar is seller8
+2022-11-18 18:06:39.939237: seller6 is out of stock for item fish
+2022-11-18 18:06:39.940091 : buyer5 purchased fish from seller6
+2022-11-18 18:06:39.940723 : Trader clock : 30
+2022-11-18 18:06:39.940751 : Trader got a purchase request for item fish from buyer4 with clock 17
+2022-11-18 18:06:39.945420 :Current Trader of the bazar is seller8
+2022-11-18 18:06:39.946893: seller6 is out of stock for item fish
+2022-11-18 18:06:39.946944: seller6 has picked item fish to sell
+2022-11-18 18:06:39.953193 : buyer4 purchased fish from seller6
+2022-11-18 18:06:44.579289 : Trader clock : 31
+2022-11-18 18:06:44.579338 : Trader got a purchase request for item fish from buyer5 with clock 18
+2022-11-18 18:06:44.595292 :Current Trader of the bazar is seller8
+2022-11-18 18:06:44.596821: seller6 is out of stock for item fish
+2022-11-18 18:06:44.596871: seller6 has picked item boar to sell
+2022-11-18 18:06:44.598185 : buyer5 purchased fish from seller6
+2022-11-18 18:06:44.598660 : Trader clock : 32
+2022-11-18 18:06:44.599037 : Trader got a purchase request for item boar from buyer4 with clock 18
+2022-11-18 18:06:44.605381 :Current Trader of the bazar is seller8
+2022-11-18 18:06:44.607299: seller1 is out of stock for item boar
+2022-11-18 18:06:44.608398 : buyer4 purchased boar from seller1
+2022-11-18 18:06:44.609625 : Trader clock : 33
+2022-11-18 18:06:44.609698 : Trader got a purchase request for item boar from buyer7 with clock 18
+2022-11-18 18:06:44.615245 :Current Trader of the bazar is seller8
+2022-11-18 18:06:44.616714: seller1 is out of stock for item boar
+2022-11-18 18:06:44.617931 : buyer7 purchased boar from seller1
+2022-11-18 18:06:44.618355 : Trader clock : 34
+2022-11-18 18:06:44.618396 : Trader got a purchase request for item salt from buyer9 with clock 18
+2022-11-18 18:06:44.623971 :Current Trader of the bazar is seller8
+2022-11-18 18:06:44.625430 : seller3 has sold salt to buyer9 and earned 4.0 $
+2022-11-18 18:06:44.625476 : seller3 has 2 salt left
+2022-11-18 18:06:44.636893 : buyer9 purchased salt from seller3
+2022-11-18 18:06:49.607512: seller1 registered their product fish with trader
+2022-11-18 18:06:49.619020: seller6 registered their product boar with trader
+2022-11-18 18:06:49.633212: seller1 registered their product fish with trader
+2022-11-18 18:06:49.650066: seller1 registered their product fish with trader
+2022-11-18 18:06:49.997999 : Trader clock : 35
+2022-11-18 18:06:49.998435 : Trader got a purchase request for item salt from buyer7 with clock 19
+2022-11-18 18:06:50.004769 :Current Trader of the bazar is seller8
+2022-11-18 18:06:50.006032 : seller3 has sold salt to buyer7 and earned 4.0 $
+2022-11-18 18:06:50.006077 : seller3 has 1 salt left
+2022-11-18 18:06:50.007397 : Trader clock : 36
+2022-11-18 18:06:50.007445 : Trader got a purchase request for item salt from buyer5 with clock 19
+2022-11-18 18:06:50.007644 : buyer7 purchased salt from seller3
+2022-11-18 18:06:50.013860 :Current Trader of the bazar is seller8
+2022-11-18 18:06:50.015392 : seller3 has sold salt to buyer5 and earned 4.0 $
+2022-11-18 18:06:50.015447 : seller3 has 0 salt left
+2022-11-18 18:06:50.016758 : Trader clock : 37
+2022-11-18 18:06:50.016806 : Trader got a purchase request for item fish from buyer4 with clock 19
+2022-11-18 18:06:50.017003 : buyer5 purchased salt from seller3
+2022-11-18 18:06:50.019076: seller3 is out of stock for item salt
+2022-11-18 18:06:50.019221: seller3 has picked item fish to sell
+2022-11-18 18:06:50.022659 :Current Trader of the bazar is seller8
+2022-11-18 18:06:50.024228 : seller1 has sold fish to buyer4 and earned 7.2 $
+2022-11-18 18:06:50.024275 : seller1 has 9 fish left
+2022-11-18 18:06:50.030554 : buyer4 purchased fish from seller1
+2022-11-18 18:06:54.533649 : Trader clock : 38
+2022-11-18 18:06:54.533714 : Trader got a purchase request for item fish from buyer0 with clock 19
+2022-11-18 18:06:54.539510 :Current Trader of the bazar is seller8
+2022-11-18 18:06:54.541357 : seller1 has sold fish to buyer0 and earned 7.2 $
+2022-11-18 18:06:54.541405 : seller1 has 8 fish left
+2022-11-18 18:06:54.563595 : buyer0 purchased fish from seller1
+2022-11-18 18:06:54.668994 : Trader clock : 39
+2022-11-18 18:06:54.669356 : Trader got a purchase request for item boar from buyer4 with clock 20
+2022-11-18 18:06:54.675626 :Current Trader of the bazar is seller8
+2022-11-18 18:06:54.677139 : seller6 has sold boar to buyer4 and earned 8.0 $
+2022-11-18 18:06:54.677184 : seller6 has 9 boar left
+2022-11-18 18:06:54.678237 : buyer4 purchased boar from seller6
+2022-11-18 18:06:54.678630 : Trader clock : 40
+2022-11-18 18:06:54.678745 : Trader got a purchase request for item salt from buyer7 with clock 20
+2022-11-18 18:06:54.684811 :Current Trader of the bazar is seller8
+2022-11-18 18:06:54.686208: seller3 is out of stock for item salt
+2022-11-18 18:06:54.686259: seller3 has picked item boar to sell
+2022-11-18 18:06:54.687592 : Trader clock : 41
+2022-11-18 18:06:54.687644 : Trader got a purchase request for item boar from buyer9 with clock 20
+2022-11-18 18:06:54.687859 : buyer7 purchased salt from seller3
+2022-11-18 18:06:54.693408 :Current Trader of the bazar is seller8
+2022-11-18 18:06:54.695170 : seller6 has sold boar to buyer9 and earned 8.0 $
+2022-11-18 18:06:54.695215 : seller6 has 8 boar left
+2022-11-18 18:06:54.696146 : buyer9 purchased boar from seller6
+2022-11-18 18:06:54.696466 : Trader clock : 42
+2022-11-18 18:06:54.696502 : Trader got a purchase request for item boar from buyer5 with clock 20
+2022-11-18 18:06:54.702711 :Current Trader of the bazar is seller8
+2022-11-18 18:06:54.704263 : seller6 has sold boar to buyer5 and earned 8.0 $
+2022-11-18 18:06:54.704318 : seller6 has 7 boar left
+2022-11-18 18:06:54.726247 : buyer5 purchased boar from seller6
+2022-11-18 18:07:00.101145 : Trader clock : 43
+2022-11-18 18:07:00.101246 : Trader got a purchase request for item boar from buyer7 with clock 21
+2022-11-18 18:07:00.108408 :Current Trader of the bazar is seller8
+2022-11-18 18:07:00.109848 : seller6 has sold boar to buyer7 and earned 8.0 $
+2022-11-18 18:07:00.109898 : seller6 has 6 boar left
+2022-11-18 18:07:00.116034 : buyer7 purchased boar from seller6
+2022-11-18 18:07:00.144975 : Trader clock : 44
+2022-11-18 18:07:00.145311 : Trader got a purchase request for item fish from buyer4 with clock 21
+2022-11-18 18:07:00.150817 :Current Trader of the bazar is seller8
+2022-11-18 18:07:00.152215 : seller1 has sold fish to buyer4 and earned 7.2 $
+2022-11-18 18:07:00.152256 : seller1 has 7 fish left
+2022-11-18 18:07:00.153537 : Trader clock : 45
+2022-11-18 18:07:00.153671 : Trader got a purchase request for item boar from buyer5 with clock 21
+2022-11-18 18:07:00.153811 : buyer4 purchased fish from seller1
+2022-11-18 18:07:00.159977 :Current Trader of the bazar is seller8
+2022-11-18 18:07:00.161331 : seller6 has sold boar to buyer5 and earned 8.0 $
+2022-11-18 18:07:00.161377 : seller6 has 5 boar left
+2022-11-18 18:07:00.174222 : buyer5 purchased boar from seller6
+2022-11-18 18:07:04.7705
