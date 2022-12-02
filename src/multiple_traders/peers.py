@@ -95,7 +95,7 @@ class Peer(Process):
         is called.
         """
 
-        print(f"{self.get_timestamp()}: Dear buyers and sellers, My ID is {self.id}, and I am the new coordinator")
+        print(f"{self.get_timestamp()} : Dear buyers and sellers, My ID is {self.id}, and I am the new coordinator")
   
         self.received_won_message = True
         self.election_flag = False
@@ -112,7 +112,7 @@ class Peer(Process):
         # current architecture
         self.executor = ThreadPoolExecutor(max_workers=50)
 
-        print(f"{self.get_timestamp()}: Trader is ready for product registration")
+        print(f"{self.get_timestamp()} : Trader{self.current_trader_id.index(self.id)} is ready for product registration")
         self.executor.submit(self.begin_trading)
         
 
@@ -120,19 +120,23 @@ class Peer(Process):
 
     def seller_loop(self,):
         # send_sale_message logic`
-        while True:
-            time.sleep(50)
-            print("Executing seller loop")
+        try:
             while True:
-                picked_item = self.items[random.randint(0, len(self.item) - 1)]
-                if self.item!=picked_item:
-                    self.item = picked_item
-                    break
-            print(f"{self.get_timestamp()}: {self.id} has picked item {self.item} to sell")
-            self.has_deposited_lock.acquire()
-            self.has_deposited = False
-            self.has_deposited_lock.release()
-            self.begin_trading()
+                time.sleep(50)
+                print(f"{self.get_timestamp()} : Executing seller loop")
+                while True:
+                    picked_item = self.items[random.randint(0, len(self.items) - 1)]
+                    if self.item!=picked_item:
+                        self.item = picked_item
+                        break
+                print(f"{self.get_timestamp()} : {self.id} has picked item {self.item} to sell")
+                self.has_deposited_lock.acquire()
+                self.has_deposited = False
+                self.has_deposited_lock.release()
+                self.begin_trading()
+        except Exception as e:
+            print(f"Something went wrong with seller_loop with error {e}")
+
 
     # Trader will call sick after serving 40 requests
     @Pyro4.expose
@@ -210,7 +214,7 @@ class Peer(Process):
         #     current_trader_proxy.role_reversal()
         #     self.broadcast_lamport_clock()
         try:
-            print(f"{self.get_timestamp()}: {self.id} has started the election")
+            print(f"{self.get_timestamp()} : {self.id} has started the election")
             higher_peers = []
             
             for neigh_id in self.neighbors:
@@ -229,8 +233,6 @@ class Peer(Process):
                 for higher_peer in higher_peers:
                     self.executor.submit(higher_peer.send_election_message ,"elect_leader",self.id)
                 time.sleep(5)
-                print(f"reached this state for {self.id}")
-                print(self.received_ok_message, self.received_won_message)
                 if self.received_ok_message == False and self.received_won_message == False:
                     print(f"entering this if statement for {self.id}")
                     self.winning_lock.acquire()
@@ -244,7 +246,7 @@ class Peer(Process):
                 self.forward_win_message()
                 self.winning_lock.release()
         except Exception as e:
-            print(f"{self.get_timestamp()}: Something went wrong while {self.id} tried to start election with error {e}")
+            print(f"{self.get_timestamp()} : Something went wrong while {self.id} tried to start election with error {e}")
         
 
 
@@ -273,7 +275,7 @@ class Peer(Process):
             if message == "elect_leader" and self.id not in self.current_trader_id:
                 self.executor.submit(self.get_uri_from_id(sender).send_election_message,"OK",sender)
                 # If the peer haven't taken part in election till now only then it will take part in an election
-                print(f"send election message {self.received_ok_message}, {self.received_won_message}")
+                # print(f"send election message {self.received_ok_message}, {self.received_won_message}")
                 if not self.received_ok_message and not self.received_won_message:
                     higher_peers = []
                     for neigh_id in self.neighbors:
@@ -309,20 +311,20 @@ class Peer(Process):
             elif message == "OK":
                 self.received_ok_message = True
             elif message == "won":
-                print(f"{self.get_timestamp()}: {self.id} received message won from {sender} and recognizes {sender} as the new coordinator of the bazaar")
+                print(f"{self.get_timestamp()} : {self.id} received message won from {sender} and recognizes {sender} as the new coordinator of the bazaar")
                 self.winning_lock.acquire()
                 self.received_won_message = True
                 if sender not in self.current_trader_id:
                     self.current_trader_id.append(sender)
                 self.election_flag = False # 
                 self.winning_lock.release()
-                print(f"{self.get_timestamp()}: {self.id} is ready to trade")
+                print(f"{self.get_timestamp()} : {self.id} is ready to trade")
                 self.executor.submit(self.begin_trading)
                 #### Need to define the seller loop
                 if self.role == "seller":
                     self.executor.submit(self.seller_loop())
         except Exception as e:
-            print(f"{self.get_timestamp()}: Something went wrong with error {e}")
+            print(f"{self.get_timestamp()} : Something went wrong with error {e}")
 
     @Pyro4.expose
     def begin_trading(self):
@@ -342,30 +344,17 @@ class Peer(Process):
         self.election_flag = False
         self.winning_lock.release()
         if len(self.current_trader_id) < self.number_of_traders:
-            print("len(self.current_trader_id) = {}".format(len(self.current_trader_id)))
-            # print(f"{self.role} = {self.id}")
-            # print("Not enough traders elected")
-            # self.election_lock.acquire()
-            # self.election_flag = True
-            # self.election_lock.release()
-
-            # if self.id not in self.current_trader_id:
-            #     self.winning_lock.acquire()
-            #     self.received_won_message = False
-            #     self.winning_lock.release()
-            #     self.received_ok_message = False
-
-            # print(self.id, self.smallest_buyer)
             if self.id == self.smallest_buyer:
                 print(f"Start re-election!! Traders elected till now {self.current_trader_id}")
                 self.elect_leader()
             return
-        else:
-            print(f"len(len(self.current_trader_id)) trader(s) ecelted, trading can begin!!!")
+        # else:
+        #     print(f"{self.get_timestamp()} : {len(self.current_trader_id)} trader(s) in the bazar, trading can begin!!!")
         # can write an else condition for len(self.current_trader_id) > self.number_of_traders : role reversal
 
         try:
             # Set all election related flags to false
+            print(f"{self.get_timestamp()} : Waiting 15s before starting trading")
             time.sleep(15)
 
             # When trading begins seller will deposit all their items to trader if they haven't done so
@@ -381,17 +370,18 @@ class Peer(Process):
                 registration_result = self.executor.submit(trader_proxy.register_product, seller_data, self.id)
                 res = registration_result.result()
                 if res:
-                    print(f"{self.get_timestamp()}: {self.id} registered their product {self.item} with trader")
+                    print(f"{self.get_timestamp()} : {self.id} registered their product {self.item} with trader{self.current_trader_id.index(self.id)}")
                     self.has_deposited_lock.acquire()
                     self.has_deposited = True
                     self.has_deposited_lock.release()
                 else:
-                    print(f"Something went wrong while registering the product with trader. Retrying!!!")
+                    print(f"Something went wrong while registering the product with trader{self.current_trader_id.index(self.id)}. Retrying!!!")
                     self.begin_trading()
             # Trader loop will take care of purchase request from buyer
             elif self.role == "trader":
                 time.sleep(10)
-                print(f"{self.get_timestamp()} : Trader is ready to trade")
+                print(f"{self.get_timestamp()} : Trader{self.current_trader_id.index(self.id)} aka {self.id} - is ready to trade")
+                print(f"{self.get_timestamp()} : {len(self.current_trader_id)} trader(s) in the bazar, trading can begin!!!")
                 self.executor.submit(self.trader_loop)
             # If role is of buyer then start buyer loop and keep on buying product
             elif self.role == "buyer":
@@ -418,6 +408,7 @@ class Peer(Process):
         while True:
             try:
                 trader = self.current_trader_id[random.randint(0, len(self.current_trader_id)-1)]
+                trader = self.get_uri_from_id(trader)
                 executor = self.executor.submit(trader.send_heartbeat)
                 res = executor.result()
                 if res == "dead":
@@ -430,7 +421,7 @@ class Peer(Process):
                         self.election_lock.acquire()
                         self.election_flag = True
                         self.election_lock.release()
-                        print("Current leader is dead!!! Start re-election")
+                        print(f"{self.get_timestamp()} : Current leader is dead!!! Start re-election")
                         self.elect_leader()
                         break
                 self.broadcast_lamport_clock()
@@ -502,14 +493,14 @@ class Peer(Process):
                     item, buyer_id , buyer_clock= self.trading_queue.pop(min_index)
                     self.clock.adjust(buyer_clock)
                     self.clock.forward()
-                    print(f"{self.get_timestamp()} : Trader clock : {self.clock.value}")
+                    print(f"{self.get_timestamp()} : Trader{self.current_trader_id.index(self.id)} clock : {self.clock.value}")
                     
-                    print(f"{self.get_timestamp()} : Trader got a purchase request for item {item} from {buyer_id} with clock {buyer_clock}")
+                    print(f"{self.get_timestamp()} : Trader{self.current_trader_id.index(self.id)} got a purchase request for item {item} from {buyer_id} with clock {buyer_clock}")
                     data = self.db.find_seller_by_item(item, self.id, self.sellers)
                    
                     
                     if data == None:
-                        print(f"{self.get_timestamp()}:{item} is not available for sell in the bazaar right now")
+                        print(f"{self.get_timestamp()} : {item} is not available for sell in the bazaar right now")
                         continue
                     seller_id = data["seller_id"]
                     price = data["price"]
@@ -524,7 +515,7 @@ class Peer(Process):
                     self.heatbeat_lock.acquire()
                     self.heartbeat_counter+=1
                     self.heatbeat_lock.release()
-                    print(f"{self.get_timestamp()} :Current Trader of the bazar is {self.id}")
+                    print(f"{self.get_timestamp()} : Current Trader{self.current_trader_id.index(self.id)} of the bazar is {self.id}")
                     self.executor.submit(seller_proxy.send_sale_message, item, round(0.8*price,2), count-1, buyer_id, False)
                     self.executor.submit(buyer_proxy.send_purchase_message, seller_id, item)
   
@@ -552,13 +543,13 @@ class Peer(Process):
                 self.executor.submit(current_trader_proxy.update_clock_data)
 
         if count <=0:
-            print(f"{self.get_timestamp()}: {self.id} is out of stock for item {item}")
+            print(f"{self.get_timestamp()} : {self.id} is out of stock for item {item}")
             while True:
                 picked_item = self.items[random.randint(0, len(self.item) - 1)]
                 if self.item!=picked_item:
                     self.item = picked_item
                     break
-            print(f"{self.get_timestamp()}: {self.id} has picked item {self.item} to sell")
+            print(f"{self.get_timestamp()} : {self.id} has picked item {self.item} to sell")
             self.has_deposited_lock.acquire()
             self.has_deposited = False
             self.has_deposited_lock.release()

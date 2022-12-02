@@ -19,12 +19,12 @@ def main():
         hostname = sys.argv[1]
     except Exception as e:
         print("Host name not provided please provide a hostname while executing the run command")
-    if len(sys.argv)==3:
+    if len(sys.argv) >= 3:
         number_of_peers = int(sys.argv[2])
     else:
         number_of_peers = default_configs["number_of_peers"]
     
-    if len(sys.argv)==4:
+    if len(sys.argv) >= 4:
         number_of_traders = min(3, int(sys.argv[3]))
     else:
         number_of_traders = default_configs["number_of_peers"]
