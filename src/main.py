@@ -23,6 +23,12 @@ def main():
         number_of_peers = int(sys.argv[2])
     else:
         number_of_peers = default_configs["number_of_peers"]
+    
+    if len(sys.argv)==4:
+        number_of_traders = min(3, int(sys.argv[3]))
+    else:
+        number_of_traders = default_configs["number_of_peers"]
+
     roles = default_configs["roles"]
     items = default_configs["items"]
     items_count = default_configs["number_of_items"]
@@ -39,7 +45,7 @@ def main():
         id = f"{role}{str(i)}"
         ids[id] = role
     for id,role in ids.items():
-        peer = Peer(id,role,items,items_count,hostname,base_path)
+        peer = Peer(id,role,items,items_count,hostname,base_path, number_of_traders)
         peers.append(peer)
     return peers
 
