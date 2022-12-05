@@ -3,6 +3,7 @@
       "number_of_peers": 6,
       "items":["fish","salt","boar"],
       "roles" : ["buyer","seller"],
-      "number_of_items":10
+      "number_of_items":10,
+      "number_of_traders": 2
     }
 }
