@@ -313,7 +313,7 @@ class Peer(Process):
         If the role is trader, then start the trader loop
         If the rolw is buyer then start the buyer loop
         """
-        time.sleep(5)
+        time.sleep(10)
         self.winning_lock.acquire()
         self.received_won_message = False
         self.received_ok_message = False
