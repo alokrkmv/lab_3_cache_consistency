@@ -10,7 +10,7 @@ from database import DbHandler
 # It is responsible for spwaning peers as buyers or sellers
 
 def main():
-    config_file = open(os.path.join(os.path.dirname(__file__), '..', 'config.json'))
+    config_file = open(os.path.join(os.path.dirname(__file__), '../..', 'config.json'))
     data = json.load(config_file)
     default_configs = data["default_config"]
     # If number of peers is passed through command line then use that as number of peer

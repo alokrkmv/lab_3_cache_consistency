@@ -10,7 +10,7 @@ from database import DbHandler
 # It is responsible for spwaning peers as buyers or sellers
 
 def main():
-    config_file = open(os.path.join(os.path.dirname(__file__), '..', 'config.json'))
+    config_file = open(os.path.join(os.path.dirname(__file__), '../..', 'config.json'))
     data = json.load(config_file)
     default_configs = data["default_config"]
     # If number of peers is passed through command line then use that as number of peer
@@ -19,10 +19,16 @@ def main():
         hostname = sys.argv[1]
     except Exception as e:
         print("Host name not provided please provide a hostname while executing the run command")
-    if len(sys.argv)==3:
+    if len(sys.argv) >= 3:
         number_of_peers = int(sys.argv[2])
     else:
         number_of_peers = default_configs["number_of_peers"]
+    
+    if len(sys.argv) >= 4:
+        number_of_traders = min(3, int(sys.argv[3]))
+    else:
+        number_of_traders = default_configs["number_of_peers"]
+
     roles = default_configs["roles"]
     items = default_configs["items"]
     items_count = default_configs["number_of_items"]
@@ -39,7 +45,7 @@ def main():
         id = f"{role}{str(i)}"
         ids[id] = role
     for id,role in ids.items():
-        peer = Peer(id,role,items,items_count,hostname,base_path)
+        peer = Peer(id,role,items,items_count,hostname,base_path, number_of_traders)
         peers.append(peer)
     return peers
 
