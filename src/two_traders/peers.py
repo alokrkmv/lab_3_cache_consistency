@@ -50,10 +50,6 @@ class Peer(Process):
         self.heartbeat_counter = 0
         self.heatbeat_lock = Lock()
         self.smallest_buyer = "buyer0"
-        # self.clock = LamportClock()
-        # self.clock_lock = Lock()
-        # self.clock_counter = 0
-        # self.seller_clock = []
         self.number_of_traders = number_of_traders
 
     def __str__(self):
@@ -136,50 +132,6 @@ class Peer(Process):
                 self.begin_trading()
         except Exception as e:
             print(f"Something went wrong with seller_loop with error {e}")
-
-
-    #  # broadcast_lamport_clock : This method broadcasts a peer's clock to all the peers.
-    # def broadcast_lamport_clock(self):
-    #     """
-    #     This method allows the peers to broadcast their clocks to other peers in the network. And adjusts the clocks of all the peers. 
-    #     """
-    #     for neighbor in self.neighbors:
-    #         neighbor_proxy = self.get_uri_from_id(neighbor)
-    #         self.executor.submit(neighbor_proxy.adjust_buyer_clock, self.clock.value)
-
-    # @Pyro4.expose
-    # def adjust_buyer_clock(self, sender_clock):
-    #     """
-    #     Args:
-    #         sender_clock: tuple (sender_id, clock_value)
-    #     This function adjusts the clocks of the peer to the max value between the current_clock value and the sender's clock value
-    #     For buyer0, the clock is adjusted for every 29 requests and at the 30th request buyer0 is slowed down to simulate a slow peer
-    #     in the network. buyer0's clock will be slowed down after every 30 requests for 30s.
-    #     """
-    #     try:
-    #         if self.role == "buyer" or self.role == "seller" : 
-    #             self.clock_lock.acquire()
-                
-    #             if self.id == "buyer0":
-    #                 self.clock_counter+=1
-    #             # Make buyer 0 slow after every 30 sync requests
-    #             if self.id == "buyer0" and self.clock_counter%30 ==0 :
-    #                 time.sleep(30)
-    #             self.clock.adjust(sender_clock) 
-    #             self.clock_lock.release()
- 
-    #     except Exception as e:
-    #         print(f"Something went wrong while trying to adjust buyer's clock with error {e}")
-
-    
-    # Function to reset the role of previous trader
-    # @Pyro4.expose
-    # def role_reversal(self):
-    #     """
-    #     Whenever the trader dies, this method updates its role back to its previous role and resets the clock value.
-    #     """
-    #     self.role = self.id[:-1]
-    #     self.clock.value = 0
 
     # This method elects the leader using Bully algorithm
     @Pyro4.expose
@@ -480,11 +432,6 @@ class Peer(Process):
         if count>=0:
             print(f"{self.get_timestamp()} : {self.id} has sold {item} to {buyer_id} and earned {commission} $")
             print(f"{self.get_timestamp()} : {self.id} has {count} {item} left")
-            # Seller will forward their clock after each request
-            # Add the new clock value to trader's clock queue
-            # for traders in self.current_trader_id:
-            #     current_trader_proxy = self.get_uri_from_id(traders)
-            #     self.executor.submit(current_trader_proxy.update_clock_data)
 
         if count <=0:
             print(f"{self.get_timestamp()} : {self.id} is out of stock for item {item}")
@@ -516,18 +463,6 @@ class Peer(Process):
             print(f"Registering product for {seller_id} failed with error{e}")
             return False
 
-    # Through this method seller sends their clock value to trader which trader uses to resolve the sell. 
-    # @Pyro4.expose
-    # def update_clock_data(self, clock_data):
-    #     requested_seller, _ = clock_data
-    #     index = None
-    #     for i,clock in enumerate(self.seller_clock):
-    #         seller_id, _ = clock
-    #         if seller_id == requested_seller:
-    #             index = i
-    #     if index!=None:
-    #         self.seller_clock.pop(index)
-    #     self.seller_clock.append(clock_data)
                        
     def get_timestamp(self):
         """
@@ -566,8 +501,6 @@ class Peer(Process):
                 if int(self.id[-1])==2:
                     self.elect_leader()
                 while True:
-                    # purposely making one thread slow in the system to simulate lamport 
-                    # clock synchronization affectively
                     time.sleep(1)
         
         except Exception as e:
