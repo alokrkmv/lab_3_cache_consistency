@@ -181,9 +181,12 @@ class Peer(Process):
         
 
 
-    '''
-    
-    '''
+    @Pyro4.expose
+    def send_heartbeat(self):
+        if self.heartbeat_counter>5 and self.current_trader_id.index(self.id)==1:
+            return "dead"
+        else:
+            return "alive"
     @Pyro4.expose
     def send_election_message(self,message,sender):
         """
@@ -222,16 +225,6 @@ class Peer(Process):
                         for higher_peer in higher_peers:
                             self.executor.submit(higher_peer.send_election_message ,"elect_leader",self.id)
                         
-                        time.sleep(5)
-
-                        # check for the winning case
-                        # If the peer haven't received an Ok or won message that message it is the winner of the election
-                        # and will be crowned as the leader
-                        if self.received_ok_message == False and self.received_won_message == False:
-                            self.winning_lock.acquire()
-                            self.send_winning_message = True
-                            self.forward_win_message()
-                            self.winning_lock.release()
                     else:
                         if self.received_ok_message == False and self.received_won_message == False:
                             self.winning_lock.acquire()
@@ -265,7 +258,7 @@ class Peer(Process):
         If the role is trader, then start the trader loop
         If the rolw is buyer then start the buyer loop
         """
-        time.sleep(5)
+        time.sleep(10)
         self.winning_lock.acquire()
         self.received_won_message = False
         self.received_ok_message = False
@@ -361,6 +354,19 @@ class Peer(Process):
         self.item = self.items[random.randint(0, len(self.items) - 1)]
         self.item_lock.release()
         print(f"{self.get_timestamp()} : {self.id} has now picked item {self.item} to purchase")
+
+    @Pyro4.expose
+    def get_dead_trader_queue(self):
+        return self.trading_queue
+
+    @Pyro4.expose
+    def send_death_message(self):
+        print(f"{self.id} received death message of {self.current_trader_id[1]} from {self.current_trader_id[0]}!!! resetting trader_queue")
+        only_trader = self.current_trader_id[0]
+        self.current_trader_id = []
+        self.current_trader_id.append(only_trader)
+
+    
         
         
 
@@ -382,6 +388,27 @@ class Peer(Process):
             try:
                 if len(self.trading_queue)>0:
                     # Write all the pending transactions to the disk
+                    second_trader = None
+                    if len(self.current_trader_id)>1 and self.id!=self.current_trader_id[1]:
+                        second_trader = self.current_trader_id[1]
+                        second_trader_proxy = self.get_uri_from_id(second_trader)
+                        res = self.executor.submit(second_trader_proxy.send_heartbeat)
+                        result = res.result()
+                        if result == "dead":
+                            
+                            print(f"Trader1 aka {second_trader} is dead!!! Now Trader0 aka {self.current_trader_id[0]} is only trader of the bazaar!!!")
+                            self.trading_queue.extend(second_trader_proxy.get_dead_trader_queue())
+                            self.current_trader_id = []
+                            self.current_trader_id.append(self.id)
+                            neighbors = self.neighbors
+                            for neighbor in neighbors:
+                                if neighbor == second_trader:
+                                    continue
+                                else:
+                                    neighbor_proxy = self.get_uri_from_id(neighbor)
+                                    self.executor.submit(neighbor_proxy.send_death_message)
+                            # Let other peers reset their trading queue
+                            time.sleep(15)
 
                     pending_transactions = {"data":self.trading_queue}
                     try:

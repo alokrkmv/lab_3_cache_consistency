@@ -45,7 +45,7 @@ def main():
         id = f"{role}{str(i)}"
         ids[id] = role
     for id,role in ids.items():
-        peer = Peer(id,role,items,items_count,hostname,base_path, number_of_traders)
+        peer = Peer(id,role,items,items_count,hostname,base_path, 2)
         peers.append(peer)
     return peers
 
