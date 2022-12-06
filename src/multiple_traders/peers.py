@@ -254,7 +254,7 @@ class Peer(Process):
                 if self.role == "seller":
                     self.executor.submit(self.seller_loop())
         except Exception as e:
-            print(f"{self.get_timestamp()} : Something went wrong with error {e}")
+            print(f"{self.get_timestamp()} : Something went wrong in the send_lection message with error {e}")
 
     @Pyro4.expose
     def begin_trading(self):
@@ -498,6 +498,8 @@ class Peer(Process):
                 # Start the Pyro requestLoop
                 self.executor.submit(daemon.requestLoop)
                 # Sleep for sometime so that all peers join Bazaar
+                self.db = self.get_uri_from_id("database")
+                # self.db = DbHandler()
                 time.sleep(4)
                 if int(self.id[-1])==2:
                     self.elect_leader()
