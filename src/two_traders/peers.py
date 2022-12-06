@@ -42,7 +42,7 @@ class Peer(Process):
         self.winning_lock = Lock()
         self.price = None
         self.has_deposited = False
-        self.db = DbHandler()
+        self.db = None
         self.has_deposited_lock = Lock()
         self.trading_queue = []
         self.item_lock = []
@@ -524,6 +524,7 @@ class Peer(Process):
                 # Start the Pyro requestLoop
                 self.executor.submit(daemon.requestLoop)
                 # Sleep for sometime so that all peers join Bazaar
+                self.db = self.get_uri_from_id("database")
                 time.sleep(4)
                 if int(self.id[-1])==2:
                     self.elect_leader()

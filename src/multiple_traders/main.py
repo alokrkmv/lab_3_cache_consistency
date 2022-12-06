@@ -79,7 +79,14 @@ if __name__=='__main__':
             sys.exit()
     except Exception as e:
         print(f"Database connection failed with error {e}. Application will now exit!!!")
-        
+    # Start the database process first
+
+    new_path = f"{base_path}/database_process"
+    isExist = os.path.exists(new_path)
+    if not isExist:
+        os.makedirs(new_path)
+    os.chdir(new_path)
+    database_client.start()
     try: 
         for i,peer in enumerate(peers):
             new_path = f"{base_path}/peer/peer{i}"
