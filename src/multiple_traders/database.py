@@ -3,6 +3,7 @@ from multiprocessing import Process
 from concurrent.futures import ThreadPoolExecutor
 import time
 import Pyro4
+from datetime import datetime
 class DbHandler(Process):
     
     def __init__(self,  host="localhost", port_number = 27017):
@@ -60,7 +61,7 @@ class DbHandler(Process):
         Determined by upsert flag
         """
         try:
-            query = {"seller_id":data["seller_id"]}
+            query = {"seller_id":data["seller_id"],"item":data["item"]}
             newvalues = { "$set": data }
             self.collection.update_one(query,newvalues,upsert = True)
         except Exception as e:
@@ -79,6 +80,12 @@ class DbHandler(Process):
             return sellers_data
         except Exception as e:
             print(f"Something went wrong while trying to fetch all data with exception {e}")
+
+    def get_timestamp(self):
+        """
+        Returns: Current Timestamp
+        """
+        return datetime.now()
 
 
 
@@ -103,7 +110,7 @@ class DbHandler(Process):
         min_clock = float("inf")
         min_seller = None
          
-        
+                   
         sellers = []
 
         seller_dict =   {}    
@@ -111,22 +118,16 @@ class DbHandler(Process):
         for data in all_data:
             if data["item"]==item and data["seller_id"]!=trader_id:
                 if len(seller_clock)<=0:
+                    if data["count"] <= 0:
+                        print(f"At {self.get_timestamp()} Item {data['item']} is unavailable")
+                    else:
+                        print(f"At {self.get_timestamp()} Item {data['item']} is shipped from inventory")
                     return data
-                sellers.append(data["seller_id"])
-                seller_dict[data["seller_id"]] = data
+                # sellers.append(data["seller_id"])
+                # seller_dict[data["seller_id"]] = data
+        print(f"At {self.get_timestamp()} Item {data['item']} is unavailable")
+        return None
 
-        for seller_id, clock in seller_clock:
-            if seller_id not in sellers:
-                continue
-            if clock <= min_clock:
-                min_clock = clock
-                min_seller = seller_id
-
-        if min_seller == None and len(sellers)>0:
-            return seller_dict[sellers[0]]
-        if len(sellers)<=0:
-            return None
-        return seller_dict[min_seller]
     @Pyro4.expose
     # Saves pending transactions of the bazaar
     def save_transactions(self, item):
