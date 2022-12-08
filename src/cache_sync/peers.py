@@ -414,6 +414,13 @@ class Peer(Process):
 
                     self.db.insert_into_database({"seller_id":seller_id, "count":count-1, "price":price, "item":item})
                     self.update_cache({"seller_id":seller_id, "count":count-1, "price":price, "item":item})
+                    for neighbors in self.current_trader_id:
+                        if neighbors == self.id:
+                            continue
+                        else:
+                            neighbor_proxy = self.get_uri_from_id(neighbors)
+                            neighbor_proxy.sync_cache_with_peers({"seller_id":seller_id, "count":count-1, "price":price, "item":item})
+                            print(f"At {self.get_timestamp()} Trader{self.current_trader_id.index(self.id)}  is syncing its cache with neighbor Trader{self.current_trader_id.index(neighbors)} ")
                     # Upon each succesful trade increase the hearbeat counter by 1
                     
                     self.items_sold+=1
@@ -425,7 +432,7 @@ class Peer(Process):
   
               
             except Exception as e:
-                print(f"{self.get_timestamp()} : Registering product for {seller_id} failed with error{e}")
+                print(f"{self.get_timestamp()} : Something went wrong in the trader loop for  Trader{self.current_trader_id.index(self.id)}  failed with error{e}")
                 return False
 
     @Pyro4.expose
@@ -468,7 +475,22 @@ class Peer(Process):
         self.cache.append(item)
 
     def sync_cache_with_db(self):
+        print(f"{self.get_timestamp} Trader{self.current_trader_id.index(self.id)} is syncing their cache with database")
         self.cache = self.db.fetch_all_from_database()
+
+    @Pyro4.expose
+    def sync_cache_with_peers(self, item):
+        is_item_found = False
+        for i,data in enumerate(self.cache):
+            if data["seller_id"] == item["seller_id"] and data["item"] == item["item"]:
+                is_item_found = True
+                if data["count"]>item["count"]:
+                    self.cache.pop(i)
+                    self.cache.append(item)
+                    return 
+        if not is_item_found:
+            self.cache.append(item)
+
 
 
     # This method registers products of each seller
