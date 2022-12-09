@@ -59,7 +59,7 @@ To run any of the flavours cd into the appropriate directory and follow steps 3 
 
 6. Number of peers is optional paramter if passed the network will generate a network with equivalent number of peers otherwise it will default to six peer network based on the default config provided in config_file.
 
-7. A sample run command might look like ````bash run.sh localhost 10```` or ```` bash run.sh localhost````
+7. A sample run command might look like ````bash run.sh localhost 10 3````
 
 8. In first case a 10 peer network will be created whereas in the second a network of 6 peers will be created.
 
