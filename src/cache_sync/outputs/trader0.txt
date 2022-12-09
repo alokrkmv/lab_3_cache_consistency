@@ -1,0 +1,109 @@
+2022-12-08 21:29:53.734603 : Trader0 is ready for product registration
+2022-12-08 21:30:38.879659 : seller1 registered their product fish with trader0
+2022-12-08 21:30:48.871980 : Trader0 aka seller7 - is ready to trade
+Trader0 cache: [{'seller_id': 'seller1', 'count': 10, 'price': 10, 'item': 'fish'}]
+2022-12-08 21:30:48.873134 : Trader0 got a purchase request for item boar from buyer0
+Trader0 cache: [{'seller_id': 'seller1', 'count': 9, 'price': 10, 'item': 'fish'}]
+2022-12-08 21:30:58.949492 : Trader0 got a purchase request for item fish from buyer3
+2022-12-08 21:30:58.949522 fish is served from cache by Trader0
+At 2022-12-08 21:30:58.976656 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:30:58.980822 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:30:58.980950 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'seller_id': 'seller1', 'count': 8, 'price': 10, 'item': 'fish'}]
+2022-12-08 21:31:08.941550 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 21:31:08.944873 salt is served from database by Trader0
+At 2022-12-08 21:31:08.977352 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:31:08.988263 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:31:08.988308 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'seller_id': 'seller2', 'count': 7, 'price': 7, 'item': 'salt'}, {'seller_id': 'seller1', 'count': 6, 'price': 10, 'item': 'fish'}]
+2022-12-08 21:31:29.077335 : Trader0 got a purchase request for item fish from buyer3
+2022-12-08 21:31:29.082183 fish is served from database by Trader0
+At 2022-12-08 21:31:29.097856 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:31:29.102107 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:31:29.102161 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'seller_id': 'seller2', 'count': 7, 'price': 7, 'item': 'salt'}, {'seller_id': 'seller1', 'count': 2, 'price': 10, 'item': 'fish'}]
+2022-12-08 21:31:49.161754 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 21:31:49.161810 salt is served from cache by Trader0
+At 2022-12-08 21:31:49.219874 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:31:49.225417 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:31:49.225512 : Current Trader0 of the bazar is seller7
+2022-12-08 21:31:58.929354 : seller2 registered their product boar with trader0
+Trader0 cache: [{'seller_id': 'seller1', 'count': 2, 'price': 10, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 5, 'price': 7, 'item': 'salt'}, {'seller_id': 'seller2', 'count': 10, 'price': 7, 'item': 'boar'}]
+2022-12-08 21:31:59.163888 : Trader0 got a purchase request for item boar from buyer3
+2022-12-08 21:31:59.167906 boar is served from database by Trader0
+At 2022-12-08 21:31:59.203439 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:31:59.207460 Trader0  is syncing its cache with neighbor Trader2 
+<bound method Peer.get_timestamp of <Peer name='Peer-15' parent=52334 started>> Trader0 is syncing their cache with database
+2022-12-08 21:31:59.211450 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'_id': {'data': 'Y5KdzkLb2bX5S0Vk', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller2', 'count': 4, 'price': 7}, {'_id': {'data': 'Y5KdzkLb2bX5S0Vm', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': 2, 'price': 10}, {'_id': {'data': 'Y5KeHkLb2bX5S0ZO', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller1', 'count': 10, 'price': 10}, {'seller_id': 'seller2', 'count': 8, 'price': 7, 'item': 'boar'}]
+2022-12-08 21:32:09.198907 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 21:32:09.198946 salt is served from cache by Trader0
+At 2022-12-08 21:32:09.235618 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:32:09.240403 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:32:09.240449 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'_id': {'data': 'Y5KdzkLb2bX5S0Vm', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': 2, 'price': 10}, {'_id': {'data': 'Y5KeHkLb2bX5S0ZO', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller1', 'count': 10, 'price': 10}, {'seller_id': 'seller2', 'count': 3, 'price': 7, 'item': 'salt'}, {'seller_id': 'seller2', 'count': 7, 'price': 7, 'item': 'boar'}]
+2022-12-08 21:32:09.243605 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 21:32:09.243670 fish is served from cache by Trader0
+At 2022-12-08 21:32:09.299149 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:32:09.369389 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:32:09.369435 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'_id': {'data': 'Y5KeHkLb2bX5S0ZO', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller1', 'count': 10, 'price': 10}, {'seller_id': 'seller2', 'count': 3, 'price': 7, 'item': 'salt'}, {'seller_id': 'seller2', 'count': 7, 'price': 7, 'item': 'boar'}, {'seller_id': 'seller1', 'count': 1, 'price': 10, 'item': 'fish'}]
+2022-12-08 21:32:19.231649 : Trader0 got a purchase request for item boar from buyer3
+2022-12-08 21:32:19.236317 boar is served from database by Trader0
+At 2022-12-08 21:32:19.292459 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:32:19.323086 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:32:19.323131 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'_id': {'data': 'Y5KeHkLb2bX5S0ZO', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller1', 'count': 10, 'price': 10}, {'seller_id': 'seller2', 'count': 3, 'price': 7, 'item': 'salt'}, {'seller_id': 'seller1', 'count': 0, 'price': 10, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 6, 'price': 7, 'item': 'boar'}]
+2022-12-08 21:32:19.326088 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 21:32:19.326136 salt is served from cache by Trader0
+At 2022-12-08 21:32:19.375331 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:32:19.435277 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:32:19.435323 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'seller_id': 'seller1', 'count': 0, 'price': 10, 'item': 'fish'}, {'seller_id': 'seller1', 'count': 9, 'price': 10, 'item': 'salt'}, {'seller_id': 'seller2', 'count': 2, 'price': 7, 'item': 'salt'}, {'seller_id': 'seller2', 'count': 5, 'price': 7, 'item': 'boar'}]
+2022-12-08 21:32:39.326703 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 21:32:39.331241 fish is served from database by Trader0
+At 2022-12-08 21:32:39.341947 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:32:39.357114 Trader0  is syncing its cache with neighbor Trader2 
+<bound method Peer.get_timestamp of <Peer name='Peer-15' parent=52334 started>> Trader0 is syncing their cache with database
+2022-12-08 21:32:39.359650 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'_id': {'data': 'Y5KdzkLb2bX5S0Vk', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller2', 'count': 2, 'price': 7}, {'_id': {'data': 'Y5KdzkLb2bX5S0Vm', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': -1, 'price': 10}, {'_id': {'data': 'Y5KeHkLb2bX5S0ZO', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller1', 'count': 9, 'price': 10}, {'_id': {'data': 'Y5KeHkLb2bX5S0ZR', 'encoding': 'base64'}, 'item': 'boar', 'seller_id': 'seller2', 'count': 4, 'price': 7}]
+2022-12-08 21:32:39.363669 : Trader0 got a purchase request for item boar from buyer3
+2022-12-08 21:32:39.367691 boar is served from database by Trader0
+At 2022-12-08 21:32:39.439673 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:32:39.514591 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:32:39.514640 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'_id': {'data': 'Y5KdzkLb2bX5S0Vk', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller2', 'count': 2, 'price': 7}, {'_id': {'data': 'Y5KdzkLb2bX5S0Vm', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': -1, 'price': 10}, {'_id': {'data': 'Y5KeHkLb2bX5S0ZO', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller1', 'count': 9, 'price': 10}, {'seller_id': 'seller2', 'count': 3, 'price': 7, 'item': 'boar'}]
+2022-12-08 21:32:49.354465 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 21:32:49.357891 boar is served from database by Trader0
+At 2022-12-08 21:32:49.414421 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:32:49.419032 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:32:49.419095 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'_id': {'data': 'Y5KdzkLb2bX5S0Vk', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller2', 'count': 2, 'price': 7}, {'_id': {'data': 'Y5KdzkLb2bX5S0Vm', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': -1, 'price': 10}, {'seller_id': 'seller2', 'count': 2, 'price': 7, 'item': 'boar'}, {'seller_id': 'seller1', 'count': 8, 'price': 10, 'item': 'salt'}]
+2022-12-08 21:32:49.423375 : Trader0 got a purchase request for item boar from buyer3
+2022-12-08 21:32:49.428629 boar is served from database by Trader0
+At 2022-12-08 21:32:49.527456 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:32:49.597130 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:32:49.597177 : Current Trader0 of the bazar is seller7
+Trader0 cache: [{'_id': {'data': 'Y5KdzkLb2bX5S0Vk', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller2', 'count': 2, 'price': 7}, {'_id': {'data': 'Y5KdzkLb2bX5S0Vm', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': -1, 'price': 10}, {'seller_id': 'seller1', 'count': 8, 'price': 10, 'item': 'salt'}, {'seller_id': 'seller2', 'count': 1, 'price': 7, 'item': 'boar'}]
+2022-12-08 21:32:59.395966 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 21:32:59.401228 fish is served from database by Trader0
+At 2022-12-08 21:32:59.447835 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 21:32:59.478598 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 21:32:59.478668 : Current Trader0 of the bazar is seller7                          
+2022-12-08 21:52:32.337055 : seller1 registered their product salt with trader0
+2022-12-08 21:54:22.030419 : seller1 registered their product salt with trader0                                                                                            
+2022-12-08 21:59:43.289672 : seller1 registered their product fish with trader0                                       
+2022-12-08 22:04:33.898617 : seller1 registered their product fish with trader0
+2022-12-08 22:04:47.571874 : seller1 registered their product boar with trader0                                                    
+2022-12-08 22:12:24.867588 : seller1 registered their product boar with trader0
+2022-12-08 22:13:18.005482 : seller1 registered their product salt with trader0                                        
+2022-12-08 22:15:23.106659 : seller1 registered their product boar with trader0
+Something went wrong while registering the product with trader0. Retrying!!!
+Something went wrong while registering the product with trader0. Retrying!!!                                        
+2022-12-08 22:19:58.368575 : seller1 registered their product salt with trader0
+2022-12-08 22:22:56.228922 : seller1 registered their product salt with trader0
+2022-12-08 21:46:01.531453 : Trader0 is ready for product registration
+2022-12-08 21:46:56.666443 : Trader0 aka buyer7 - is ready to trade
+Trader0 cache: []
+2022-12-08 21:46:56.667477 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 21:46:56.667523 : Something went wrong in the trader loop for  Trader0  failed with errorcannot unpack non-iterable NoneType object      

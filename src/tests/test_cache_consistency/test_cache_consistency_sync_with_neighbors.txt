@@ -1,0 +1,323 @@
+Starting nameserver in detached mode
+Namespace server is already running on localhost
+Removing dead peers from the server
+Potentially removing lots of items from the Name server. Are you sure (y/n)?3 items removed.
+Removing dead peers from the server
+Potentially removing lots of items from the Name server. Are you sure (y/n)?5 items removed.
+Starting the main process
+Showing the graphical representation of the bazaar
+Connected succesfuly to the databse
+2022-12-08 20:57:05.649955 : buyer0 joined the bazar as buyer looking for salt
+2022-12-08 20:57:05.653922 : seller1 joined the bazar as seller selling fish
+2022-12-08 20:57:05.658802 : seller2 joined the bazar as seller selling fish
+2022-12-08 20:57:05.660059 : buyer3 joined the bazar as buyer looking for boar
+2022-12-08 20:57:05.663900 : seller4 joined the bazar as seller selling salt
+2022-12-08 20:57:05.670549 : buyer5 joined the bazar as buyer looking for salt
+2022-12-08 20:57:05.672920 : buyer6 joined the bazar as buyer looking for fish
+2022-12-08 20:57:05.676363 : seller7 joined the bazar as seller selling salt
+2022-12-08 20:57:09.662775 : seller2 has started the election
+2022-12-08 20:57:09.700716 : Dear buyers and sellers, My ID is seller7, and I am the new coordinator
+2022-12-08 20:57:09.714607 : buyer0 received message won from seller7 and recognizes seller7 as the new coordinator of the bazaar
+2022-12-08 20:57:09.714647 : buyer0 is ready to trade
+2022-12-08 20:57:09.717236 : seller1 received message won from seller7 and recognizes seller7 as the new coordinator of the bazaar
+2022-12-08 20:57:09.717296 : seller1 is ready to trade
+2022-12-08 20:57:09.719620 : seller2 received message won from seller7 and recognizes seller7 as the new coordinator of the bazaar
+2022-12-08 20:57:09.719683 : seller2 is ready to trade
+2022-12-08 20:57:09.722914 : buyer3 received message won from seller7 and recognizes seller7 as the new coordinator of the bazaar
+2022-12-08 20:57:09.722948 : buyer3 is ready to trade
+2022-12-08 20:57:09.728272 : seller4 received message won from seller7 and recognizes seller7 as the new coordinator of the bazaar
+2022-12-08 20:57:09.728319 : seller4 is ready to trade
+2022-12-08 20:57:09.732031 : buyer5 received message won from seller7 and recognizes seller7 as the new coordinator of the bazaar
+2022-12-08 20:57:09.732078 : buyer5 is ready to trade
+2022-12-08 20:57:09.736384 : Trader0 is ready for product registration
+2022-12-08 20:57:09.737405 : buyer6 received message won from seller7 and recognizes seller7 as the new coordinator of the bazaar
+2022-12-08 20:57:09.737497 : buyer6 is ready to trade
+Start re-election!! Traders elected till now ['seller7']
+2022-12-08 20:57:19.722744 : buyer0 has started the election
+2022-12-08 20:57:19.759372 : Dear buyers and sellers, My ID is buyer6, and I am the new coordinator
+2022-12-08 20:57:19.767839 : buyer0 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:57:19.767883 : buyer0 is ready to trade
+2022-12-08 20:57:19.774706 : seller1 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:57:19.774779 : seller1 is ready to trade
+2022-12-08 20:57:19.781259 : seller2 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:57:19.781665 : seller2 is ready to trade
+2022-12-08 20:57:19.786590 : buyer3 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:57:19.786707 : buyer3 is ready to trade
+2022-12-08 20:57:19.791788 : seller4 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:57:19.792255 : seller4 is ready to trade
+2022-12-08 20:57:19.795855 : buyer5 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:57:19.795932 : buyer5 is ready to trade
+2022-12-08 20:57:19.799121 : Trader1 is ready for product registration
+2022-12-08 20:57:19.799398 : seller7 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:57:19.799429 : seller7 is ready to trade
+Start re-election!! Traders elected till now ['seller7', 'buyer6']
+2022-12-08 20:57:29.777692 : buyer0 has started the election
+2022-12-08 20:57:29.807652 : Dear buyers and sellers, My ID is buyer5, and I am the new coordinator
+2022-12-08 20:57:29.815614 : buyer0 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 20:57:29.815698 : buyer0 is ready to trade
+2022-12-08 20:57:29.821600 : seller1 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 20:57:29.821645 : seller1 is ready to trade
+2022-12-08 20:57:29.827228 : seller2 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 20:57:29.827328 : seller2 is ready to trade
+2022-12-08 20:57:29.831738 : buyer3 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 20:57:29.831828 : buyer3 is ready to trade
+2022-12-08 20:57:29.834796 : seller4 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 20:57:29.834837 : seller4 is ready to trade
+2022-12-08 20:57:29.838115 : buyer6 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 20:57:29.838152 : buyer6 is ready to trade
+2022-12-08 20:57:29.841866 : Trader2 is ready for product registration
+2022-12-08 20:57:29.842333 : seller7 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 20:57:29.842402 : seller7 is ready to trade
+2022-12-08 20:57:39.826029 : Waiting 15s before starting trading
+2022-12-08 20:57:39.830618 : Waiting 15s before starting trading
+2022-12-08 20:57:39.834414 : Waiting 15s before starting trading
+2022-12-08 20:57:39.842399 : Waiting 15s before starting trading
+2022-12-08 20:57:39.845016 : Waiting 15s before starting trading
+2022-12-08 20:57:39.846428 : Waiting 15s before starting trading
+2022-12-08 20:57:39.852338 : Waiting 15s before starting trading
+2022-12-08 20:57:39.852679 : Waiting 15s before starting trading
+2022-12-08 20:57:54.907363 : seller1 registered their product fish with trader2
+2022-12-08 20:57:54.912657 : seller2 registered their product fish with trader2
+2022-12-08 20:57:54.913258 : seller4 registered their product salt with trader1
+2022-12-08 20:58:04.866507 : Trader1 aka buyer6 - is ready to trade
+All traders in the bazaar ['seller7', 'buyer6', 'buyer5']
+2022-12-08 20:58:04.866624 : 3 trader(s) in the bazar, trading can begin!!!
+2022-12-08 20:58:04.870419 : Trader0 aka seller7 - is ready to trade
+All traders in the bazaar ['seller7', 'buyer6', 'buyer5']
+2022-12-08 20:58:04.870517 : 3 trader(s) in the bazar, trading can begin!!!
+2022-12-08 20:58:04.875049 : Trader2 aka buyer5 - is ready to trade
+All traders in the bazaar ['seller7', 'buyer6', 'buyer5']
+2022-12-08 20:58:04.875153 : 3 trader(s) in the bazar, trading can begin!!!
+Trader2 cache: [{'seller_id': 'seller1', 'count': 10, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 10, 'price': 5, 'item': 'fish'}]
+2022-12-08 20:58:04.876221 : Trader2 got a purchase request for item salt from buyer0
+At 2022-12-08 20:58:04.896556 Item salt is shipped from inventory
+2022-12-08 20:58:04.896983 salt is served from database by Trader2
+At 2022-12-08 20:58:04.965730 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:58:05.036797 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:58:05.036841 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:58:05.038461 : seller4 has sold salt to buyer0 and earned 7.2 $
+2022-12-08 20:58:05.038520 : seller4 has 9 salt left
+Trader2 cache: [{'seller_id': 'seller1', 'count': 10, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 10, 'price': 5, 'item': 'fish'}, {'seller_id': 'seller4', 'count': 9, 'price': 9, 'item': 'salt'}]
+2022-12-08 20:58:05.040110 : buyer0 purchased salt from seller4
+2022-12-08 20:58:05.040186 : Trader2 got a purchase request for item boar from buyer3
+At 2022-12-08 20:58:05.044379 Item fish is unavailable
+2022-12-08 20:58:05.044693 : boar is not available for sell in the bazaar right now
+Trader2 cache: [{'seller_id': 'seller1', 'count': 10, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 10, 'price': 5, 'item': 'fish'}, {'seller_id': 'seller4', 'count': 9, 'price': 9, 'item': 'salt'}]
+2022-12-08 20:58:14.898222 : Trader2 got a purchase request for item fish from buyer0
+2022-12-08 20:58:14.898242 fish is served from cache by Trader2
+Trader0 cache: [{'seller_id': 'seller4', 'count': 9, 'price': 9, 'item': 'salt'}]
+2022-12-08 20:58:14.927406 : Trader0 got a purchase request for item fish from buyer3
+At 2022-12-08 20:58:14.928787 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:58:14.930810 Item fish is shipped from inventory
+2022-12-08 20:58:14.931342 fish is served from database by Trader0
+At 2022-12-08 20:58:14.964964 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 20:58:14.969540 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 20:58:14.969606 : Current Trader0 of the bazar is seller7
+At 2022-12-08 20:58:14.970808 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:58:14.970874 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:58:14.972083 : seller1 has sold fish to buyer3 and earned 5.6 $
+2022-12-08 20:58:14.972639 : seller1 has 8 fish left
+2022-12-08 20:58:14.973706 : seller1 has sold fish to buyer0 and earned 5.6 $
+2022-12-08 20:58:14.973752 : seller1 has 9 fish left
+2022-12-08 20:58:14.974321 : buyer3 purchased fish from seller1
+2022-12-08 20:58:14.979733 : buyer0 purchased fish from seller1
+Trader2 cache: [{'seller_id': 'seller2', 'count': 10, 'price': 5, 'item': 'fish'}, {'seller_id': 'seller4', 'count': 9, 'price': 9, 'item': 'salt'}, {'seller_id': 'seller1', 'count': 8, 'price': 7, 'item': 'fish'}]
+2022-12-08 20:58:24.968193 : Trader2 got a purchase request for item salt from buyer0
+At 2022-12-08 20:58:24.971908 Item salt is shipped from inventory
+2022-12-08 20:58:24.972362 salt is served from database by Trader2
+Trader0 cache: [{'seller_id': 'seller4', 'count': 9, 'price': 9, 'item': 'salt'}, {'seller_id': 'seller1', 'count': 8, 'price': 7, 'item': 'fish'}]
+2022-12-08 20:58:24.986979 : Trader0 got a purchase request for item fish from buyer3
+At 2022-12-08 20:58:24.987688 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:58:24.991067 Item fish is shipped from inventory
+2022-12-08 20:58:24.991686 fish is served from database by Trader0
+At 2022-12-08 20:58:25.031341 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:58:25.031385 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:58:25.033393 : seller4 has sold salt to buyer0 and earned 7.2 $
+2022-12-08 20:58:25.033435 : seller4 has 8 salt left
+At 2022-12-08 20:58:25.037096 Trader0  is syncing its cache with neighbor Trader1 
+2022-12-08 20:58:25.040188 : buyer0 purchased salt from seller4
+At 2022-12-08 20:58:25.124887 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 20:58:25.124934 : Current Trader0 of the bazar is seller7
+2022-12-08 20:58:25.126485 : seller1 has sold fish to buyer3 and earned 5.6 $
+2022-12-08 20:58:25.126524 : seller1 has 7 fish left
+2022-12-08 20:58:25.132684 : buyer3 purchased fish from seller1
+Trader2 cache: [{'seller_id': 'seller2', 'count': 10, 'price': 5, 'item': 'fish'}, {'seller_id': 'seller4', 'count': 8, 'price': 9, 'item': 'salt'}, {'seller_id': 'seller1', 'count': 7, 'price': 7, 'item': 'fish'}]
+2022-12-08 20:58:34.985043 : Trader2 got a purchase request for item fish from buyer0
+2022-12-08 20:58:34.985153 fish is served from cache by Trader2
+At 2022-12-08 20:58:35.065475 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:58:35.109138 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:58:35.109182 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:58:35.110927 : seller2 has sold fish to buyer0 and earned 4.0 $
+2022-12-08 20:58:35.110982 : seller2 has 9 fish left
+Trader2 cache: [{'seller_id': 'seller4', 'count': 8, 'price': 9, 'item': 'salt'}, {'seller_id': 'seller1', 'count': 7, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 9, 'price': 5, 'item': 'fish'}]
+2022-12-08 20:58:35.111951 : buyer0 purchased fish from seller2
+2022-12-08 20:58:35.112106 : Trader2 got a purchase request for item salt from buyer3
+2022-12-08 20:58:35.112158 salt is served from cache by Trader2
+At 2022-12-08 20:58:35.194735 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:58:35.264444 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:58:35.264488 Trader2 is syncing their cache with database
+2022-12-08 20:58:35.266706 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:58:35.268369 : seller4 has sold salt to buyer3 and earned 7.2 $
+2022-12-08 20:58:35.268414 : seller4 has 7 salt left
+2022-12-08 20:58:35.274716 : buyer3 purchased salt from seller4
+Trader2 cache: [{'_id': {'data': 'Y5KWIkLb2bX5S0Hl', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': 7, 'price': 7}, {'_id': {'data': 'Y5KWIkLb2bX5S0Hn', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller4', 'count': 7, 'price': 9}, {'_id': {'data': 'Y5KWIkLb2bX5S0Hp', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller2', 'count': 9, 'price': 5}]
+2022-12-08 20:58:45.037125 : Trader2 got a purchase request for item fish from buyer0
+2022-12-08 20:58:45.037148 fish is served from cache by Trader2
+Trader0 cache: [{'seller_id': 'seller1', 'count': 7, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 9, 'price': 5, 'item': 'fish'}, {'seller_id': 'seller4', 'count': 7, 'price': 9, 'item': 'salt'}]
+2022-12-08 20:58:45.060793 : Trader0 got a purchase request for item fish from buyer3
+2022-12-08 20:58:45.060842 fish is served from cache by Trader0
+At 2022-12-08 20:58:45.060941 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:58:45.087485 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 20:58:45.092692 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 20:58:45.092756 : Current Trader0 of the bazar is seller7
+2022-12-08 20:58:45.094666 : seller2 has sold fish to buyer3 and earned 4.0 $
+2022-12-08 20:58:45.094722 : seller2 has 8 fish left
+2022-12-08 20:58:45.101269 : buyer3 purchased fish from seller2
+At 2022-12-08 20:58:45.114153 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:58:45.114198 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:58:45.115684 : seller1 has sold fish to buyer0 and earned 5.6 $
+2022-12-08 20:58:45.115725 : seller1 has 6 fish left
+2022-12-08 20:58:45.121886 : buyer0 purchased fish from seller1
+2022-12-08 20:58:49.781298 : Executing seller loop
+2022-12-08 20:58:49.781389 : seller2 has picked item boar to sell
+2022-12-08 20:58:49.814394 : Executing seller loop
+2022-12-08 20:58:49.814488 : seller1 has picked item boar to sell
+2022-12-08 20:58:49.826391 : Executing seller loop
+2022-12-08 20:58:49.826485 : seller4 has picked item boar to sell
+Trader0 cache: [{'seller_id': 'seller4', 'count': 7, 'price': 9, 'item': 'salt'}, {'seller_id': 'seller1', 'count': 6, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 8, 'price': 5, 'item': 'fish'}]
+2022-12-08 20:58:55.090326 : Trader0 got a purchase request for item boar from buyer0
+At 2022-12-08 20:58:55.093541 Item fish is unavailable
+2022-12-08 20:58:55.093808 : boar is not available for sell in the bazaar right now
+Trader2 cache: [{'_id': {'data': 'Y5KWIkLb2bX5S0Hn', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller4', 'count': 7, 'price': 9}, {'seller_id': 'seller1', 'count': 6, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 8, 'price': 5, 'item': 'fish'}]
+2022-12-08 20:58:55.118232 : Trader2 got a purchase request for item fish from buyer3
+At 2022-12-08 20:58:55.122557 Item fish is shipped from inventory
+2022-12-08 20:58:55.123106 fish is served from database by Trader2
+At 2022-12-08 20:58:55.178167 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:58:55.237043 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:58:55.237090 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:58:55.238520 : seller1 has sold fish to buyer3 and earned 5.6 $
+2022-12-08 20:58:55.238551 : seller1 has 5 fish left
+2022-12-08 20:58:55.245085 : buyer3 purchased fish from seller1
+2022-12-08 20:58:59.791443 : Waiting 15s before starting trading
+2022-12-08 20:58:59.822704 : Waiting 15s before starting trading
+2022-12-08 20:58:59.834454 : Waiting 15s before starting trading
+2022-12-08 20:58:59.874403 : Executing seller loop
+2022-12-08 20:58:59.874485 : seller1 has picked item fish to sell
+2022-12-08 20:58:59.878400 : Executing seller loop
+2022-12-08 20:58:59.878473 : seller2 has picked item fish to sell
+2022-12-08 20:58:59.892790 : Executing seller loop
+2022-12-08 20:58:59.892882 : seller4 has picked item salt to sell
+Trader1 cache: [{'seller_id': 'seller4', 'count': 7, 'price': 9, 'item': 'salt'}, {'seller_id': 'seller2', 'count': 8, 'price': 5, 'item': 'fish'}, {'seller_id': 'seller1', 'count': 5, 'price': 7, 'item': 'fish'}]
+2022-12-08 20:59:05.131838 : Trader1 got a purchase request for item fish from buyer0
+At 2022-12-08 20:59:05.135835 Item fish is shipped from inventory
+2022-12-08 20:59:05.136530 fish is served from database by Trader1
+At 2022-12-08 20:59:05.199850 Trader1  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:59:05.270515 Trader1  is syncing its cache with neighbor Trader2 
+2022-12-08 20:59:05.270563 : Current Trader1 of the bazar is buyer6
+2022-12-08 20:59:05.272292 : seller1 has sold fish to buyer0 and earned 5.6 $
+2022-12-08 20:59:05.272334 : seller1 has 4 fish left
+Trader1 cache: [{'seller_id': 'seller4', 'count': 7, 'price': 9, 'item': 'salt'}, {'seller_id': 'seller2', 'count': 8, 'price': 5, 'item': 'fish'}, {'seller_id': 'seller1', 'count': 4, 'price': 7, 'item': 'fish'}]
+2022-12-08 20:59:05.273529 : buyer0 purchased fish from seller1
+2022-12-08 20:59:05.273603 : Trader1 got a purchase request for item salt from buyer3
+2022-12-08 20:59:05.273634 salt is served from cache by Trader1
+At 2022-12-08 20:59:05.324930 Trader1  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:59:05.381093 Trader1  is syncing its cache with neighbor Trader2 
+2022-12-08 20:59:05.381140 : Current Trader1 of the bazar is buyer6
+2022-12-08 20:59:05.382773 : seller4 has sold salt to buyer3 and earned 7.2 $
+2022-12-08 20:59:05.382817 : seller4 has 6 salt left
+2022-12-08 20:59:05.388992 : buyer3 purchased salt from seller4
+2022-12-08 20:59:09.882405 : Waiting 15s before starting trading
+2022-12-08 20:59:09.886401 : Waiting 15s before starting trading
+2022-12-08 20:59:09.902379 : Waiting 15s before starting trading
+2022-12-08 20:59:09.918404 : Executing seller loop
+2022-12-08 20:59:09.918489 : seller1 has picked item salt to sell
+2022-12-08 20:59:09.926393 : Executing seller loop
+2022-12-08 20:59:09.926494 : seller2 has picked item boar to sell
+2022-12-08 20:59:09.934411 : Executing seller loop
+2022-12-08 20:59:09.934495 : seller4 has picked item fish to sell
+2022-12-08 20:59:14.884898 : seller2 registered their product boar with trader0
+2022-12-08 20:59:14.905236 : seller1 registered their product salt with trader1
+2022-12-08 20:59:14.906267 : seller4 registered their product fish with trader0
+Trader2 cache: [{'seller_id': 'seller2', 'count': 8, 'price': 5, 'item': 'fish'}, {'seller_id': 'seller1', 'count': 4, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller4', 'count': 6, 'price': 9, 'item': 'salt'}]
+2022-12-08 20:59:15.175087 : Trader2 got a purchase request for item fish from buyer0
+2022-12-08 20:59:15.175163 fish is served from cache by Trader2
+At 2022-12-08 20:59:15.222614 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:59:15.272513 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:59:15.272563 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:59:15.274204 : seller2 has sold fish to buyer0 and earned 4.0 $
+2022-12-08 20:59:15.274248 : seller2 has 7 fish left
+Trader2 cache: [{'seller_id': 'seller1', 'count': 4, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller4', 'count': 6, 'price': 9, 'item': 'salt'}, {'seller_id': 'seller2', 'count': 7, 'price': 5, 'item': 'fish'}]
+2022-12-08 20:59:15.275343 : buyer0 purchased fish from seller2
+2022-12-08 20:59:15.275389 : Trader2 got a purchase request for item salt from buyer3
+At 2022-12-08 20:59:15.278713 Item salt is shipped from inventory
+2022-12-08 20:59:15.279690 salt is served from database by Trader2
+At 2022-12-08 20:59:15.345271 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:59:15.399454 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:59:15.399501 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:59:15.401471 : seller4 has sold salt to buyer3 and earned 7.2 $
+2022-12-08 20:59:15.401517 : seller4 has 5 salt left
+2022-12-08 20:59:15.407804 : buyer3 purchased salt from seller4
+2022-12-08 20:59:19.928579 : Waiting 15s before starting trading
+2022-12-08 20:59:19.934405 : Waiting 15s before starting trading
+2022-12-08 20:59:19.944590 : Waiting 15s before starting trading
+Trader2 cache: [{'seller_id': 'seller1', 'count': 4, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 7, 'price': 5, 'item': 'fish'}, {'seller_id': 'seller4', 'count': 5, 'price': 9, 'item': 'salt'}]
+2022-12-08 20:59:25.200446 : Trader2 got a purchase request for item boar from buyer0
+At 2022-12-08 20:59:25.203547 Item boar is shipped from inventory
+2022-12-08 20:59:25.204035 boar is served from database by Trader2
+Trader0 cache: [{'seller_id': 'seller1', 'count': 4, 'price': 7, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 10, 'price': 5, 'item': 'boar'}, {'seller_id': 'seller4', 'count': 10, 'price': 9, 'item': 'fish'}, {'seller_id': 'seller2', 'count': 7, 'price': 5, 'item': 'fish'}, {'seller_id': 'seller4', 'count': 5, 'price': 9, 'item': 'salt'}]
+2022-12-08 20:59:25.246007 : Trader0 got a purchase request for item salt from buyer3
+At 2022-12-08 20:59:25.246485 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:59:25.250491 Item salt is shipped from inventory
+2022-12-08 20:59:25.251077 salt is served from database by Trader0
+At 2022-12-08 20:59:25.276903 Trader0  is syncing its cache with neighbor Trader1 
+At 2022-12-08 20:59:25.280400 Trader0  is syncing its cache with neighbor Trader2 
+2022-12-08 20:59:25.280445 : Current Trader0 of the bazar is seller7
+2022-12-08 20:59:25.282472 : seller4 has sold salt to buyer3 and earned 7.2 $
+2022-12-08 20:59:25.282519 : seller4 has 4 salt left
+2022-12-08 20:59:25.289315 : buyer3 purchased salt from seller4
+At 2022-12-08 20:59:25.298844 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:59:25.298887 Trader2 is syncing their cache with database
+2022-12-08 20:59:25.301229 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:59:25.302772 : seller2 has sold boar to buyer0 and earned 4.0 $
+2022-12-08 20:59:25.302812 : seller2 has 9 boar left
+2022-12-08 20:59:25.309027 : buyer0 purchased boar from seller2
+Trader2 cache: [{'_id': {'data': 'Y5KWIkLb2bX5S0Hl', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': 4, 'price': 7}, {'_id': {'data': 'Y5KWIkLb2bX5S0Hn', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller4', 'count': 4, 'price': 9}, {'_id': {'data': 'Y5KWIkLb2bX5S0Hp', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller2', 'count': 7, 'price': 5}, {'_id': {'data': 'Y5KWckLb2bX5S0LF', 'encoding': 'base64'}, 'item': 'boar', 'seller_id': 'seller2', 'count': 9, 'price': 5}, {'_id': {'data': 'Y5KWckLb2bX5S0LI', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller1', 'count': 10, 'price': 7}, {'_id': {'data': 'Y5KWckLb2bX5S0LK', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller4', 'count': 10, 'price': 9}]
+2022-12-08 20:59:35.257055 : Trader2 got a purchase request for item boar from buyer0
+At 2022-12-08 20:59:35.260907 Item boar is shipped from inventory
+2022-12-08 20:59:35.261384 boar is served from database by Trader2
+At 2022-12-08 20:59:35.327917 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:59:35.381617 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:59:35.381664 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:59:35.383637 : seller2 has sold boar to buyer0 and earned 4.0 $
+2022-12-08 20:59:35.383681 : seller2 has 8 boar left
+Trader2 cache: [{'_id': {'data': 'Y5KWIkLb2bX5S0Hl', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': 4, 'price': 7}, {'_id': {'data': 'Y5KWIkLb2bX5S0Hn', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller4', 'count': 4, 'price': 9}, {'_id': {'data': 'Y5KWIkLb2bX5S0Hp', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller2', 'count': 7, 'price': 5}, {'_id': {'data': 'Y5KWckLb2bX5S0LI', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller1', 'count': 10, 'price': 7}, {'_id': {'data': 'Y5KWckLb2bX5S0LK', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller4', 'count': 10, 'price': 9}, {'seller_id': 'seller2', 'count': 8, 'price': 5, 'item': 'boar'}]
+2022-12-08 20:59:35.384805 : buyer0 purchased boar from seller2
+2022-12-08 20:59:35.384955 : Trader2 got a purchase request for item boar from buyer3
+At 2022-12-08 20:59:35.388810 Item boar is shipped from inventory
+2022-12-08 20:59:35.389305 boar is served from database by Trader2
+At 2022-12-08 20:59:35.453682 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:59:35.507324 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:59:35.507369 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:59:35.508954 : seller2 has sold boar to buyer3 and earned 4.0 $
+2022-12-08 20:59:35.509005 : seller2 has 7 boar left
+2022-12-08 20:59:35.515357 : buyer3 purchased boar from seller2
+Trader2 cache: [{'_id': {'data': 'Y5KWIkLb2bX5S0Hl', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': 4, 'price': 7}, {'_id': {'data': 'Y5KWIkLb2bX5S0Hn', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller4', 'count': 4, 'price': 9}, {'_id': {'data': 'Y5KWIkLb2bX5S0Hp', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller2', 'count': 7, 'price': 5}, {'_id': {'data': 'Y5KWckLb2bX5S0LI', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller1', 'count': 10, 'price': 7}, {'_id': {'data': 'Y5KWckLb2bX5S0LK', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller4', 'count': 10, 'price': 9}, {'seller_id': 'seller2', 'count': 7, 'price': 5, 'item': 'boar'}]
+2022-12-08 20:59:45.299562 : Trader2 got a purchase request for item boar from buyer0
+At 2022-12-08 20:59:45.302583 Item boar is shipped from inventory
+2022-12-08 20:59:45.303030 boar is served from database by Trader2
+At 2022-12-08 20:59:45.374486 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:59:45.438762 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:59:45.438809 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:59:45.440438 : seller2 has sold boar to buyer0 and earned 4.0 $
+2022-12-08 20:59:45.440480 : seller2 has 6 boar left
+Trader2 cache: [{'_id': {'data': 'Y5KWIkLb2bX5S0Hl', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller1', 'count': 4, 'price': 7}, {'_id': {'data': 'Y5KWIkLb2bX5S0Hn', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller4', 'count': 4, 'price': 9}, {'_id': {'data': 'Y5KWIkLb2bX5S0Hp', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller2', 'count': 7, 'price': 5}, {'_id': {'data': 'Y5KWckLb2bX5S0LI', 'encoding': 'base64'}, 'item': 'salt', 'seller_id': 'seller1', 'count': 10, 'price': 7}, {'_id': {'data': 'Y5KWckLb2bX5S0LK', 'encoding': 'base64'}, 'item': 'fish', 'seller_id': 'seller4', 'count': 10, 'price': 9}, {'seller_id': 'seller2', 'count': 6, 'price': 5, 'item': 'boar'}]
+2022-12-08 20:59:45.441684 : buyer0 purchased boar from seller2
+2022-12-08 20:59:45.441782 : Trader2 got a purchase request for item boar from buyer3
+At 2022-12-08 20:59:45.445176 Item boar is shipped from inventory
+2022-12-08 20:59:45.445657 boar is served from database by Trader2
+At 2022-12-08 20:59:45.517859 Trader2  is syncing its cache with neighbor Trader0 
+At 2022-12-08 20:59:45.583636 Trader2  is syncing its cache with neighbor Trader1 
+2022-12-08 20:59:45.583681 : Current Trader2 of the bazar is buyer5
+2022-12-08 20:59:45.585344 : seller2 has sold boar to buyer3 and earned 4.0 $
+2022-12-08 20:59:45.585387 : seller2 has 5 boar left
+2022-12-08 20:59:45.591573 : buyer3 purchased boar from seller2

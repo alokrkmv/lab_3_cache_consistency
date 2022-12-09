@@ -1,0 +1,190 @@
+Starting the main process
+Showing the graphical representation of the bazaar
+
+Connected succesfuly to the databse
+2022-12-08 19:08:52.649512 : buyer0 joined the bazar as buyer looking for salt
+2022-12-08 19:08:52.650428 : seller1 joined the bazar as seller selling salt
+2022-12-08 19:08:52.654053 : buyer2 joined the bazar as buyer looking for boar
+2022-12-08 19:08:52.658435 : seller3 joined the bazar as seller selling fish
+2022-12-08 19:08:52.664962 : seller4 joined the bazar as seller selling fish
+2022-12-08 19:08:52.666643 : buyer5 joined the bazar as buyer looking for boar
+2022-12-08 19:08:52.672165 : seller6 joined the bazar as seller selling salt
+2022-12-08 19:08:52.674168 : buyer7 joined the bazar as buyer looking for fish
+2022-12-08 19:08:56.658510 : buyer2 has started the election
+
+2022-12-08 19:08:56.700286 : Dear buyers and sellers, My ID is buyer7, and I am the new coordinator
+2022-12-08 19:08:56.717362 : buyer0 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 19:08:56.717419 : buyer0 is ready to trade
+2022-12-08 19:08:56.720323 : seller1 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 19:08:56.720371 : seller1 is ready to trade
+2022-12-08 19:08:56.723058 : buyer2 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 19:08:56.723139 : buyer2 is ready to trade
+2022-12-08 19:08:56.726012 : seller3 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 19:08:56.726067 : seller3 is ready to trade
+2022-12-08 19:08:56.729043 : seller4 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 19:08:56.729091 : seller4 is ready to trade
+2022-12-08 19:08:56.732547 : buyer5 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 19:08:56.732594 : buyer5 is ready to trade
+2022-12-08 19:08:56.735647 : Trader0 is ready for product registration
+2022-12-08 19:08:56.736371 : seller6 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 19:08:56.736422 : seller6 is ready to trade
+
+Start re-election!! Traders elected till now ['buyer7']
+
+2022-12-08 19:09:06.727973 : buyer0 has started the election
+2022-12-08 19:09:06.762558 : Dear buyers and sellers, My ID is seller6, and I am the new coordinator
+2022-12-08 19:09:06.775960 : buyer0 received message won from seller6 and recognizes seller6 as the new coordinator of the bazaar
+2022-12-08 19:09:06.776011 : buyer0 is ready to trade
+2022-12-08 19:09:06.782335 : seller1 received message won from seller6 and recognizes seller6 as the new coordinator of the bazaar
+2022-12-08 19:09:06.782401 : seller1 is ready to trade
+2022-12-08 19:09:06.787233 : buyer2 received message won from seller6 and recognizes seller6 as the new coordinator of the bazaar
+2022-12-08 19:09:06.787323 : buyer2 is ready to trade
+2022-12-08 19:09:06.790689 : seller3 received message won from seller6 and recognizes seller6 as the new coordinator of the bazaar
+2022-12-08 19:09:06.790734 : seller3 is ready to trade
+2022-12-08 19:09:06.794964 : seller4 received message won from seller6 and recognizes seller6 as the new coordinator of the bazaar
+2022-12-08 19:09:06.795002 : seller4 is ready to trade
+2022-12-08 19:09:06.797588 : buyer5 received message won from seller6 and recognizes seller6 as the new coordinator of the bazaar
+2022-12-08 19:09:06.797631 : buyer5 is ready to trade
+2022-12-08 19:09:06.800669 : Trader1 is ready for product registration
+2022-12-08 19:09:06.801363 : buyer7 received message won from seller6 and recognizes seller6 as the new coordinator of the bazaar
+2022-12-08 19:09:06.801422 : buyer7 is ready to trade
+
+Start re-election!! Traders elected till now ['buyer7', 'seller6']
+2022-12-08 19:09:16.786303 : buyer0 has started the election
+2022-12-08 19:09:16.821575 : Dear buyers and sellers, My ID is buyer5, and I am the new coordinator
+2022-12-08 19:09:16.834534 : buyer0 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 19:09:16.834586 : buyer0 is ready to trade
+2022-12-08 19:09:16.836605 : seller1 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 19:09:16.836646 : seller1 is ready to trade
+2022-12-08 19:09:16.838894 : buyer2 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 19:09:16.838948 : buyer2 is ready to trade
+2022-12-08 19:09:16.842070 : seller3 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 19:09:16.842111 : seller3 is ready to trade
+2022-12-08 19:09:16.844840 : seller4 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 19:09:16.844905 : seller4 is ready to trade
+2022-12-08 19:09:16.847394 : seller6 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 19:09:16.847443 : seller6 is ready to trade
+2022-12-08 19:09:16.849800 : Trader2 is ready for product registration
+2022-12-08 19:09:16.850158 : buyer7 received message won from buyer5 and recognizes buyer5 as the new coordinator of the bazaar
+2022-12-08 19:09:16.850203 : buyer7 is ready to trade
+
+2022-12-08 19:09:26.844879 : Waiting 15s before starting trading
+2022-12-08 19:09:26.845107 : Waiting 15s before starting trading
+2022-12-08 19:09:26.846423 : Waiting 15s before starting trading
+2022-12-08 19:09:26.850829 : Waiting 15s before starting trading
+2022-12-08 19:09:26.854412 : Waiting 15s before starting trading
+2022-12-08 19:09:26.855100 : Waiting 15s before starting trading
+2022-12-08 19:09:26.859084 : Waiting 15s before starting trading
+2022-12-08 19:09:26.859094 : Waiting 15s before starting trading
+
+2022-12-08 19:09:41.924783 : seller1 registered their product salt with trader0
+2022-12-08 19:09:41.929104 : seller4 registered their product fish with trader1
+2022-12-08 19:09:41.929653 : seller3 registered their product fish with trader0
+
+2022-12-08 19:09:46.739520 : Executing seller loop
+2022-12-08 19:09:46.739540 : Executing seller loop
+2022-12-08 19:09:46.739651 : seller4 has picked item boar to sell
+2022-12-08 19:09:46.739680 : seller6 has picked item fish to sell
+2022-12-08 19:09:46.770639 : Executing seller loop
+2022-12-08 19:09:46.770731 : seller1 has picked item fish to sell
+2022-12-08 19:09:46.774430 : Executing seller loop
+2022-12-08 19:09:46.774609 : seller3 has picked item boar to sell
+2022-12-08 19:09:51.870127 : Trader1 aka seller6 - is ready to trade
+
+All traders in the bazaar ['buyer7', 'seller6', 'buyer5']
+
+2022-12-08 19:09:51.870375 : 3 trader(s) in the bazar, trading can begin!!!
+
+2022-12-08 19:09:51.876813 : Trader2 aka buyer5 - is ready to trade
+
+All traders in the bazaar ['buyer7', 'seller6', 'buyer5']
+2022-12-08 19:09:51.876913 : 3 trader(s) in the bazar, trading can begin!!!
+
+2022-12-08 19:09:51.877918 : Trader2 got a purchase request for item boar from buyer2
+2022-12-08 19:09:51.882621 : Trader0 aka buyer7 - is ready to trade
+
+All traders in the bazaar ['buyer7', 'seller6', 'buyer5']
+2022-12-08 19:09:51.882719 : 3 trader(s) in the bazar, trading can begin!!!
+
+At 2022-12-08 19:09:51.902797 Item fish is unavailable
+2022-12-08 19:09:51.903354 : boar is not available for sell in the bazaar right now
+
+2022-12-08 19:09:51.913447 : Trader1 got a purchase request for item salt from buyer0
+At 2022-12-08 19:09:51.917487 Item salt is shipped from inventory
+2022-12-08 19:09:51.923454 : Current Trader1 of the bazar is seller6
+2022-12-08 19:09:51.924916 : seller1 has sold salt to buyer0 and earned 6.4 $
+2022-12-08 19:09:51.924966 : seller1 has 9 salt left
+2022-12-08 19:09:51.931096 : buyer0 purchased salt from seller1
+
+2022-12-08 19:09:56.749708 : Waiting 15s before starting trading
+2022-12-08 19:09:56.751484 : Waiting 15s before starting trading
+2022-12-08 19:09:56.780819 : Waiting 15s before starting trading
+2022-12-08 19:09:56.782376 : Waiting 15s before starting trading
+
+2022-12-08 19:09:56.830397 : Executing seller loop
+2022-12-08 19:09:56.830503 : seller1 has picked item boar to sell
+2022-12-08 19:09:56.838382 : Executing seller loop
+2022-12-08 19:09:56.838459 : seller3 has picked item fish to sell
+2022-12-08 19:09:56.843415 : Executing seller loop
+2022-12-08 19:09:56.843501 : seller4 has picked item fish to sell
+
+2022-12-08 19:10:01.923292 : Trader0 got a purchase request for item salt from buyer2
+At 2022-12-08 19:10:01.926555 Item salt is shipped from inventory
+2022-12-08 19:10:01.932440 : Current Trader0 of the bazar is buyer7
+2022-12-08 19:10:01.933989 : seller1 has sold salt to buyer2 and earned 6.4 $
+2022-12-08 19:10:01.934096 : seller1 has 8 salt left
+2022-12-08 19:10:01.935810 : buyer2 purchased salt from seller1
+
+2022-12-08 19:10:01.935922 : Trader0 got a purchase request for item boar from buyer0
+
+At 2022-12-08 19:10:01.939652 Item fish is unavailable
+2022-12-08 19:10:01.939965 : boar is not available for sell in the bazaar right now
+
+2022-12-08 19:10:06.840596 : Waiting 15s before starting trading
+2022-12-08 19:10:06.846390 : Waiting 15s before starting trading
+2022-12-08 19:10:06.850404 : Waiting 15s before starting trading
+
+2022-12-08 19:10:06.886390 : Executing seller loop
+2022-12-08 19:10:06.886467 : seller1 has picked item fish to sell
+2022-12-08 19:10:06.890421 : Executing seller loop
+2022-12-08 19:10:06.890490 : seller3 has picked item boar to sell
+2022-12-08 19:10:06.894373 : Executing seller loop
+2022-12-08 19:10:06.894448 : seller4 has picked item boar to sell
+
+2022-12-08 19:10:11.845582 : seller4 registered their product boar with trader2
+2022-12-08 19:10:11.898238 : seller3 registered their product boar with trader2
+2022-12-08 19:10:11.902040 : seller1 registered their product fish with trader1
+
+2022-12-08 19:10:11.952855 : Trader0 got a purchase request for item salt from buyer2
+At 2022-12-08 19:10:11.955950 Item salt is shipped from inventory
+2022-12-08 19:10:11.962619 : Current Trader0 of the bazar is buyer7
+2022-12-08 19:10:11.964395 : seller1 has sold salt to buyer2 and earned 6.4 $
+2022-12-08 19:10:11.964445 : seller1 has 7 salt left
+2022-12-08 19:10:11.971227 : buyer2 purchased salt from seller1
+
+
+2022-12-08 19:10:12.000664 : Trader2 got a purchase request for item salt from buyer0
+At 2022-12-08 19:10:12.003524 Item salt is shipped from inventory
+2022-12-08 19:10:12.009435 : Current Trader2 of the bazar is buyer5
+2022-12-08 19:10:12.011898 : seller1 has sold salt to buyer0 and earned 6.4 $
+2022-12-08 19:10:12.011941 : seller1 has 6 salt left
+2022-12-08 19:10:12.018528 : buyer0 purchased salt from seller1
+2022-12-08 19:10:16.888373 : Waiting 15s before starting trading
+2022-12-08 19:10:16.900247 : Waiting 15s before starting trading
+2022-12-08 19:10:16.904280 : Waiting 15s before starting trading
+2022-12-08 19:10:21.786555 : Trader1 aka seller6 - is ready to trade
+
+All traders in the bazaar ['buyer7', 'seller6', 'buyer5']
+2022-12-08 19:10:21.796848 : 3 trader(s) in the bazar, trading can begin!!!
+2022-12-08 19:10:22.000822 : Trader0 got a purchase request for item fish from buyer2
+At 2022-12-08 19:10:22.004368 Item fish is shipped from inventory
+2022-12-08 19:10:22.010725 : Current Trader0 of the bazar is buyer7
+2022-12-08 19:10:22.012677 : seller4 has sold fish to buyer2 and earned 4.0 $
+2022-12-08 19:10:22.012736 : seller4 has 9 fish left
+2022-12-08 19:10:22.018692 : buyer2 purchased fish from seller4
+2022-12-08 19:10:22.098746 : Trader1 got a purchase request for item fish from buyer0
+At 2022-12-08 19:10:22.105925 Item fish is shipped from inventory
+2022-12-08 19:10:22.275868 : Current Trader1 of the bazar is seller6
+2022-12-08 19:10:22.323362 : seller4 has sold fish to buyer0 and earned 4.0 $
+2022-12-08 19:10:22.323401 : seller4 has 8 fish left
+2022-12-08 19:10:22.360626 : buyer0 purchased fish from seller4

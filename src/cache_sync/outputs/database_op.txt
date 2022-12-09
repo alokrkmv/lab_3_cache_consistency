@@ -1,0 +1,224 @@
+At 2022-12-08 21:46:56.701020 Item salt is unavailable
+At 2022-12-08 21:46:56.705216 Item salt is unavailable
+At 2022-12-08 21:47:16.781229 Item salt is unavailable
+At 2022-12-08 21:47:36.777524 Item salt is unavailable
+At 2022-12-08 21:47:46.806908 Item salt is unavailable
+At 2022-12-08 21:47:56.831349 Item salt is unavailable
+At 2022-12-08 21:48:16.856504 Item salt is unavailable
+At 2022-12-08 21:48:36.906336 Item salt is unavailable
+At 2022-12-08 21:48:56.982314 Item salt is unavailable
+At 2022-12-08 21:49:57.133399 Item salt is unavailable
+At 2022-12-08 21:50:07.016483 Item salt is unavailable
+At 2022-12-08 21:50:07.155387 Item salt is unavailable
+At 2022-12-08 21:50:17.065910 Item fish is shipped from inventory
+At 2022-12-08 21:50:37.101581 Item fish is unavailable
+At 2022-12-08 21:50:37.166672 Item fish is unavailable
+At 2022-12-08 21:50:47.101843 Item fish is unavailable
+At 2022-12-08 21:50:57.132755 Item fish is shipped from inventory
+At 2022-12-08 21:50:57.191359 Item fish is shipped from inventory
+At 2022-12-08 21:50:57.216762 Item fish is unavailable
+At 2022-12-08 21:51:17.250699 Item fish is shipped from inventory
+At 2022-12-08 21:51:37.188942 Item fish is unavailable
+At 2022-12-08 21:51:37.292860 Item fish is unavailable
+At 2022-12-08 21:52:07.279403 Item salt is unavailable
+At 2022-12-08 21:52:07.351754 Item fish is shipped from inventory
+At 2022-12-08 21:52:17.289666 Item salt is unavailable
+At 2022-12-08 21:52:17.313801 Item salt is unavailable
+At 2022-12-08 21:52:27.346122 Item salt is unavailable
+At 2022-12-08 21:52:27.369516 Item boar is shipped from inventory
+At 2022-12-08 21:52:47.364723 Item fish is shipped from inventory
+At 2022-12-08 21:52:57.452527 Item salt is shipped from inventory
+At 2022-12-08 21:53:37.482376 Item salt is shipped from inventory
+At 2022-12-08 21:53:57.546455 Item boar is shipped from inventory
+At 2022-12-08 21:53:57.575372 Item boar is shipped from inventory
+At 2022-12-08 21:54:07.561683 Item boar is shipped from inventory
+At 2022-12-08 21:54:17.581974 Item fish is shipped from inventory
+At 2022-12-08 21:54:17.607298 Item fish is shipped from inventory
+At 2022-12-08 21:54:57.659252 Item boar is shipped from inventory
+At 2022-12-08 21:55:07.818191 Item fish is shipped from inventory
+At 2022-12-08 21:55:17.685542 Item fish is shipped from inventory
+At 2022-12-08 21:55:27.743651 Item fish is shipped from inventory
+At 2022-12-08 21:55:27.768789 Item boar is shipped from inventory
+At 2022-12-08 21:55:37.717850 Item boar is shipped from inventory
+At 2022-12-08 21:55:47.749138 Item boar is shipped from inventory
+At 2022-12-08 21:55:57.733961 Item boar is unavailable
+At 2022-12-08 21:56:07.819810 Item salt is shipped from inventory
+At 2022-12-08 21:56:07.848660 Item salt is shipped from inventory
+At 2022-12-08 21:56:17.796343 Item fish is shipped from inventory
+At 2022-12-08 21:56:17.819261 Item boar is unavailable
+At 2022-12-08 21:56:37.854140 Item boar is unavailable
+At 2022-12-08 21:56:37.878503 Item salt is shipped from inventory
+At 2022-12-08 21:56:47.868497 Item boar is unavailable
+At 2022-12-08 21:56:47.895731 Item boar is unavailable
+At 2022-12-08 21:57:07.923307 Item boar is shipped from inventory
+At 2022-12-08 21:57:07.948156 Item salt is shipped from inventory
+At 2022-12-08 21:57:27.992408 Item boar is shipped from inventory
+At 2022-12-08 21:57:37.996861 Item boar is shipped from inventory
+At 2022-12-08 21:57:57.985566 Item fish is shipped from inventory
+At 2022-12-08 21:58:08.009258 Item fish is shipped from inventory
+At 2022-12-08 21:58:08.035661 Item boar is shipped from inventory
+At 2022-12-08 21:58:18.038225 Item fish is shipped from inventory
+At 2022-12-08 21:58:38.079922 Item fish is shipped from inventory
+At 2022-12-08 21:58:38.110105 Item boar is shipped from inventory
+At 2022-12-08 21:58:48.126087 Item boar is shipped from inventory
+At 2022-12-08 21:58:48.151362 Item fish is shipped from inventory
+At 2022-12-08 21:58:58.180850 Item fish is shipped from inventory
+At 2022-12-08 21:59:08.186423 Item boar is shipped from inventory
+At 2022-12-08 21:59:08.216492 Item boar is shipped from inventory
+At 2022-12-08 21:59:18.154403 Item fish is shipped from inventory
+At 2022-12-08 21:59:18.241138 Item fish is shipped from inventory
+At 2022-12-08 21:59:18.265476 Item fish is unavailable
+At 2022-12-08 21:59:28.161880 Item boar is shipped from inventory
+At 2022-12-08 21:59:28.267986 Item boar is shipped from inventory
+At 2022-12-08 21:59:38.218523 Item fish is unavailable
+At 2022-12-08 21:59:48.303573 Item boar is shipped from inventory
+At 2022-12-08 22:00:18.349513 Item salt is shipped from inventory
+At 2022-12-08 22:00:28.383908 Item salt is shipped from inventory
+At 2022-12-08 22:00:38.454128 Item fish is shipped from inventory
+At 2022-12-08 22:00:48.511368 Item salt is shipped from inventory
+At 2022-12-08 22:01:08.588316 Item boar is shipped from inventory
+At 2022-12-08 22:01:18.464815 Item boar is shipped from inventory
+At 2022-12-08 22:01:18.493336 Item boar is shipped from inventory
+At 2022-12-08 22:01:18.634235 Item fish is shipped from inventory
+At 2022-12-08 22:01:38.543589 Item salt is shipped from inventory
+At 2022-12-08 22:01:38.689692 Item boar is shipped from inventory
+At 2022-12-08 22:01:48.538410 Item salt is unavailable
+At 2022-12-08 22:02:08.630197 Item fish is shipped from inventory
+At 2022-12-08 22:02:08.775285 Item fish is shipped from inventory
+At 2022-12-08 22:02:18.606758 Item fish is shipped from inventory
+At 2022-12-08 22:02:18.631537 Item fish is shipped from inventory
+At 2022-12-08 22:02:28.670654 Item salt is unavailable
+At 2022-12-08 22:02:38.645776 Item salt is unavailable
+At 2022-12-08 22:02:38.674058 Item salt is unavailable
+At 2022-12-08 22:02:38.823130 Item fish is shipped from inventory
+At 2022-12-08 22:02:48.663024 Item fish is shipped from inventory
+At 2022-12-08 22:02:48.870715 Item boar is shipped from inventory
+At 2022-12-08 22:02:58.906632 Item salt is shipped from inventory
+At 2022-12-08 22:03:28.787748 Item salt is shipped from inventory
+At 2022-12-08 22:03:48.790070 Item boar is shipped from inventory
+At 2022-12-08 22:04:08.872250 Item fish is shipped from inventory
+At 2022-12-08 22:04:28.893746 Item boar is unavailable
+At 2022-12-08 22:04:38.926881 Item fish is shipped from inventory
+At 2022-12-08 22:05:08.975781 Item fish is shipped from inventory
+At 2022-12-08 22:05:39.002865 Item boar is shipped from inventory
+At 2022-12-08 22:05:49.172193 Item salt is shipped from inventory
+At 2022-12-08 22:05:59.066295 Item salt is shipped from inventory
+At 2022-12-08 22:06:39.276197 Item boar is shipped from inventory
+At 2022-12-08 22:06:49.149078 Item fish is shipped from inventory
+At 2022-12-08 22:06:49.175270 Item boar is shipped from inventory
+At 2022-12-08 22:06:49.201447 Item boar is shipped from inventory
+At 2022-12-08 22:06:59.190661 Item boar is shipped from inventory
+At 2022-12-08 22:06:59.214056 Item salt is unavailable
+At 2022-12-08 22:07:09.202168 Item salt is unavailable
+At 2022-12-08 22:07:19.262684 Item salt is unavailable
+At 2022-12-08 22:07:29.446555 Item salt is unavailable
+At 2022-12-08 22:07:59.321872 Item salt is shipped from inventory
+At 2022-12-08 22:07:59.555258 Item salt is shipped from inventory
+At 2022-12-08 22:08:09.328176 Item boar is shipped from inventory
+At 2022-12-08 22:08:19.367411 Item boar is shipped from inventory
+At 2022-12-08 22:08:19.386758 Item fish is shipped from inventory
+At 2022-12-08 22:08:19.406207 Item boar is shipped from inventory
+At 2022-12-08 22:08:19.576832 Item fish is shipped from inventory
+At 2022-12-08 22:08:29.419266 Item boar is shipped from inventory
+At 2022-12-08 22:09:09.473423 Item boar is shipped from inventory
+At 2022-12-08 22:09:09.688380 Item boar is shipped from inventory
+At 2022-12-08 22:09:49.790115 Item boar is shipped from inventory
+At 2022-12-08 22:10:09.565399 Item fish is shipped from inventory
+At 2022-12-08 22:10:09.589687 Item boar is shipped from inventory
+At 2022-12-08 22:10:09.613482 Item boar is shipped from inventory
+At 2022-12-08 22:10:19.942034 Item fish is shipped from inventory
+At 2022-12-08 22:10:29.627673 Item boar is unavailable
+At 2022-12-08 22:10:39.667443 Item salt is shipped from inventory
+At 2022-12-08 22:10:49.723465 Item fish is shipped from inventory
+At 2022-12-08 22:10:59.673747 Item fish is shipped from inventory
+At 2022-12-08 22:11:09.676298 Item salt is shipped from inventory
+At 2022-12-08 22:11:19.718826 Item fish is unavailable
+At 2022-12-08 22:11:29.738164 Item boar is shipped from inventory
+At 2022-12-08 22:11:29.767721 Item boar is shipped from inventory
+At 2022-12-08 22:11:39.767077 Item boar is shipped from inventory
+At 2022-12-08 22:11:39.794756 Item boar is shipped from inventory
+At 2022-12-08 22:11:59.814817 Item fish is unavailable
+At 2022-12-08 22:11:59.842419 Item fish is unavailable
+At 2022-12-08 22:12:00.183526 Item fish is unavailable
+At 2022-12-08 22:12:09.838326 Item fish is unavailable
+At 2022-12-08 22:12:19.853958 Item boar is shipped from inventory
+At 2022-12-08 22:12:29.874232 Item boar is shipped from inventory
+At 2022-12-08 22:12:30.257724 Item fish is unavailable
+At 2022-12-08 22:12:49.905703 Item fish is shipped from inventory
+At 2022-12-08 22:12:49.931619 Item fish is shipped from inventory
+At 2022-12-08 22:13:09.990717 Item salt is shipped from inventory
+At 2022-12-08 22:13:20.005451 Item salt is shipped from inventory
+At 2022-12-08 22:13:20.393846 Item fish is shipped from inventory
+At 2022-12-08 22:14:20.091999 Item boar is shipped from inventory
+At 2022-12-08 22:14:20.115723 Item fish is shipped from inventory
+At 2022-12-08 22:14:20.143615 Item fish is shipped from inventory
+At 2022-12-08 22:14:30.155752 Item fish is shipped from inventory
+At 2022-12-08 22:14:40.161062 Item fish is shipped from inventory
+At 2022-12-08 22:14:50.222014 Item boar is shipped from inventory
+At 2022-12-08 22:14:50.559580 Item boar is shipped from inventory
+At 2022-12-08 22:15:00.656542 Item fish is shipped from inventory
+At 2022-12-08 22:15:10.210476 Item boar is shipped from inventory
+At 2022-12-08 22:15:10.236933 Item boar is shipped from inventory
+At 2022-12-08 22:15:20.299466 Item fish is unavailable
+At 2022-12-08 22:15:30.411629 Item fish is unavailable
+At 2022-12-08 22:15:40.270571 Item boar is shipped from inventory
+At 2022-12-08 22:15:40.346556 Item fish is unavailable
+At 2022-12-08 22:15:50.465583 Item fish is unavailable
+At 2022-12-08 22:16:00.472357 Item boar is shipped from inventory
+At 2022-12-08 22:16:10.322941 Item salt is shipped from inventory
+At 2022-12-08 22:16:20.534617 Item fish is unavailable
+At 2022-12-08 22:16:30.402110 Item salt is shipped from inventory
+At 2022-12-08 22:16:40.574516 Item boar is shipped from inventory
+At 2022-12-08 22:16:50.459510 Item boar is shipped from inventory
+At 2022-12-08 22:16:50.622049 Item fish is unavailable
+At 2022-12-08 22:17:10.461322 Item fish is unavailable
+At 2022-12-08 22:17:20.723279 Item fish is unavailable
+At 2022-12-08 22:17:20.986896 Item boar is shipped from inventory
+At 2022-12-08 22:17:30.527149 Item boar is shipped from inventory
+At 2022-12-08 22:17:31.019926 Item fish is shipped from inventory
+At 2022-12-08 22:17:50.598604 Item salt is unavailable
+At 2022-12-08 22:18:10.591543 Item boar is shipped from inventory
+At 2022-12-08 22:18:30.819763 Item fish is shipped from inventory
+At 2022-12-08 22:18:40.683144 Item boar is shipped from inventory
+At 2022-12-08 22:18:50.671043 Item fish is shipped from inventory
+At 2022-12-08 22:18:51.136619 Item boar is shipped from inventory
+At 2022-12-08 22:19:00.873785 Item boar is shipped from inventory
+At 2022-12-08 22:19:01.136390 Item boar is shipped from inventory
+At 2022-12-08 22:19:10.761688 Item fish is shipped from inventory
+At 2022-12-08 22:19:20.937298 Item fish is shipped from inventory
+At 2022-12-08 22:19:30.775492 Item fish is shipped from inventory
+At 2022-12-08 22:19:30.958554 Item fish is shipped from inventory
+At 2022-12-08 22:19:31.259288 Item boar is shipped from inventory
+At 2022-12-08 22:19:40.818740 Item boar is shipped from inventory
+At 2022-12-08 22:19:51.031836 Item salt is shipped from inventory
+At 2022-12-08 22:20:00.842333 Item boar is shipped from inventory
+At 2022-12-08 22:20:01.324728 Item boar is unavailable
+At 2022-12-08 22:20:40.906916 Item fish is unavailable
+At 2022-12-08 22:21:00.976965 Item fish is unavailable
+At 2022-12-08 22:21:11.223547 Item fish is unavailable
+At 2022-12-08 22:21:11.419831 Item salt is shipped from inventory
+At 2022-12-08 22:21:21.017335 Item fish is unavailable
+At 2022-12-08 22:21:21.043349 Item fish is unavailable
+At 2022-12-08 22:21:31.099579 Item boar is shipped from inventory
+At 2022-12-08 22:21:41.123931 Item fish is shipped from inventory
+At 2022-12-08 22:21:41.311133 Item boar is shipped from inventory
+At 2022-12-08 22:21:51.158612 Item boar is shipped from inventory
+At 2022-12-08 22:22:01.343833 Item fish is shipped from inventory
+At 2022-12-08 22:22:11.246276 Item boar is shipped from inventory
+At 2022-12-08 22:22:11.366969 Item fish is shipped from inventory
+At 2022-12-08 22:22:21.409039 Item boar is shipped from inventory
+At 2022-12-08 22:22:31.289607 Item salt is unavailable
+At 2022-12-08 22:22:31.589104 Item salt is unavailable
+At 2022-12-08 22:22:41.452431 Item salt is unavailable
+At 2022-12-08 22:22:41.647710 Item salt is unavailable
+At 2022-12-08 22:23:01.476560 Item salt is shipped from inventory
+At 2022-12-08 22:23:11.272963 Item salt is shipped from inventory
+At 2022-12-08 22:23:21.388422 Item boar is shipped from inventory
+At 2022-12-08 22:23:31.795677 Item boar is shipped from inventory
+At 2022-12-08 22:23:41.449690 Item fish is shipped from inventory
+At 2022-12-08 22:23:41.825593 Item boar is shipped from inventory
+At 2022-12-08 22:23:51.350647 Item boar is shipped from inventory
+At 2022-12-08 22:24:01.382140 Item boar is shipped from inventory
+At 2022-12-08 22:24:01.578622 Item fish is shipped from inventory
+At 2022-12-08 22:24:31.618126 Item fish is shipped from inventory
+At 2022-12-08 22:25:01.716077 Item salt is shipped from inventory

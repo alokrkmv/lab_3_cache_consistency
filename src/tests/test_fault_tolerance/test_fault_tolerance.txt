@@ -1,0 +1,783 @@
+Starting nameserver in detached mode
+Namespace server is already running on localhost
+Removing dead peers from the server
+Potentially removing lots of items from the Name server. Are you sure (y/n)?5 items removed.
+Removing dead peers from the server
+Potentially removing lots of items from the Name server. Are you sure (y/n)?3 items removed.
+Starting the main process
+Showing the graphical representation of the bazaar
+Connected succesfuly to the databse
+2022-12-08 20:05:25.588103 : buyer0 joined the bazar as buyer looking for salt
+2022-12-08 20:05:25.591765 : seller1 joined the bazar as seller selling fish
+2022-12-08 20:05:25.593892 : buyer2 joined the bazar as buyer looking for boar
+2022-12-08 20:05:25.601185 : seller3 joined the bazar as seller selling salt
+2022-12-08 20:05:25.605962 : buyer4 joined the bazar as buyer looking for salt
+2022-12-08 20:05:25.613080 : buyer5 joined the bazar as buyer looking for salt
+2022-12-08 20:05:25.617415 : buyer6 joined the bazar as buyer looking for boar
+2022-12-08 20:05:25.621171 : buyer7 joined the bazar as buyer looking for fish
+2022-12-08 20:05:29.598906 : buyer2 has started the election
+2022-12-08 20:05:29.632290 : Dear buyers and sellers, My ID is buyer7, and I am the new coordinator
+2022-12-08 20:05:29.646046 : buyer0 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 20:05:29.646109 : buyer0 is ready to trade
+2022-12-08 20:05:29.650850 : seller1 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 20:05:29.650925 : seller1 is ready to trade
+2022-12-08 20:05:29.657191 : buyer2 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 20:05:29.657241 : buyer2 is ready to trade
+2022-12-08 20:05:29.660704 : seller3 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 20:05:29.660770 : seller3 is ready to trade
+2022-12-08 20:05:29.663901 : buyer4 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 20:05:29.663976 : buyer4 is ready to trade
+2022-12-08 20:05:29.671757 : buyer5 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 20:05:29.671801 : buyer5 is ready to trade
+2022-12-08 20:05:29.674000 : Trader0 is ready for product registration
+2022-12-08 20:05:29.674446 : buyer6 received message won from buyer7 and recognizes buyer7 as the new coordinator of the bazaar
+2022-12-08 20:05:29.674512 : buyer6 is ready to trade
+Start re-election!! Traders elected till now ['buyer7']
+2022-12-08 20:05:39.655363 : buyer0 has started the election
+2022-12-08 20:05:39.692960 : Dear buyers and sellers, My ID is buyer6, and I am the new coordinator
+2022-12-08 20:05:39.702880 : buyer0 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:05:39.702939 : buyer0 is ready to trade
+2022-12-08 20:05:39.708435 : seller1 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:05:39.708924 : seller1 is ready to trade
+2022-12-08 20:05:39.715730 : buyer2 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:05:39.715831 : buyer2 is ready to trade
+2022-12-08 20:05:39.723957 : seller3 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:05:39.724405 : seller3 is ready to trade
+2022-12-08 20:05:39.731816 : buyer4 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:05:39.731898 : buyer4 is ready to trade
+2022-12-08 20:05:39.737347 : buyer5 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:05:39.737861 : buyer5 is ready to trade
+2022-12-08 20:05:39.739610 : Trader1 is ready for product registration
+2022-12-08 20:05:39.739970 : buyer7 received message won from buyer6 and recognizes buyer6 as the new coordinator of the bazaar
+2022-12-08 20:05:39.740007 : buyer7 is ready to trade
+2022-12-08 20:05:49.705303 : Waiting 15s before starting trading
+2022-12-08 20:05:49.718653 : Waiting 15s before starting trading
+2022-12-08 20:05:49.726081 : Waiting 15s before starting trading
+2022-12-08 20:05:49.734625 : Waiting 15s before starting trading
+2022-12-08 20:05:49.738436 : Waiting 15s before starting trading
+2022-12-08 20:05:49.746451 : Waiting 15s before starting trading
+2022-12-08 20:05:49.747174 : Waiting 15s before starting trading
+2022-12-08 20:05:49.748738 : Waiting 15s before starting trading
+2022-12-08 20:06:04.773549 : seller1 registered their product fish with trader0
+2022-12-08 20:06:04.780847 : seller3 registered their product salt with trader1
+2022-12-08 20:06:14.768505 : Trader0 aka buyer7 - is ready to trade
+2022-12-08 20:06:14.768572 : 2 trader(s) in the bazar, trading can begin!!!
+2022-12-08 20:06:14.773484 : Trader1 aka buyer6 - is ready to trade
+2022-12-08 20:06:14.773616 : 2 trader(s) in the bazar, trading can begin!!!
+2022-12-08 20:06:14.774905 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:06:14.775076 : Trader1 got a purchase request for item salt from buyer0
+2022-12-08 20:06:14.813386 : boar is not available for sell in the bazaar right now
+2022-12-08 20:06:14.814016 : Current Trader1 of the bazar is buyer6
+2022-12-08 20:06:14.816215 : seller3 has sold salt to buyer0 and earned 6.4 $
+2022-12-08 20:06:14.816324 : seller3 has 9 salt left
+2022-12-08 20:06:14.818665 : buyer0 purchased salt from seller3
+2022-12-08 20:06:14.819010 : Trader1 got a purchase request for item salt from buyer5
+2022-12-08 20:06:14.819500 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 20:06:14.831844 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:06:14.832159 : Current Trader1 of the bazar is buyer6
+2022-12-08 20:06:14.834419 : seller3 has sold salt to buyer4 and earned 6.4 $
+2022-12-08 20:06:14.834493 : seller3 has 8 salt left
+2022-12-08 20:06:14.834818 : seller3 has sold salt to buyer5 and earned 6.4 $
+2022-12-08 20:06:14.834896 : seller3 has 8 salt left
+2022-12-08 20:06:14.836145 : buyer5 purchased salt from seller3
+2022-12-08 20:06:14.840856 : buyer4 purchased salt from seller3
+2022-12-08 20:06:19.698595 : Executing seller loop
+2022-12-08 20:06:19.698659 : seller1 has picked item salt to sell
+2022-12-08 20:06:19.710401 : Executing seller loop
+2022-12-08 20:06:19.710476 : seller3 has picked item fish to sell
+2022-12-08 20:06:24.778823 : Trader1 got a purchase request for item fish from buyer0
+2022-12-08 20:06:24.787176 : Current Trader1 of the bazar is buyer6
+2022-12-08 20:06:24.789283 : seller1 has sold fish to buyer0 and earned 4.8 $
+2022-12-08 20:06:24.789342 : seller1 has 9 fish left
+2022-12-08 20:06:24.791238 : Trader1 got a purchase request for item boar from buyer4
+2022-12-08 20:06:24.791638 : buyer0 purchased fish from seller1
+2022-12-08 20:06:24.795965 : boar is not available for sell in the bazaar right now
+2022-12-08 20:06:24.796558 : Trader1 got a purchase request for item boar from buyer5
+2022-12-08 20:06:24.800089 : boar is not available for sell in the bazaar right now
+2022-12-08 20:06:24.854660 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:06:24.867915 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:06:24.869510 : seller1 has sold fish to buyer2 and earned 4.8 $
+2022-12-08 20:06:24.869562 : seller1 has 8 fish left
+2022-12-08 20:06:24.875981 : buyer2 purchased fish from seller1
+2022-12-08 20:06:29.708733 : Waiting 15s before starting trading
+2022-12-08 20:06:29.718403 : Waiting 15s before starting trading
+2022-12-08 20:06:29.749175 : Executing seller loop
+2022-12-08 20:06:29.749251 : seller1 has picked item boar to sell
+2022-12-08 20:06:29.774408 : Executing seller loop
+2022-12-08 20:06:29.774486 : seller3 has picked item salt to sell
+2022-12-08 20:06:34.851952 : Trader1 got a purchase request for item fish from buyer0
+2022-12-08 20:06:34.852211 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:06:34.858268 : boar is not available for sell in the bazaar right now
+2022-12-08 20:06:34.864407 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:06:34.865978 : Current Trader1 of the bazar is buyer6
+2022-12-08 20:06:34.868079 : seller1 has sold fish to buyer0 and earned 4.8 $
+2022-12-08 20:06:34.868127 : seller1 has 7 fish left
+2022-12-08 20:06:34.868855 : boar is not available for sell in the bazaar right now
+2022-12-08 20:06:34.869832 : Trader1 got a purchase request for item boar from buyer2
+2022-12-08 20:06:34.869901 : buyer0 purchased fish from seller1
+2022-12-08 20:06:34.874097 : boar is not available for sell in the bazaar right now
+2022-12-08 20:06:39.759374 : Waiting 15s before starting trading
+2022-12-08 20:06:39.782399 : Waiting 15s before starting trading
+2022-12-08 20:06:44.770095 : seller1 registered their product boar with trader0
+2022-12-08 20:06:44.824608 : seller3 registered their product salt with trader1
+2022-12-08 20:06:44.842565 : Trader1 got a purchase request for item boar from buyer4
+2022-12-08 20:06:44.853393 : Current Trader1 of the bazar is buyer6
+2022-12-08 20:06:44.856475 : Trader1 got a purchase request for item fish from buyer5
+2022-12-08 20:06:44.856759 : buyer4 purchased boar from seller1
+2022-12-08 20:06:44.858160 : seller1 has sold boar to buyer4 and earned 4.8 $
+2022-12-08 20:06:44.858285 : seller1 has 9 boar left
+2022-12-08 20:06:44.860872 : fish is not available for sell in the bazaar right now
+2022-12-08 20:06:44.861276 : Trader1 got a purchase request for item salt from buyer0
+2022-12-08 20:06:44.874402 : Current Trader1 of the bazar is buyer6
+2022-12-08 20:06:44.876287 : seller3 has sold salt to buyer0 and earned 6.4 $
+2022-12-08 20:06:44.876329 : seller3 has 9 salt left
+2022-12-08 20:06:44.882974 : buyer0 purchased salt from seller3
+Trader1 aka buyer6 is dead!!! Now Trader0 aka buyer7 is only trader of the bazaar!!!
+buyer0 received death message of buyer6 from buyer7!!! resetting trader_queue
+seller1 received death message of buyer6 from buyer7!!! resetting trader_queue
+buyer2 received death message of buyer6 from buyer7!!! resetting trader_queue
+seller3 received death message of buyer6 from buyer7!!! resetting trader_queue
+buyer4 received death message of buyer6 from buyer7!!! resetting trader_queue
+buyer5 received death message of buyer6 from buyer7!!! resetting trader_queue
+2022-12-08 20:06:59.994415 : Trader0 got a purchase request for item salt from buyer2
+2022-12-08 20:07:00.006368 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:00.008259 : seller3 has sold salt to buyer2 and earned 6.4 $
+2022-12-08 20:07:00.008312 : seller3 has 8 salt left
+2022-12-08 20:07:00.009540 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:07:00.009780 : buyer2 purchased salt from seller3
+2022-12-08 20:07:00.013081 : fish is not available for sell in the bazaar right now
+2022-12-08 20:07:00.013658 : Trader0 got a purchase request for item fish from buyer5
+2022-12-08 20:07:00.019774 : fish is not available for sell in the bazaar right now
+2022-12-08 20:07:00.020252 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:07:00.024671 : fish is not available for sell in the bazaar right now
+2022-12-08 20:07:00.025124 : Trader0 got a purchase request for item salt from buyer2
+2022-12-08 20:07:00.038449 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:00.040023 : seller3 has sold salt to buyer2 and earned 6.4 $
+2022-12-08 20:07:00.040070 : seller3 has 7 salt left
+2022-12-08 20:07:00.046524 : buyer2 purchased salt from seller3
+2022-12-08 20:07:04.886659 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:07:04.895670 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:04.898037 : seller3 has sold salt to buyer5 and earned 6.4 $
+2022-12-08 20:07:04.898081 : seller3 has 6 salt left
+2022-12-08 20:07:04.899449 : buyer5 purchased salt from seller3
+2022-12-08 20:07:04.899516 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:07:04.904194 : fish is not available for sell in the bazaar right now
+2022-12-08 20:07:04.904568 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:07:04.909228 : fish is not available for sell in the bazaar right now
+2022-12-08 20:07:04.909733 : Trader0 got a purchase request for item salt from buyer2
+2022-12-08 20:07:04.921545 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:04.923533 : seller3 has sold salt to buyer2 and earned 6.4 $
+2022-12-08 20:07:04.923567 : seller3 has 5 salt left
+2022-12-08 20:07:04.930325 : buyer2 purchased salt from seller3
+2022-12-08 20:07:14.939300 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:07:14.942993 : fish is not available for sell in the bazaar right now
+2022-12-08 20:07:14.943338 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:07:14.955223 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:14.956892 : seller3 has sold salt to buyer0 and earned 6.4 $
+2022-12-08 20:07:14.956929 : seller3 has 4 salt left
+2022-12-08 20:07:14.958433 : buyer0 purchased salt from seller3
+2022-12-08 20:07:14.958560 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:07:14.963555 : fish is not available for sell in the bazaar right now
+2022-12-08 20:07:14.964045 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:07:14.973612 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:14.975328 : seller3 has sold salt to buyer5 and earned 6.4 $
+2022-12-08 20:07:14.975375 : seller3 has 3 salt left
+2022-12-08 20:07:14.981701 : buyer5 purchased salt from seller3
+2022-12-08 20:07:24.991202 : Trader0 got a purchase request for item fish from buyer5
+2022-12-08 20:07:24.994909 : fish is not available for sell in the bazaar right now
+2022-12-08 20:07:24.995477 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:07:25.006230 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:25.008594 : seller1 has sold boar to buyer0 and earned 4.8 $
+2022-12-08 20:07:25.008655 : seller1 has 8 boar left
+2022-12-08 20:07:25.010326 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 20:07:25.010458 : buyer0 purchased boar from seller1
+2022-12-08 20:07:25.022308 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:25.024494 : seller3 has sold salt to buyer4 and earned 6.4 $
+2022-12-08 20:07:25.024549 : seller3 has 2 salt left
+2022-12-08 20:07:25.026000 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:07:25.026366 : buyer4 purchased salt from seller3
+2022-12-08 20:07:25.030509 : fish is not available for sell in the bazaar right now
+2022-12-08 20:07:34.818664 : Executing seller loop
+2022-12-08 20:07:34.818734 : seller1 has picked item fish to sell
+2022-12-08 20:07:34.874390 : Executing seller loop
+2022-12-08 20:07:34.874468 : seller3 has picked item fish to sell
+2022-12-08 20:07:35.022844 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:07:35.033313 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:35.034959 : seller3 has sold salt to buyer5 and earned 6.4 $
+2022-12-08 20:07:35.034996 : seller3 has 1 salt left
+2022-12-08 20:07:35.036432 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:07:35.036642 : buyer5 purchased salt from seller3
+2022-12-08 20:07:35.046974 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:35.049176 : seller1 has sold boar to buyer2 and earned 4.8 $
+2022-12-08 20:07:35.049238 : seller1 has 7 boar left
+2022-12-08 20:07:35.050393 : buyer2 purchased boar from seller1
+2022-12-08 20:07:35.050446 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:07:35.061127 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:35.064122 : seller1 has sold boar to buyer4 and earned 4.8 $
+2022-12-08 20:07:35.064170 : seller1 has 6 boar left
+2022-12-08 20:07:35.065568 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:07:35.065861 : buyer4 purchased boar from seller1
+2022-12-08 20:07:35.075540 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:35.077667 : seller3 has sold salt to buyer0 and earned 6.4 $
+2022-12-08 20:07:35.077742 : seller3 has 0 salt left
+2022-12-08 20:07:35.077760 : seller3 is out of stock for item salt
+2022-12-08 20:07:35.079644 : buyer0 purchased salt from seller3
+2022-12-08 20:07:44.821138 : Executing seller loop
+2022-12-08 20:07:44.821219 : seller1 has picked item salt to sell
+2022-12-08 20:07:44.842394 : Executing seller loop
+2022-12-08 20:07:44.842473 : seller3 has picked item boar to sell
+2022-12-08 20:07:45.034175 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:07:45.043776 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:45.045511 : seller3 is out of stock for item salt
+2022-12-08 20:07:45.045571 : seller3 has picked item fish to sell
+2022-12-08 20:07:45.047084 : buyer5 purchased salt from seller3
+2022-12-08 20:07:45.047237 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:07:45.057970 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:45.059884 : seller1 has sold boar to buyer0 and earned 4.8 $
+2022-12-08 20:07:45.059932 : seller1 has 5 boar left
+2022-12-08 20:07:45.061648 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:07:45.061912 : buyer0 purchased boar from seller1
+2022-12-08 20:07:45.070372 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:45.072031 : seller1 has sold boar to buyer2 and earned 4.8 $
+2022-12-08 20:07:45.072071 : seller1 has 4 boar left
+2022-12-08 20:07:45.073869 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:07:45.073907 : buyer2 purchased boar from seller1
+2022-12-08 20:07:45.084533 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:45.086093 : seller1 has sold boar to buyer4 and earned 4.8 $
+2022-12-08 20:07:45.086135 : seller1 has 3 boar left
+2022-12-08 20:07:45.092224 : buyer4 purchased boar from seller1
+2022-12-08 20:07:55.072881 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:07:55.075832 : fish is not available for sell in the bazaar right now
+2022-12-08 20:07:55.076233 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:07:55.085360 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:55.086892 : seller1 has sold boar to buyer4 and earned 4.8 $
+2022-12-08 20:07:55.086936 : seller1 has 2 boar left
+2022-12-08 20:07:55.088147 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:07:55.088374 : buyer4 purchased boar from seller1
+2022-12-08 20:07:55.100176 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:55.101765 : seller1 has sold boar to buyer5 and earned 4.8 $
+2022-12-08 20:07:55.101806 : seller1 has 1 boar left
+2022-12-08 20:07:55.103360 : Trader0 got a purchase request for item salt from buyer2
+2022-12-08 20:07:55.103580 : buyer5 purchased boar from seller1
+2022-12-08 20:07:55.115001 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:07:55.116754 : seller3 is out of stock for item salt
+2022-12-08 20:07:55.116805 : seller3 has picked item salt to sell
+2022-12-08 20:07:55.123266 : buyer2 purchased salt from seller3
+2022-12-08 20:08:05.087573 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:08:05.096576 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:05.098314 : seller3 is out of stock for item salt
+2022-12-08 20:08:05.099905 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:08:05.100048 : buyer5 purchased salt from seller3
+2022-12-08 20:08:05.104142 : fish is not available for sell in the bazaar right now
+2022-12-08 20:08:05.104588 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:08:05.115747 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:05.117399 : seller1 has sold boar to buyer2 and earned 4.8 $
+2022-12-08 20:08:05.117441 : seller1 has 0 boar left
+2022-12-08 20:08:05.117458 : seller1 is out of stock for item boar
+2022-12-08 20:08:05.117491 : seller1 has picked item fish to sell
+2022-12-08 20:08:05.118965 : buyer2 purchased boar from seller1
+2022-12-08 20:08:05.119125 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:08:05.123728 : fish is not available for sell in the bazaar right now
+2022-12-08 20:08:15.123045 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:08:15.133091 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:15.135363 : seller3 is out of stock for item salt
+2022-12-08 20:08:15.135415 : seller3 has picked item boar to sell
+2022-12-08 20:08:15.136465 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:08:15.136666 : buyer5 purchased salt from seller3
+2022-12-08 20:08:15.148227 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:15.149959 : seller3 is out of stock for item salt
+2022-12-08 20:08:15.151376 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 20:08:15.151583 : buyer0 purchased salt from seller3
+2022-12-08 20:08:15.162486 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:15.164335 : seller3 is out of stock for item salt
+2022-12-08 20:08:15.164401 : seller3 has picked item fish to sell
+2022-12-08 20:08:15.165964 : buyer4 purchased salt from seller3
+2022-12-08 20:08:15.166724 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:08:15.177221 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:15.179172 : seller1 is out of stock for item boar
+2022-12-08 20:08:15.179244 : seller1 has picked item salt to sell
+2022-12-08 20:08:15.180511 : buyer2 purchased boar from seller1
+2022-12-08 20:08:25.167903 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:08:25.177361 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:25.179481 : seller3 is out of stock for item salt
+2022-12-08 20:08:25.179538 : seller3 has picked item boar to sell
+2022-12-08 20:08:25.180777 : buyer0 purchased salt from seller3
+2022-12-08 20:08:25.180892 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:08:25.184514 : fish is not available for sell in the bazaar right now
+2022-12-08 20:08:25.185015 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:08:25.188874 : fish is not available for sell in the bazaar right now
+2022-12-08 20:08:25.189386 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:08:25.200209 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:25.201718 : seller1 is out of stock for item boar
+2022-12-08 20:08:25.201770 : seller1 has picked item boar to sell
+2022-12-08 20:08:25.208292 : buyer5 purchased boar from seller1
+2022-12-08 20:08:34.870630 : Executing seller loop
+2022-12-08 20:08:34.870706 : seller1 has picked item fish to sell
+2022-12-08 20:08:34.934552 : Executing seller loop
+2022-12-08 20:08:34.934612 : seller3 has picked item salt to sell
+2022-12-08 20:08:35.169740 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:08:35.181421 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:35.183317 : seller1 is out of stock for item boar
+2022-12-08 20:08:35.183369 : seller1 has picked item boar to sell
+2022-12-08 20:08:35.184816 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:08:35.184846 : buyer4 purchased boar from seller1
+2022-12-08 20:08:35.188672 : fish is not available for sell in the bazaar right now
+2022-12-08 20:08:35.189361 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:08:35.194481 : fish is not available for sell in the bazaar right now
+2022-12-08 20:08:35.194889 : Trader0 got a purchase request for item fish from buyer5
+2022-12-08 20:08:35.198394 : fish is not available for sell in the bazaar right now
+2022-12-08 20:08:44.880658 : Executing seller loop
+2022-12-08 20:08:44.880728 : seller1 has picked item fish to sell
+2022-12-08 20:08:44.895567 : Executing seller loop
+2022-12-08 20:08:44.895637 : seller3 has picked item boar to sell
+2022-12-08 20:08:45.229069 : Trader0 got a purchase request for item fish from buyer5
+2022-12-08 20:08:45.231749 : fish is not available for sell in the bazaar right now
+2022-12-08 20:08:45.232211 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:08:45.244021 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:45.246108 : seller3 is out of stock for item salt
+2022-12-08 20:08:45.246178 : seller3 has picked item salt to sell
+2022-12-08 20:08:45.247197 : buyer0 purchased salt from seller3
+2022-12-08 20:08:45.247321 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:08:45.259589 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:45.262039 : seller1 is out of stock for item boar
+2022-12-08 20:08:45.262099 : seller1 has picked item boar to sell
+2022-12-08 20:08:45.263538 : buyer2 purchased boar from seller1
+2022-12-08 20:08:45.263819 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:08:45.268559 : fish is not available for sell in the bazaar right now
+2022-12-08 20:08:55.245329 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:08:55.254861 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:55.257050 : seller1 is out of stock for item boar
+2022-12-08 20:08:55.257111 : seller1 has picked item fish to sell
+2022-12-08 20:08:55.258531 : buyer5 purchased boar from seller1
+2022-12-08 20:08:55.258624 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:08:55.268383 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:55.270176 : seller3 is out of stock for item salt
+2022-12-08 20:08:55.270228 : seller3 has picked item fish to sell
+2022-12-08 20:08:55.271994 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:08:55.272136 : buyer0 purchased salt from seller3
+2022-12-08 20:08:55.283327 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:55.284764 : seller1 is out of stock for item boar
+2022-12-08 20:08:55.284813 : seller1 has picked item boar to sell
+2022-12-08 20:08:55.285873 : buyer2 purchased boar from seller1
+2022-12-08 20:08:55.285918 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 20:08:55.297275 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:08:55.299193 : seller3 is out of stock for item salt
+2022-12-08 20:08:55.299255 : seller3 has picked item boar to sell
+2022-12-08 20:08:55.300367 : buyer4 purchased salt from seller3
+2022-12-08 20:09:05.277989 : Trader0 got a purchase request for item fish from buyer5
+2022-12-08 20:09:05.281639 : fish is not available for sell in the bazaar right now
+2022-12-08 20:09:05.282011 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:09:05.293075 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:05.296280 : seller1 is out of stock for item boar
+2022-12-08 20:09:05.297604 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:09:05.297819 : buyer2 purchased boar from seller1
+2022-12-08 20:09:05.307652 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:05.310334 : seller3 is out of stock for item salt
+2022-12-08 20:09:05.310424 : seller3 has picked item salt to sell
+2022-12-08 20:09:05.312203 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:09:05.312503 : buyer0 purchased salt from seller3
+2022-12-08 20:09:05.315832 : fish is not available for sell in the bazaar right now
+2022-12-08 20:09:15.304796 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:09:15.314802 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:15.316586 : seller1 is out of stock for item boar
+2022-12-08 20:09:15.316640 : seller1 has picked item fish to sell
+2022-12-08 20:09:15.318171 : buyer5 purchased boar from seller1
+2022-12-08 20:09:15.318275 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:09:15.330183 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:15.331948 : seller1 is out of stock for item boar
+2022-12-08 20:09:15.333426 : buyer2 purchased boar from seller1
+2022-12-08 20:09:15.333614 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:09:15.338889 : fish is not available for sell in the bazaar right now
+2022-12-08 20:09:15.339436 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:09:15.349818 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:15.351898 : seller1 is out of stock for item boar
+2022-12-08 20:09:15.358625 : buyer0 purchased boar from seller1
+2022-12-08 20:09:25.338726 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:09:25.349581 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:25.351255 : seller1 is out of stock for item boar
+2022-12-08 20:09:25.352664 : buyer0 purchased boar from seller1
+2022-12-08 20:09:25.352759 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:09:25.364251 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:25.366085 : seller3 is out of stock for item salt
+2022-12-08 20:09:25.366154 : seller3 has picked item boar to sell
+2022-12-08 20:09:25.367074 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:09:25.367469 : buyer5 purchased salt from seller3
+2022-12-08 20:09:25.371063 : fish is not available for sell in the bazaar right now
+2022-12-08 20:09:25.371491 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:09:25.376342 : fish is not available for sell in the bazaar right now
+2022-12-08 20:09:34.905780 : Executing seller loop
+2022-12-08 20:09:34.905839 : seller1 has picked item boar to sell
+2022-12-08 20:09:34.992751 : Executing seller loop
+2022-12-08 20:09:34.992810 : seller3 has picked item fish to sell
+2022-12-08 20:09:35.375253 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:09:35.384792 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:35.386476 : seller1 is out of stock for item boar
+2022-12-08 20:09:35.388085 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:09:35.388486 : buyer2 purchased boar from seller1
+2022-12-08 20:09:35.401955 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:35.403862 : seller1 is out of stock for item boar
+2022-12-08 20:09:35.405487 : buyer5 purchased boar from seller1
+2022-12-08 20:09:35.405508 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:09:35.419339 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:35.421828 : seller3 is out of stock for item salt
+2022-12-08 20:09:35.421904 : seller3 has picked item salt to sell
+2022-12-08 20:09:35.423508 : buyer0 purchased salt from seller3
+2022-12-08 20:09:35.423517 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:09:35.428375 : fish is not available for sell in the bazaar right now
+2022-12-08 20:09:44.915900 : Executing seller loop
+2022-12-08 20:09:44.915969 : seller3 has picked item fish to sell
+2022-12-08 20:09:44.938415 : Executing seller loop
+2022-12-08 20:09:44.938515 : seller1 has picked item salt to sell
+2022-12-08 20:09:45.407964 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:09:45.417506 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:45.420035 : seller1 is out of stock for item boar
+2022-12-08 20:09:45.422647 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:09:45.422964 : buyer2 purchased boar from seller1
+2022-12-08 20:09:45.426805 : fish is not available for sell in the bazaar right now
+2022-12-08 20:09:45.427270 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:09:45.439799 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:45.441672 : seller3 is out of stock for item salt
+2022-12-08 20:09:45.441742 : seller3 has picked item salt to sell
+2022-12-08 20:09:45.443104 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:09:45.443333 : buyer0 purchased salt from seller3
+2022-12-08 20:09:45.455337 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:45.457401 : seller1 is out of stock for item boar
+2022-12-08 20:09:45.464570 : buyer5 purchased boar from seller1
+2022-12-08 20:09:55.440905 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:09:55.448497 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:55.450579 : seller1 is out of stock for item boar
+2022-12-08 20:09:55.452113 : buyer0 purchased boar from seller1
+2022-12-08 20:09:55.452251 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:09:55.463178 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:55.464935 : seller1 is out of stock for item boar
+2022-12-08 20:09:55.464984 : seller1 has picked item boar to sell
+2022-12-08 20:09:55.466305 : Trader0 got a purchase request for item fish from buyer5
+2022-12-08 20:09:55.466559 : buyer2 purchased boar from seller1
+2022-12-08 20:09:55.469624 : fish is not available for sell in the bazaar right now
+2022-12-08 20:09:55.470308 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:09:55.482548 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:09:55.484458 : seller1 is out of stock for item boar
+2022-12-08 20:09:55.491510 : buyer4 purchased boar from seller1
+2022-12-08 20:10:05.474968 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:10:05.482645 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:05.484516 : seller1 is out of stock for item boar
+2022-12-08 20:10:05.484575 : seller1 has picked item salt to sell
+2022-12-08 20:10:05.486148 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:10:05.486459 : buyer5 purchased boar from seller1
+2022-12-08 20:10:05.496547 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:05.498374 : seller1 is out of stock for item boar
+2022-12-08 20:10:05.498448 : seller1 has picked item fish to sell
+2022-12-08 20:10:05.500042 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:10:05.500295 : buyer0 purchased boar from seller1
+2022-12-08 20:10:05.504871 : fish is not available for sell in the bazaar right now
+2022-12-08 20:10:05.505227 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:10:05.516652 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:05.518411 : seller1 is out of stock for item boar
+2022-12-08 20:10:05.525349 : buyer4 purchased boar from seller1
+2022-12-08 20:10:15.501063 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:10:15.510226 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:15.512176 : seller1 is out of stock for item boar
+2022-12-08 20:10:15.512226 : seller1 has picked item salt to sell
+2022-12-08 20:10:15.513810 : buyer0 purchased boar from seller1
+2022-12-08 20:10:15.514129 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:10:15.517631 : fish is not available for sell in the bazaar right now
+2022-12-08 20:10:15.518171 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:10:15.529643 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:15.532248 : seller1 is out of stock for item boar
+2022-12-08 20:10:15.532316 : seller1 has picked item fish to sell
+2022-12-08 20:10:15.533681 : Trader0 got a purchase request for item salt from buyer2
+2022-12-08 20:10:15.533914 : buyer5 purchased boar from seller1
+2022-12-08 20:10:15.546288 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:15.548284 : seller3 is out of stock for item salt
+2022-12-08 20:10:15.548368 : seller3 has picked item fish to sell
+2022-12-08 20:10:15.554772 : buyer2 purchased salt from seller3
+2022-12-08 20:10:25.523208 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:10:25.532534 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:25.534565 : seller3 is out of stock for item salt
+2022-12-08 20:10:25.534659 : seller3 has picked item boar to sell
+2022-12-08 20:10:25.536213 : buyer0 purchased salt from seller3
+2022-12-08 20:10:25.536260 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:10:25.541427 : fish is not available for sell in the bazaar right now
+2022-12-08 20:10:25.541880 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:10:25.551657 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:25.554141 : seller1 is out of stock for item boar
+2022-12-08 20:10:25.554236 : seller1 has picked item boar to sell
+2022-12-08 20:10:25.555661 : buyer5 purchased boar from seller1
+2022-12-08 20:10:25.555882 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 20:10:25.566889 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:25.568847 : seller3 is out of stock for item salt
+2022-12-08 20:10:25.568932 : seller3 has picked item salt to sell
+2022-12-08 20:10:25.575597 : buyer4 purchased salt from seller3
+2022-12-08 20:10:34.965919 : Executing seller loop
+2022-12-08 20:10:34.965982 : seller1 has picked item fish to sell
+2022-12-08 20:10:35.052403 : Executing seller loop
+2022-12-08 20:10:35.052442 : seller3 has picked item fish to sell
+2022-12-08 20:10:35.601719 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:10:35.611672 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:35.613698 : seller1 is out of stock for item boar
+2022-12-08 20:10:35.615602 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:10:35.615800 : buyer2 purchased boar from seller1
+2022-12-08 20:10:35.619659 : fish is not available for sell in the bazaar right now
+2022-12-08 20:10:35.620216 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:10:35.630845 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:35.633245 : seller3 is out of stock for item salt
+2022-12-08 20:10:35.633314 : seller3 has picked item salt to sell
+2022-12-08 20:10:35.634672 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:10:35.634692 : buyer5 purchased salt from seller3
+2022-12-08 20:10:35.640176 : fish is not available for sell in the bazaar right now
+2022-12-08 20:10:44.934368 : Executing seller loop
+2022-12-08 20:10:44.934433 : seller3 has picked item boar to sell
+2022-12-08 20:10:44.993117 : Executing seller loop
+2022-12-08 20:10:44.993197 : seller1 has picked item boar to sell
+2022-12-08 20:10:45.629063 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:10:45.638219 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:45.640149 : seller1 is out of stock for item boar
+2022-12-08 20:10:45.641582 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:10:45.641868 : buyer2 purchased boar from seller1
+2022-12-08 20:10:45.645379 : fish is not available for sell in the bazaar right now
+2022-12-08 20:10:45.645839 : Trader0 got a purchase request for item fish from buyer5
+2022-12-08 20:10:45.649056 : fish is not available for sell in the bazaar right now
+2022-12-08 20:10:45.649515 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:10:45.659825 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:45.661798 : seller3 is out of stock for item salt
+2022-12-08 20:10:45.668661 : buyer0 purchased salt from seller3
+2022-12-08 20:10:55.695682 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:10:55.699292 : fish is not available for sell in the bazaar right now
+2022-12-08 20:10:55.699685 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:10:55.703563 : fish is not available for sell in the bazaar right now
+2022-12-08 20:10:55.703926 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:10:55.713023 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:55.715133 : seller1 is out of stock for item boar
+2022-12-08 20:10:55.715220 : seller1 has picked item fish to sell
+2022-12-08 20:10:55.716781 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:10:55.717662 : buyer2 purchased boar from seller1
+2022-12-08 20:10:55.727693 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:10:55.729289 : seller3 is out of stock for item salt
+2022-12-08 20:10:55.729347 : seller3 has picked item fish to sell
+2022-12-08 20:10:55.736025 : buyer5 purchased salt from seller3
+2022-12-08 20:11:05.738204 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:11:05.746883 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:05.749005 : seller1 is out of stock for item boar
+2022-12-08 20:11:05.749075 : seller1 has picked item boar to sell
+2022-12-08 20:11:05.750573 : Trader0 got a purchase request for item salt from buyer2
+2022-12-08 20:11:05.750796 : buyer4 purchased boar from seller1
+2022-12-08 20:11:05.760890 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:05.763058 : seller3 is out of stock for item salt
+2022-12-08 20:11:05.764804 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:11:05.764983 : buyer2 purchased salt from seller3
+2022-12-08 20:11:05.776478 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:05.778150 : seller3 is out of stock for item salt
+2022-12-08 20:11:05.779538 : buyer5 purchased salt from seller3
+2022-12-08 20:11:05.779653 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:11:05.783642 : fish is not available for sell in the bazaar right now
+2022-12-08 20:11:15.742437 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:11:15.746709 : fish is not available for sell in the bazaar right now
+2022-12-08 20:11:15.747102 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:11:15.757989 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:15.759879 : seller1 is out of stock for item boar
+2022-12-08 20:11:15.761579 : buyer5 purchased boar from seller1
+2022-12-08 20:11:15.761688 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:11:15.766141 : fish is not available for sell in the bazaar right now
+2022-12-08 20:11:15.766670 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:11:15.779010 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:15.780660 : seller1 is out of stock for item boar
+2022-12-08 20:11:15.780716 : seller1 has picked item fish to sell
+2022-12-08 20:11:15.787043 : buyer0 purchased boar from seller1
+2022-12-08 20:11:25.782752 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:11:25.793288 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:25.795187 : seller1 is out of stock for item boar
+2022-12-08 20:11:25.795245 : seller1 has picked item salt to sell
+2022-12-08 20:11:25.796713 : buyer2 purchased boar from seller1
+2022-12-08 20:11:25.796759 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:11:25.808121 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:25.810095 : seller3 is out of stock for item salt
+2022-12-08 20:11:25.810171 : seller3 has picked item boar to sell
+2022-12-08 20:11:25.811403 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 20:11:25.811609 : buyer5 purchased salt from seller3
+2022-12-08 20:11:25.823208 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:25.825566 : seller3 is out of stock for item salt
+2022-12-08 20:11:25.825625 : seller3 has picked item fish to sell
+2022-12-08 20:11:25.827053 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:11:25.827242 : buyer4 purchased salt from seller3
+2022-12-08 20:11:25.836965 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:25.839222 : seller3 is out of stock for item salt
+2022-12-08 20:11:25.839313 : seller3 has picked item salt to sell
+2022-12-08 20:11:25.846713 : buyer0 purchased salt from seller3
+2022-12-08 20:11:35.006368 : Executing seller loop
+2022-12-08 20:11:35.006431 : seller1 has picked item fish to sell
+2022-12-08 20:11:35.112504 : Executing seller loop
+2022-12-08 20:11:35.112543 : seller3 has picked item fish to sell
+2022-12-08 20:11:35.819324 : Trader0 got a purchase request for item salt from buyer2
+2022-12-08 20:11:35.829101 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:35.830772 : seller3 is out of stock for item salt
+2022-12-08 20:11:35.830838 : seller3 has picked item salt to sell
+2022-12-08 20:11:35.832263 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:11:35.832555 : buyer2 purchased salt from seller3
+2022-12-08 20:11:35.837008 : fish is not available for sell in the bazaar right now
+2022-12-08 20:11:35.837586 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:11:35.847528 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:35.849405 : seller1 is out of stock for item boar
+2022-12-08 20:11:35.851546 : Trader0 got a purchase request for item fish from buyer5
+2022-12-08 20:11:35.851685 : buyer0 purchased boar from seller1
+2022-12-08 20:11:35.856074 : fish is not available for sell in the bazaar right now
+2022-12-08 20:11:44.992672 : Executing seller loop
+2022-12-08 20:11:44.992742 : seller3 has picked item fish to sell
+2022-12-08 20:11:45.050218 : Executing seller loop
+2022-12-08 20:11:45.050294 : seller1 has picked item salt to sell
+2022-12-08 20:11:45.862176 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:11:45.871842 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:45.873653 : seller1 is out of stock for item boar
+2022-12-08 20:11:45.873735 : seller1 has picked item fish to sell
+2022-12-08 20:11:45.875057 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 20:11:45.875312 : buyer0 purchased boar from seller1
+2022-12-08 20:11:45.885218 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:45.887175 : seller3 is out of stock for item salt
+2022-12-08 20:11:45.887241 : seller3 has picked item boar to sell
+2022-12-08 20:11:45.889015 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:11:45.889493 : buyer4 purchased salt from seller3
+2022-12-08 20:11:45.899389 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:45.901351 : seller3 is out of stock for item salt
+2022-12-08 20:11:45.902944 : buyer5 purchased salt from seller3
+2022-12-08 20:11:45.903066 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:11:45.916592 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:45.918475 : seller1 is out of stock for item boar
+2022-12-08 20:11:45.925313 : buyer2 purchased boar from seller1
+2022-12-08 20:11:55.903944 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:11:55.915056 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:55.917705 : seller3 is out of stock for item salt
+2022-12-08 20:11:55.919813 : buyer0 purchased salt from seller3
+2022-12-08 20:11:55.919819 : Trader0 got a purchase request for item salt from buyer4
+2022-12-08 20:11:55.931026 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:55.933171 : seller3 is out of stock for item salt
+2022-12-08 20:11:55.933241 : seller3 has picked item fish to sell
+2022-12-08 20:11:55.934458 : buyer4 purchased salt from seller3
+2022-12-08 20:11:55.934485 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:11:55.939606 : fish is not available for sell in the bazaar right now
+2022-12-08 20:11:55.940121 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:11:55.951322 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:11:55.953489 : seller3 is out of stock for item salt
+2022-12-08 20:11:55.960581 : buyer5 purchased salt from seller3
+2022-12-08 20:12:05.930340 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:12:05.939532 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:05.941184 : seller1 is out of stock for item boar
+2022-12-08 20:12:05.941239 : seller1 has picked item boar to sell
+2022-12-08 20:12:05.942516 : Trader0 got a purchase request for item salt from buyer2
+2022-12-08 20:12:05.942838 : buyer4 purchased boar from seller1
+2022-12-08 20:12:05.955136 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:05.957161 : seller3 is out of stock for item salt
+2022-12-08 20:12:05.958592 : Trader0 got a purchase request for item fish from buyer5
+2022-12-08 20:12:05.958863 : buyer2 purchased salt from seller3
+2022-12-08 20:12:05.962781 : fish is not available for sell in the bazaar right now
+2022-12-08 20:12:05.963373 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:12:05.967729 : fish is not available for sell in the bazaar right now
+2022-12-08 20:12:15.962451 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:12:15.972477 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:15.974510 : seller3 is out of stock for item salt
+2022-12-08 20:12:15.976099 : buyer5 purchased salt from seller3
+2022-12-08 20:12:15.976267 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:12:15.979955 : fish is not available for sell in the bazaar right now
+2022-12-08 20:12:15.980456 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:12:15.984665 : fish is not available for sell in the bazaar right now
+2022-12-08 20:12:15.985112 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:12:15.989219 : fish is not available for sell in the bazaar right now
+2022-12-08 20:12:26.001827 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:12:26.011229 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:26.013174 : seller3 is out of stock for item salt
+2022-12-08 20:12:26.013240 : seller3 has picked item boar to sell
+2022-12-08 20:12:26.014830 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:12:26.015106 : buyer5 purchased salt from seller3
+2022-12-08 20:12:26.019421 : fish is not available for sell in the bazaar right now
+2022-12-08 20:12:26.019876 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:12:26.030620 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:26.032985 : seller3 is out of stock for item salt
+2022-12-08 20:12:26.034651 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:12:26.034719 : buyer0 purchased salt from seller3
+2022-12-08 20:12:26.045071 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:26.047143 : seller1 is out of stock for item boar
+2022-12-08 20:12:26.047209 : seller1 has picked item fish to sell
+2022-12-08 20:12:26.054067 : buyer4 purchased boar from seller1
+2022-12-08 20:12:35.036755 : Executing seller loop
+2022-12-08 20:12:35.036831 : seller1 has picked item salt to sell
+2022-12-08 20:12:35.151316 : Executing seller loop
+2022-12-08 20:12:35.151391 : seller3 has picked item salt to sell
+2022-12-08 20:12:35.992092 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:12:36.003470 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:36.005299 : seller3 is out of stock for item salt
+2022-12-08 20:12:36.005360 : seller3 has picked item fish to sell
+2022-12-08 20:12:36.012309 : Trader0 got a purchase request for item salt from buyer2
+2022-12-08 20:12:36.012749 : buyer5 purchased salt from seller3
+2022-12-08 20:12:36.023108 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:36.024673 : seller3 is out of stock for item salt
+2022-12-08 20:12:36.024737 : seller3 has picked item boar to sell
+2022-12-08 20:12:36.026069 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:12:36.026177 : buyer2 purchased salt from seller3
+2022-12-08 20:12:36.038163 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:36.040105 : seller1 is out of stock for item boar
+2022-12-08 20:12:36.040169 : seller1 has picked item boar to sell
+2022-12-08 20:12:36.041618 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:12:36.041855 : buyer4 purchased boar from seller1
+2022-12-08 20:12:36.051726 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:36.053986 : seller3 is out of stock for item salt
+2022-12-08 20:12:36.054052 : seller3 has picked item fish to sell
+2022-12-08 20:12:36.056016 : buyer0 purchased salt from seller3
+2022-12-08 20:12:45.006376 : Executing seller loop
+2022-12-08 20:12:45.006439 : seller3 has picked item boar to sell
+2022-12-08 20:12:45.062398 : Executing seller loop
+2022-12-08 20:12:45.062495 : seller1 has picked item fish to sell
+2022-12-08 20:12:46.031281 : Trader0 got a purchase request for item boar from buyer2
+2022-12-08 20:12:46.039669 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:46.041693 : seller1 is out of stock for item boar
+2022-12-08 20:12:46.041746 : seller1 has picked item boar to sell
+2022-12-08 20:12:46.043527 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:12:46.043872 : buyer2 purchased boar from seller1
+2022-12-08 20:12:46.048141 : fish is not available for sell in the bazaar right now
+2022-12-08 20:12:46.048585 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:12:46.066269 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:46.068651 : seller3 is out of stock for item salt
+2022-12-08 20:12:46.068706 : seller3 has picked item salt to sell
+2022-12-08 20:12:46.070407 : Trader0 got a purchase request for item boar from buyer0
+2022-12-08 20:12:46.070571 : buyer5 purchased salt from seller3
+2022-12-08 20:12:46.081193 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:46.083187 : seller1 is out of stock for item boar
+2022-12-08 20:12:46.090316 : buyer0 purchased boar from seller1
+2022-12-08 20:12:56.113949 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:12:56.117821 : fish is not available for sell in the bazaar right now
+2022-12-08 20:12:56.118403 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:12:56.122398 : fish is not available for sell in the bazaar right now
+2022-12-08 20:12:56.122864 : Trader0 got a purchase request for item salt from buyer5
+2022-12-08 20:12:56.134082 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:56.136115 : seller3 is out of stock for item salt
+2022-12-08 20:12:56.136181 : seller3 has picked item fish to sell
+2022-12-08 20:12:56.137536 : buyer5 purchased salt from seller3
+2022-12-08 20:12:56.137619 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:12:56.149334 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:12:56.151329 : seller3 is out of stock for item salt
+2022-12-08 20:12:56.158357 : buyer0 purchased salt from seller3
+2022-12-08 20:13:06.138669 : Trader0 got a purchase request for item fish from buyer0
+2022-12-08 20:13:06.141525 : fish is not available for sell in the bazaar right now
+2022-12-08 20:13:06.141926 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:13:06.152531 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:13:06.154257 : seller1 is out of stock for item boar
+2022-12-08 20:13:06.154311 : seller1 has picked item fish to sell
+2022-12-08 20:13:06.155992 : Trader0 got a purchase request for item boar from buyer4
+2022-12-08 20:13:06.156289 : buyer5 purchased boar from seller1
+2022-12-08 20:13:06.166655 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:13:06.168927 : seller1 is out of stock for item boar
+2022-12-08 20:13:06.169019 : seller1 has picked item salt to sell
+2022-12-08 20:13:06.170122 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:13:06.170485 : buyer4 purchased boar from seller1
+2022-12-08 20:13:06.174103 : fish is not available for sell in the bazaar right now
+2022-12-08 20:13:16.185777 : Trader0 got a purchase request for item fish from buyer2
+2022-12-08 20:13:16.189336 : fish is not available for sell in the bazaar right now
+2022-12-08 20:13:16.189736 : Trader0 got a purchase request for item fish from buyer4
+2022-12-08 20:13:16.194371 : fish is not available for sell in the bazaar right now
+2022-12-08 20:13:16.194782 : Trader0 got a purchase request for item boar from buyer5
+2022-12-08 20:13:16.206361 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:13:16.208012 : seller1 is out of stock for item boar
+2022-12-08 20:13:16.208085 : seller1 has picked item fish to sell
+2022-12-08 20:13:16.209234 : Trader0 got a purchase request for item salt from buyer0
+2022-12-08 20:13:16.209429 : buyer5 purchased boar from seller1
+2022-12-08 20:13:16.219569 : Current Trader0 of the bazar is buyer7
+2022-12-08 20:13:16.221499 : seller3 is out of stock for item salt
+2022-12-08 20:13:16.221563 : seller3 has picked item boar to sell
+2022-12-08 20:13:16.228059 : buyer0 purchased salt from seller3
