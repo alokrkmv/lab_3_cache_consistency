@@ -27,7 +27,7 @@ def main():
     if len(sys.argv) >= 4:
         number_of_traders = min(3, int(sys.argv[3]))
     else:
-        number_of_traders = default_configs["number_of_peers"]
+        number_of_traders = default_configs["number_of_traders"]
 
     roles = default_configs["roles"]
     items = default_configs["items"]
