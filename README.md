@@ -86,3 +86,4 @@ sudo apt-get install python3-tk````
   
 
 1 ![design_doc](https://github.com/alokrkmv/lab_3_cache_consistency/blob/main/Documentation/the_multi_trader_trouble_doumentation.pdf)
+2.![problem_statemnt](https://github.com/alokrkmv/lab_3_cache_consistency/blob/main/Documentation/Lab_3_multi_treader_problem_statement.pdf)
